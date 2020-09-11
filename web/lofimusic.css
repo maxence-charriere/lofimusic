@@ -112,7 +112,7 @@ a:hover {
 
 .overlay-menu {
   height: 100%;
-  background: linear-gradient(black, rgba(0, 0, 0, 0.6), black);
+  background: linear-gradient(black, rgba(0, 0, 0, 0.75), black);
 }
 
 /* -----------------------------------------------------------------------------

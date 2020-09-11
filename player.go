@@ -161,10 +161,11 @@ func (p *player) onPlay(ctx app.Context, e app.Event) {
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {
-	c := channels.Get("/")
-	if c.Slug != p.Channel.Slug {
-		app.Navigate("/" + c.Slug)
-		return
+	for {
+		c := channels.Get("/")
+		if c.Slug != p.Channel.Slug {
+			app.Navigate("/" + c.Slug)
+			return
+		}
 	}
-
 }
