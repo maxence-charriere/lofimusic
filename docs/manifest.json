@@ -1,0 +1,21 @@
+{
+  "short_name": "Lofimusic",
+  "name": "Lofimusic",
+  "icons": [
+    {
+      "src": "https://storage.googleapis.com/murlok-github/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://storage.googleapis.com/murlok-github/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "scope": "/go-app/",
+  "start_url": "/go-app/",
+  "background_color": "#000000",
+  "display": "standalone",
+  "theme_color": "#000000"
+}

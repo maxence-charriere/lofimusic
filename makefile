@@ -1,10 +1,15 @@
 build:
-	@GOARCH=wasm GOOS=js go build -o web/app.wasm
-	@go build
+	@GOARCH=wasm GOOS=js go build -o docs/web/app.wasm ./bin/lofimusic
+	@go build -o docs/lofimusic ./bin/lofimusic
 
 run: build
-	@./lofimusic
+	@cd docs && ./lofimusic local
+
+
+github: build
+	@cd docs && ./lofimusic github
 
 clean:
-	@go clean
-	@-rm web/app.wasm
+	@go clean ./...
+	@-rm docs/web/app.wasm
+	@-rm docs/lofimusic
