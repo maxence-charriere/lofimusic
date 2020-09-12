@@ -11,5 +11,4 @@ github: build
 
 clean:
 	@go clean ./...
-	@-rm docs/web/app.wasm
 	@-rm docs/lofimusic
