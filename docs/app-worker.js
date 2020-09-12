@@ -1,19 +1,19 @@
-const cacheName = "app-" + "7c8c19537304800e79af75859aa37d4ec9930d32";
+const cacheName = "app-" + "4d9d30a3b0d73a2193df5a2bdce8951376d4bc92";
 
 self.addEventListener("install", event => {
-  console.log("installing app worker 7c8c19537304800e79af75859aa37d4ec9930d32");
+  console.log("installing app worker 4d9d30a3b0d73a2193df5a2bdce8951376d4bc92");
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(cacheName).then(cache => {
       return cache.addAll([
-        "/lofimusic",
-        "/lofimusic/app.css",
-        "/lofimusic/app.js",
-        "/lofimusic/manifest.json",
-        "/lofimusic/wasm_exec.js",
-        "/lofimusic/web/app.wasm",
-        "/lofimusic/web/lofimusic.css",
+        "/",
+        "//app.css",
+        "//app.js",
+        "//manifest.json",
+        "//wasm_exec.js",
+        "//web/app.wasm",
+        "//web/lofimusic.css",
         "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
         "https://fonts.googleapis.com/css2?family=Roboto&display=swap",
         "https://storage.googleapis.com/murlok-github/icon-192.png",
@@ -36,7 +36,7 @@ self.addEventListener("activate", event => {
       );
     })
   );
-  console.log("app worker 7c8c19537304800e79af75859aa37d4ec9930d32 is activated");
+  console.log("app worker 4d9d30a3b0d73a2193df5a2bdce8951376d4bc92 is activated");
 });
 
 self.addEventListener("fetch", event => {
