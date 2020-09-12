@@ -109,7 +109,7 @@ func newChannelStore() *channelStore {
 			Slug: "chillhopmusic",
 			SocialMedia: []link{
 				{
-					URL:       "https://youtu.be/DWcJFNfaw9c",
+					URL:       "https://youtu.be/5yx6BWlEVcY",
 					MediaSlug: "youtube",
 				},
 				{

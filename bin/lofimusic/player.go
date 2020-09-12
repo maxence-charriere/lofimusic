@@ -68,6 +68,7 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 
 	case 2:
 		playing = false
+		app.Window().GetElementByID("play")
 
 	}
 
