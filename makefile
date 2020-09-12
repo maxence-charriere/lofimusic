@@ -6,8 +6,10 @@ run: build
 	@cd docs && ./lofimusic local
 
 
-github: build
+build-github: build
 	@cd docs && ./lofimusic github
+
+github: build-github clean 
 
 clean:
 	@go clean ./...
