@@ -18,7 +18,6 @@ type player struct {
 	youtube                  app.Value
 	releaseIframe            func()
 	releasePlayerStateChange func()
-	ready                    bool
 	playing                  bool
 }
 
@@ -31,7 +30,6 @@ func (p *player) OnMount(ctx app.Context) {
 	}
 
 	p.setupYoutubePlayer()
-	p.ready = true
 	p.playing = true
 	p.Update()
 }
@@ -68,12 +66,9 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 
 	case 2:
 		playing = false
-		app.Window().GetElementByID("play")
-
 	}
 
 	app.Dispatch(func() {
-		p.ready = true
 		p.playing = playing
 		p.Update()
 	})
@@ -92,11 +87,6 @@ func (p *player) OnDismount() {
 }
 
 func (p *player) Render() app.UI {
-	controlsState := ""
-	if !p.ready {
-		controlsState = "hidden"
-	}
-
 	return app.Div().
 		ID("player").
 		Class("player").
@@ -122,7 +112,6 @@ func (p *player) Render() app.UI {
 					app.Footer().Body(
 						app.Stack().
 							Class("controls").
-							Class(controlsState).
 							Center().
 							Content(
 								app.If(!p.playing,
