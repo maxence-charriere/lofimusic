@@ -103,7 +103,7 @@ func (p *player) Render() app.UI {
 				AllowFullscreen(true).
 				Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
 				Src(fmt.Sprintf(
-					"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1",
+					"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playsinline=1",
 					p.Channel.ID,
 				)),
 			app.Div().
