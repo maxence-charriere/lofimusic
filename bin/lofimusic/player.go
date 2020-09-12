@@ -100,7 +100,6 @@ func (p *player) Render() app.UI {
 				Allow("accelerometer").
 				Allow("encrypted-media").
 				Allow("picture-in-picture").
-				AllowFullscreen(true).
 				Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
 				Src(fmt.Sprintf(
 					"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playsinline=1",
