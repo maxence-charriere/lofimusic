@@ -127,7 +127,7 @@ func (p *player) Render() app.UI {
 									app.Button().
 										ID("play").
 										Class("button").
-										Text("Play").
+										Title(fmt.Sprintf("Play %s.", p.Channel.Name)).
 										OnClick(p.onPlay).
 										Body(
 											app.Raw(`
@@ -140,7 +140,7 @@ func (p *player) Render() app.UI {
 									app.Button().
 										ID("shuffle").
 										Class("button").
-										Text("Play").
+										Title("Play a random Lofi channel.").
 										OnClick(p.onShuffle).
 										Body(
 											app.Raw(`

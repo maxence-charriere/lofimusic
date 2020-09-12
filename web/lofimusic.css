@@ -86,7 +86,7 @@ a:hover {
 }
 
 .menu .item:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .menu .item:active {
@@ -183,7 +183,7 @@ a:hover {
 
 .player .controls .button:hover {
   color: white;
-  transform: scale(1.1);
+  transform: scale(1.3);
 }
 
 .player .controls .button:active {
@@ -197,7 +197,32 @@ a:hover {
 .detail {
   max-width: 75%;
   position: absolute;
-  bottom: 25%;
+  bottom: 15%;
   right: 0;
   text-shadow: 1px 1px black;
+}
+
+.detail .channel {
+  text-align: right;
+}
+
+.detail .social {
+  margin: 6px 24px 0 auto;
+}
+
+.detail .button {
+  display: block;
+  padding: 6px;
+  margin-left: 6px;
+  transition: 0.2s all;
+}
+
+.detail .button:hover {
+  color: white;
+  transform: scale(1.6);
+}
+
+.detail .button:active {
+  color: white;
+  transform: scale(0.98);
 }
