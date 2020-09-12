@@ -126,7 +126,7 @@ a:hover {
 }
 
 .player .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -226,4 +226,3 @@ a:hover {
   color: white;
   transform: scale(0.98);
 }
-
