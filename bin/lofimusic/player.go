@@ -106,10 +106,11 @@ func (p *player) Render() app.UI {
 			app.IFrame().
 				ID("youtube-"+p.Channel.Slug).
 				Allow("autoplay").
+				Allow("accelerometer").
 				Allow("encrypted-media").
 				Allow("picture-in-picture").
 				AllowFullscreen(true).
-				Sandbox("allow-same-origin allow-scripts allow-popups").
+				Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
 				Src(fmt.Sprintf(
 					"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1",
 					p.Channel.ID,
