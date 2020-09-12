@@ -97,7 +97,7 @@ func runLocal(ctx context.Context, h http.Handler, opts options) {
 }
 
 func generateGitHubPages(ctx context.Context, h *app.Handler, opts githubOptions) {
-	if err := app.GenerateStaticWebsite(opts.Output, h); err != nil {
+	if err := app.GenerateStaticWebsite(opts.Output, h, channels.Slugs()...); err != nil {
 		panic(err)
 	}
 }

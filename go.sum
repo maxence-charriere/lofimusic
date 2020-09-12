@@ -28,6 +28,8 @@ github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200910195649-2817ca04210c h1:/
 github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200910195649-2817ca04210c/go.mod h1:qiedA5LLT2yDX8jV0bOKBjRmv0YyLfnTpYIiljHNl/A=
 github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200910211810-d0c61cdb3791 h1:a9LETo8PyZUpZOLJk+7VRRd3opEaIHJ09AUGh9A7Xok=
 github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200910211810-d0c61cdb3791/go.mod h1:qiedA5LLT2yDX8jV0bOKBjRmv0YyLfnTpYIiljHNl/A=
+github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200912151253-d3cd91a3a435 h1:dEGB2+Rp+iWHZc2yFXmCaJaYOkqIAba0vDudxfoB+DU=
+github.com/maxence-charriere/go-app/v7 v7.0.6-0.20200912151253-d3cd91a3a435/go.mod h1:qiedA5LLT2yDX8jV0bOKBjRmv0YyLfnTpYIiljHNl/A=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
