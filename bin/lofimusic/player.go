@@ -64,7 +64,7 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 	case 1:
 		playing = true
 
-	case 2:
+	case -1, 2:
 		playing = false
 	}
 
