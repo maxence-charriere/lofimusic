@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
-    .register("//app-worker.js")
+    .register("/lofimusic/app-worker.js")
     .then(reg => {
       console.log("registering app service worker");
     })
@@ -15,7 +15,7 @@ if ("serviceWorker" in navigator) {
 // -----------------------------------------------------------------------------
 // Init progressive app
 // -----------------------------------------------------------------------------
-const goappEnv = {"GOAPP_ROOT_PREFIX":"/","GOAPP_STATIC_RESOURCES_URL":"/","GOAPP_VERSION":"4d9d30a3b0d73a2193df5a2bdce8951376d4bc92"};
+const goappEnv = {"GOAPP_ROOT_PREFIX":"/lofimusic","GOAPP_STATIC_RESOURCES_URL":"/lofimusic","GOAPP_VERSION":"894ad765682b9af59afe47ee7dfdaaad7288a9f0"};
 
 function goappGetenv(k) {
   return goappEnv[k];
@@ -40,7 +40,7 @@ if (!WebAssembly.instantiateStreaming) {
 
 const go = new Go();
 
-WebAssembly.instantiateStreaming(fetch("//web/app.wasm"), go.importObject)
+WebAssembly.instantiateStreaming(fetch("/lofimusic/web/app.wasm"), go.importObject)
   .then(result => {
     const loaderIcon = document.getElementById("app-wasm-loader-icon");
     loaderIcon.className = "goapp-logo";
