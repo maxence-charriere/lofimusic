@@ -13,8 +13,8 @@
       "sizes": "512x512"
     }
   ],
-  "scope": "/lofimusic/",
-  "start_url": "/lofimusic/",
+  "scope": "/",
+  "start_url": "/",
   "background_color": "#000000",
   "display": "standalone",
   "theme_color": "#000000"
