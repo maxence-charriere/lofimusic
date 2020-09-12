@@ -91,20 +91,24 @@ func (p *player) Render() app.UI {
 		ID("player").
 		Class("player").
 		Body(
-			app.Script().
-				Src("//www.youtube.com/iframe_api").
-				Async(true),
-			app.IFrame().
-				ID("youtube-"+p.Channel.Slug).
-				Allow("autoplay").
-				Allow("accelerometer").
-				Allow("encrypted-media").
-				Allow("picture-in-picture").
-				Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
-				Src(fmt.Sprintf(
-					"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playsinline=1",
-					p.Channel.ID,
-				)),
+			app.Div().
+				Class("video").
+				Body(
+					app.Script().
+						Src("//www.youtube.com/iframe_api").
+						Async(true),
+					app.IFrame().
+						ID("youtube-"+p.Channel.Slug).
+						Allow("autoplay").
+						Allow("accelerometer").
+						Allow("encrypted-media").
+						Allow("picture-in-picture").
+						Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
+						Src(fmt.Sprintf(
+							"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playsinline=1",
+							p.Channel.ID,
+						)),
+				),
 			app.Div().
 				Class("overlay").
 				Body(
