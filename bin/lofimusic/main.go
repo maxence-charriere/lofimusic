@@ -39,6 +39,9 @@ func main() {
 		Author:          "Maxence Charriere",
 		BackgroundColor: backgroundColor,
 		Description:     "Lofi music player",
+		Icon: app.Icon{
+			Default: "/web/logo.png",
+		},
 		Keywords: []string{
 			"lofi",
 			"music",

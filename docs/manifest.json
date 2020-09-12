@@ -3,12 +3,12 @@
   "name": "Lofimusic",
   "icons": [
     {
-      "src": "https://storage.googleapis.com/murlok-github/icon-192.png",
+      "src": "/web/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://storage.googleapis.com/murlok-github/icon-512.png",
+      "src": "/",
       "type": "image/png",
       "sizes": "512x512"
     }
