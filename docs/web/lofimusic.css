@@ -133,7 +133,7 @@ a:hover {
 }
 
 .player .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -185,7 +185,7 @@ a:hover {
   cursor: pointer;
   outline: none;
   transition: 0.2s all;
-  margin: 18px;
+  margin: 24px;
 }
 
 .player .controls .button:hover {

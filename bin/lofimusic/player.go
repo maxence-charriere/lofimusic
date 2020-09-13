@@ -17,6 +17,7 @@ type player struct {
 
 	youtube                  app.Value
 	releaseIframe            func()
+	releaseOnPlayerReady     func()
 	releasePlayerStateChange func()
 	playing                  bool
 }
@@ -44,6 +45,11 @@ func (p *player) onYoutubeIframeAPIReady(this app.Value, args []app.Value) inter
 }
 
 func (p *player) setupYoutubePlayer() {
+	fmt.Println("setupYoutubePlayer", p.Channel.Slug)
+
+	onPlayerReady := app.FuncOf(p.onPlayerReady)
+	p.releaseOnPlayerReady = onPlayerReady.Release
+
 	onPlayerStateChange := app.FuncOf(p.onPlayerStateChange)
 	p.releasePlayerStateChange = onPlayerStateChange.Release
 
@@ -52,19 +58,28 @@ func (p *player) setupYoutubePlayer() {
 		Get("Player").
 		New("youtube-"+p.Channel.Slug, map[string]interface{}{
 			"events": map[string]interface{}{
+				"onReady":       onPlayerReady,
 				"onStateChange": onPlayerStateChange,
 			},
 		})
 }
 
+func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
+	fmt.Println("onPlayerReady", p.Channel.Slug)
+	p.youtube.Call("playVideo")
+	return nil
+}
+
 func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface{} {
+	fmt.Println("onPlayerStateChange", p.Channel.Slug)
+
 	playing := true
 
 	switch args[0].Get("data").Int() {
 	case 1:
 		playing = true
 
-	case -1, 2:
+	case -1, 0, 2:
 		playing = false
 	}
 
@@ -77,8 +92,14 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 }
 
 func (p *player) OnDismount() {
+	fmt.Println("dismounting", p.Channel.Slug)
+
 	if p.releaseIframe != nil {
 		p.releaseIframe()
+	}
+
+	if p.releaseOnPlayerReady != nil {
+		p.releaseOnPlayerReady()
 	}
 
 	if p.releasePlayerStateChange != nil {
