@@ -19,8 +19,8 @@ type player struct {
 	releaseIframe            func()
 	releaseOnPlayerReady     func()
 	releasePlayerStateChange func()
+	ready                    bool
 	playing                  bool
-	blur                     bool
 }
 
 func (p *player) OnMount(ctx app.Context) {
@@ -32,7 +32,6 @@ func (p *player) OnMount(ctx app.Context) {
 	}
 
 	app.Dispatch(p.setupYoutubePlayer)
-	p.blur = true
 	p.Update()
 }
 
@@ -74,22 +73,25 @@ func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
 func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface{} {
 	fmt.Println("onPlayerStateChange", p.Channel.Slug)
 
-	playing := true
-	blur := true
+	ready := false
+	playing := false
 
 	switch args[0].Get("data").Int() {
 	case 1:
 		playing = true
-		blur = false
+		ready = true
 
 	case -1, 0, 2:
 		playing = false
-		blur = true
+		ready = true
+
+	case 3:
+		ready = false
 	}
 
 	app.Dispatch(func() {
+		p.ready = ready
 		p.playing = playing
-		p.blur = blur
 		p.Update()
 	})
 
@@ -113,9 +115,14 @@ func (p *player) OnDismount() {
 }
 
 func (p *player) Render() app.UI {
-	blur := ""
-	if p.blur {
-		blur = "blur"
+	hide := "hide"
+	if p.ready {
+		hide = ""
+	}
+
+	blur := "blur"
+	if p.playing {
+		blur = ""
 	}
 
 	return app.Div().
@@ -147,6 +154,7 @@ func (p *player) Render() app.UI {
 					app.Footer().Body(
 						app.Stack().
 							Class("controls").
+							Class(hide).
 							Center().
 							Content(
 								app.If(!p.playing,
