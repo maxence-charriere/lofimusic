@@ -58,11 +58,32 @@ a:hover {
   display: none;
 }
 
+::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 10px;
+  height: 10px;
+}
+
 /* -----------------------------------------------------------------------------
 // Menu
 ------------------------------------------------------------------------------*/
+.menu-layout {
+  height: calc(100% - 24px - 24px);
+  padding: 24px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .menu {
-  height: 100%;
+  min-height: 100%;
   text-shadow: 1px 1px black;
 }
 

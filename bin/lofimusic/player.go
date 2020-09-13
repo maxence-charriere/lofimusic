@@ -30,11 +30,7 @@ func (p *player) OnMount(ctx app.Context) {
 		return
 	}
 
-	app.Dispatch(func() {
-		p.setupYoutubePlayer()
-		p.playing = true
-		p.Update()
-	})
+	app.Dispatch(p.setupYoutubePlayer)
 }
 
 func (p *player) onYoutubeIframeAPIReady(this app.Value, args []app.Value) interface{} {
