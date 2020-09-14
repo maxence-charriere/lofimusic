@@ -44,6 +44,7 @@ func (m *menu) Render() app.UI {
 								newMenuItem().
 									Text("Buy me a coffee").
 									Href("https://www.buymeacoffee.com/Lofimusicapp").
+									OpenAside().
 									Help("Buy a coffee to support Lofimusic.app.").
 									Icon(`
 									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -53,6 +54,7 @@ func (m *menu) Render() app.UI {
 								newMenuItem().
 									Text("Github").
 									Href("https://github.com/maxence-charriere/lofimusic").
+									OpenAside().
 									Help("See sources on GitHub.").
 									Icon(`
 									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -62,6 +64,7 @@ func (m *menu) Render() app.UI {
 								newMenuItem().
 									Text("Twitter").
 									Href("https://twitter.com/jonhymaxoo").
+									OpenAside().
 									Help("Follow on Twitter").
 									Icon(`
 									<svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -82,6 +85,7 @@ type menuItem struct {
 	Iselected string
 	Itext     string
 	Ihelp     string
+	Itarget   string
 }
 
 func newMenuItem() *menuItem {
@@ -115,12 +119,18 @@ func (i *menuItem) Help(v string) *menuItem {
 	return i
 }
 
+func (i *menuItem) OpenAside() *menuItem {
+	i.Itarget = "_blank"
+	return i
+}
+
 func (i *menuItem) Render() app.UI {
 	return app.A().
 		Class("item").
 		Class(i.Iselected).
 		Href(i.Ihref).
 		Title(i.Ihelp).
+		Target(i.Itarget).
 		Body(
 			app.Stack().
 				Center().

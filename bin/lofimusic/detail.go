@@ -69,6 +69,7 @@ func (b *button) Render() app.UI {
 		Class("button").
 		Title(b.Ihelp).
 		Href(b.Iurl).
+		Target("_blank").
 		Body(
 			app.Raw(b.Iicon),
 		)
