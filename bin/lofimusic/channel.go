@@ -264,13 +264,10 @@ func newChannelStore() *channelStore {
 					MediaSlug: "twitter",
 				},
 				{
-					URL:       "https://www.instagram.com/homework_radio/",
+					URL:       "https://www.instagram.com/homework_radio",
 					MediaSlug: "instagram",
 				},
-				{
-					URL:       "https://www.instagram.com/homework_radio/",
-					MediaSlug: "instagram",
-				},
+
 				{
 					URL:       "https://discord.com/invite/SmD2Pu2",
 					MediaSlug: "discord",
