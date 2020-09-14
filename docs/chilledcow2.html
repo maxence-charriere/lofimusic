@@ -3,23 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
-        <meta content="Maxence Charriere" name="author">
-        <meta content="Lofi music player" name="description">
+        <meta name="author" content="Maxence Charriere">
+        <meta name="description" content="Lofi music player">
         <meta name="keywords" content="lofi, music, chilled cow">
-        <meta name="theme-color" content="#000000">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+        <meta content="#000000" name="theme-color">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" name="viewport">
         <title>
             Lofimusic.app
         </title>
-        <link type="image/png" href="/web/logo.png" rel="icon">
-        <link rel="apple-touch-icon" href="/web/logo.png">
+        <link rel="icon" type="image/png" href="/web/logo.png">
+        <link href="/web/logo.png" rel="apple-touch-icon">
         <link rel="manifest" href="/manifest.json">
         <link type="text/css" rel="stylesheet" href="/app.css">
-        <script src="/wasm_exec.js" defer></script>
+        <script defer src="/wasm_exec.js"></script>
         <script defer src="/app.js"></script>
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
         <link type="text/css" rel="stylesheet" href="/web/lofimusic.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-177947020-1');
+			</script>
+
     </head>
     <body>
         <div id="app-wasm-layout" class="goapp-app-info">

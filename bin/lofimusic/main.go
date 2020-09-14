@@ -49,11 +49,24 @@ func main() {
 		},
 		LoadingLabel: "Lofi music player to work, study or relax.",
 		Name:         "Lofimusic",
+		RawHeaders: []string{
+			`<!-- Global site tag (gtag.js) - Google Analytics -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
+			<script>
+			  window.dataLayer = window.dataLayer || [];
+			  function gtag(){dataLayer.push(arguments);}
+			  gtag('js', new Date());
+			
+			  gtag('config', 'UA-177947020-1');
+			</script>			
+			`,
+		},
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
 			"https://fonts.googleapis.com/css2?family=Roboto&display=swap",
 			"/web/lofimusic.css",
 		},
+
 		ThemeColor: backgroundColor,
 		Title:      "Lofimusic.app",
 	}
