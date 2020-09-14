@@ -43,7 +43,7 @@ func (m *menu) Render() app.UI {
 							app.Section().Body(
 								newMenuItem().
 									Text("Buy me a coffee").
-									Href("https://www.buymeacoffee.com/Lofimusicapp").
+									Href("https://www.buymeacoffee.com/maxence").
 									OpenAside().
 									Help("Buy a coffee to support Lofimusic.app.").
 									Icon(`

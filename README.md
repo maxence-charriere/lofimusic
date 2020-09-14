@@ -28,4 +28,4 @@ For adding new Lo-Fi channel or reporting issues: open a [GitHub issue](https://
 
 Lofimusic.app is meant to listen/discover Lo-Fi radios for free and does not have any monetization purposes.
 
-Though, if you like the work that is put on this app, [buying me a coffee](https://www.buymeacoffee.com/Lofimusicapp) would be more than appreciated.
+Though, if you like the work that is put on this app, [buying me a coffee](https://www.buymeacoffee.com/maxence) would be more than appreciated.
