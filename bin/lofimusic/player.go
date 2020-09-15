@@ -177,6 +177,13 @@ func (p *player) Render() app.UI {
 											`),
 										),
 								),
+								app.Input().
+									Type("range").
+									Min("1").
+									Max("100").
+									Value("100").
+									OnInput(p.onVolumeChange).
+									OnClick(p.onVolumeChange),
 							),
 					),
 				),
@@ -189,6 +196,10 @@ func (p *player) onPlay(ctx app.Context, e app.Event) {
 
 func (p *player) play() {
 	p.youtube.Call("playVideo")
+}
+
+func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
+	p.youtube.Call("setVolume", ctx.JSSrc.Get("value").String())
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {
