@@ -20,6 +20,11 @@ Lofimusic.app is an installable Progressive web app (PWA) that lists and display
 - Works on all browser that support web assembly but optimized for Chrome on a desktop
 - May require authorization for autoplay (eg. Firefox)
 
+## How it is built
+
+- User interface is built with [go-app](https://github.com/maxence-charriere/go-app)
+- Icons are from [materialdesignicons.com](http://materialdesignicons.com)
+
 ## Suggestions
 
 For adding new Lo-Fi channel or reporting issues: open a [GitHub issue](https://github.com/maxence-charriere/lofimusic/issues).
