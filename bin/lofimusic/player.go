@@ -21,6 +21,7 @@ type player struct {
 	releasePlayerStateChange func()
 	ready                    bool
 	playing                  bool
+	volume                   string
 }
 
 func (p *player) OnMount(ctx app.Context) {
@@ -51,6 +52,10 @@ func (p *player) setupYoutubePlayer() {
 	onPlayerStateChange := app.FuncOf(p.onPlayerStateChange)
 	p.releasePlayerStateChange = onPlayerStateChange.Release
 
+	// Make default volume to 50%
+	p.volume = "50"
+	app.LocalStorage.Get("volume", &p.volume)
+
 	p.youtube = app.Window().
 		Get("YT").
 		Get("Player").
@@ -63,6 +68,7 @@ func (p *player) setupYoutubePlayer() {
 }
 
 func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
+	p.youtube.Call("setVolume", p.volume)
 	p.youtube.Call("playVideo")
 	return nil
 }
@@ -177,11 +183,17 @@ func (p *player) Render() app.UI {
 											`),
 										),
 								),
+								app.Raw(
+									`<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+										<path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+									</svg>
+									`),
 								app.Input().
 									Type("range").
-									Min("1").
+									Placeholder("Volume").
+									Min("0").
 									Max("100").
-									Value("100").
+									Value(p.volume).
 									OnInput(p.onVolumeChange).
 									OnClick(p.onVolumeChange),
 							),
@@ -199,7 +211,9 @@ func (p *player) play() {
 }
 
 func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
-	p.youtube.Call("setVolume", ctx.JSSrc.Get("value").String())
+	p.volume = ctx.JSSrc.Get("value").String()
+	p.youtube.Call("setVolume", p.volume)
+	app.LocalStorage.Set("volume", p.volume)
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {
