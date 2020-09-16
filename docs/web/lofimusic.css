@@ -61,30 +61,37 @@ a:hover {
 ::-webkit-scrollbar {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  width: 10px;
+  width: 6px;
   height: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  width: 10px;
+  width: 6px;
   height: 10px;
 }
 
 /* -----------------------------------------------------------------------------
 // Menu
 ------------------------------------------------------------------------------*/
-.menu-layout {
-  height: calc(100% - 24px - 24px);
-  padding: 24px 0;
+.menu {
+  height: 100%;
+  text-shadow: 1px 1px black;
+  max-height: calc(100% - 24px);
+  padding: 0 0 24px 0;
+  overflow: hidden;
+}
+
+.channels {
+  margin: 42px 0;
+  height: calc(100% - 57px - 96px - 42px - 42px);
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.menu {
-  min-height: 100%;
-  text-shadow: 1px 1px black;
+.channels section {
+  max-height: 100%;
 }
 
 .menu h1 {
@@ -96,10 +103,6 @@ a:hover {
 .menu .item {
   display: block;
   padding: 12px 30px 0;
-}
-
-.menu section {
-  padding-top: 42px;
 }
 
 .menu .item {

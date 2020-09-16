@@ -274,6 +274,175 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
+		{
+			Name: "STEEZYASFUCK - sleep & study",
+			ID:   "US6iyJKGNLI",
+			Slug: "steezyasfuck",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/US6iyJKGNLI",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/stzzyasfvck",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/stzzyasfvck",
+					MediaSlug: "instagram",
+				},
+
+				{
+					URL:       "https://www.stzzzy.com",
+					MediaSlug: "web",
+				},
+			},
+		},
+		{
+			Name: "STEEZYASFUCK - coffee shop radio",
+			ID:   "-5KAN9_CzSA",
+			Slug: "steezyasfuck2",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/-5KAN9_CzSA",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/stzzyasfvck",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/stzzyasfvck",
+					MediaSlug: "instagram",
+				},
+
+				{
+					URL:       "https://www.stzzzy.com",
+					MediaSlug: "web",
+				},
+			},
+		},
+		{
+			Name: "the bootleg boy - sad & sleepy",
+			ID:   "l7TxwBhtTUY",
+			Slug: "thebootlegboy",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/l7TxwBhtTUY",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/71019EDcRamfMmOEEoTdEu?si=XePP-REWQDSuzJT6-SXwSQ",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/thebootlegboy",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/thebootlegboy",
+					MediaSlug: "instagram",
+				},
+
+				{
+					URL:       "https://www.thebootlegboy.com",
+					MediaSlug: "web",
+				},
+				{
+					URL:       "https://discord.com/invite/FZrUkey",
+					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "Monstafluff Music",
+			ID:   "pH3xU1YcjaA",
+			Slug: "monstafluffmusic",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/pH3xU1YcjaA",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
+					MediaSlug: "spotify",
+				},
+			},
+		},
+		{
+			Name: "Aviencloud - Easy N' Smooth Relaxing Music ",
+			ID:   "bjZ_O1gWlx4",
+			Slug: "aviencloud",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/bjZ_O1gWlx4",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/user/aviencloud",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://aviencloud.com",
+					MediaSlug: "web",
+				},
+				{
+					URL:       "https://www.instagram.com/aviencloud",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://twitter.com/Aviencloud",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.facebook.com/Aviencloud",
+					MediaSlug: "facebook",
+				},
+				{
+					URL:       "https://discord.me/aviencloud",
+					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "InYourChill - relax & study",
+			ID:   "B8tQ8RUbTW8",
+			Slug: "inyourchill",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/B8tQ8RUbTW8",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://inyourchill.com",
+					MediaSlug: "web",
+				},
+				{
+					URL:       "https://open.spotify.com/user/ersxxojg18hnzmir1jweb1oav",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://www.instagram.com/InYourChillMusic",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://twitter.com/InYourChill",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://discord.com/invite/nTreycA",
+					MediaSlug: "discord",
+				},
+			},
+		},
 	}
 
 	sort.Slice(c, func(a, b int) bool {
