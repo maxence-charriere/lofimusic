@@ -22,6 +22,7 @@ type player struct {
 	releasePlayerStateChange func()
 	ready                    bool
 	playing                  bool
+	muted                    bool
 	volume                   int
 }
 
@@ -56,6 +57,9 @@ func (p *player) setupYoutubePlayer() {
 	p.volume = 50
 	app.LocalStorage.Get("volume", &p.volume)
 
+	p.muted = false
+	app.LocalStorage.Get("muted", &p.muted)
+
 	p.youtube = app.Window().
 		Get("YT").
 		Get("Player").
@@ -68,6 +72,9 @@ func (p *player) setupYoutubePlayer() {
 }
 
 func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
+	if p.muted {
+		p.mute()
+	}
 	p.youtube.Call("setVolume", p.volume)
 	p.youtube.Call("playVideo")
 	return nil
@@ -183,11 +190,30 @@ func (p *player) Render() app.UI {
 											`),
 										),
 								),
-								app.Raw(
-									`<svg style="width:24px;height:24px" viewBox="0 0 24 24">
-										<path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
-									</svg>
-									`),
+								app.Input().
+									ID("mute").
+									Type("checkbox").
+									Class("mute").
+									Checked(p.muted).
+									OnClick(p.onMute),
+								app.Label().
+									Class("mute").
+									For("mute").
+									Body(
+										app.If(p.muted,
+											app.Raw(
+											`<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+												<path fill="currentColor" d="M5.64,3.64L21.36,19.36L19.95,20.78L16,16.83V20L11,15H7V9H8.17L4.22,5.05L5.64,3.64M16,4V11.17L12.41,7.58L16,4Z" />
+											</svg>
+											`),
+										).Else(
+											app.Raw(
+											`<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+												<path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+											</svg>
+											`),
+										),
+									),
 								app.Input().
 									Type("range").
 									Placeholder("Volume").
@@ -212,9 +238,43 @@ func (p *player) play() {
 
 func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
 	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
+	p.setVolume(volume)
+	p.Update()
+}
+
+func (p *player) setVolume(volume int) {
 	p.volume = volume
 	p.youtube.Call("setVolume", p.volume)
 	app.LocalStorage.Set("volume", p.volume)
+	if p.volume != 0 {
+		p.unMute()
+	} else {
+		p.mute()
+	}
+}
+
+func (p *player) onMute(ctx app.Context, e app.Event) {
+	muted := ctx.JSSrc.Get("checked").Bool()
+	if muted {
+		p.mute()
+	} else {
+		p.unMute()
+	}
+	p.Update()
+}
+
+func (p *player) mute() {
+	p.muted = true
+	p.youtube.Call("mute")
+	app.LocalStorage.Set("muted", p.muted)
+}
+
+func (p *player) unMute() {
+	p.muted = false
+	fmt.Println(p.youtube.Call("unMute"))
+	p.volume = p.youtube.Call("getVolume").Int()  // In case the volume is currently 0, youtube sets the volume to 5.
+	app.LocalStorage.Set("volume", p.volume)
+	app.LocalStorage.Set("muted", p.muted)
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {

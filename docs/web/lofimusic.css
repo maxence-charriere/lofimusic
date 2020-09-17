@@ -222,6 +222,18 @@ a:hover {
   transform: scale(0.98);
 }
 
+.player .controls .mute  {
+  display: none;
+}
+
+.player .controls label.mute {
+  display: block;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-right: 3px;
+}
+
 .blur {
   filter: blur(1.5rem);
 }
