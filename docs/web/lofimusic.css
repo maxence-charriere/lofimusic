@@ -205,11 +205,19 @@ a:hover {
   border-radius: 50%;
   color: currentColor;
   width: 54px;
+  min-width: 54px;
   height: 54px;
   cursor: pointer;
   outline: none;
   transition: 0.2s all;
-  margin: 24px;
+  margin: 24px 0;
+}
+
+.player .controls .button.volume {
+  width: 36px;
+  height: 36px;
+  margin: 0 0 0 24px;
+  border: none;
 }
 
 .player .controls .button:hover {
@@ -222,16 +230,8 @@ a:hover {
   transform: scale(0.98);
 }
 
-.player .controls .mute  {
-  display: none;
-}
-
-.player .controls label.mute {
-  display: block;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-  margin-right: 3px;
+.volumebar {
+  min-width: 100px;
 }
 
 .blur {
@@ -248,7 +248,7 @@ a:hover {
 .detail {
   max-width: 75%;
   position: absolute;
-  bottom: 15%;
+  bottom: 18%;
   right: 0;
   text-shadow: 1px 1px black;
 }
