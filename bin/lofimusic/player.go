@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/maxence-charriere/go-app/v7/pkg/app"
 )
@@ -21,7 +22,7 @@ type player struct {
 	releasePlayerStateChange func()
 	ready                    bool
 	playing                  bool
-	volume                   string
+	volume                   int
 }
 
 func (p *player) OnMount(ctx app.Context) {
@@ -52,8 +53,7 @@ func (p *player) setupYoutubePlayer() {
 	onPlayerStateChange := app.FuncOf(p.onPlayerStateChange)
 	p.releasePlayerStateChange = onPlayerStateChange.Release
 
-	// Make default volume to 50%
-	p.volume = "50"
+	p.volume = 50
 	app.LocalStorage.Get("volume", &p.volume)
 
 	p.youtube = app.Window().
@@ -193,7 +193,7 @@ func (p *player) Render() app.UI {
 									Placeholder("Volume").
 									Min("0").
 									Max("100").
-									Value(p.volume).
+									Value(strconv.Itoa(p.volume)).
 									OnInput(p.onVolumeChange).
 									OnClick(p.onVolumeChange),
 							),
@@ -211,7 +211,8 @@ func (p *player) play() {
 }
 
 func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
-	p.volume = ctx.JSSrc.Get("value").String()
+	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
+	p.volume = volume
 	p.youtube.Call("setVolume", p.volume)
 	app.LocalStorage.Set("volume", p.volume)
 }
