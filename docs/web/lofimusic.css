@@ -140,9 +140,8 @@ a:hover {
 }
 
 .goapp-shell-menu-button-default {
-  cursor: pointer;
-  font-size: 32px;
-  padding: 20px;
+  font-size: 24px;
+  padding: 12px 18px;
 }
 
 /* -----------------------------------------------------------------------------
