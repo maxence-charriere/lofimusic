@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="author" content="Maxence Charriere">
-        <meta name="description" content="Lofi music player">
+        <meta content="Lofi music player" name="description">
         <meta name="keywords" content="lofi, music, chilled cow">
         <meta name="theme-color" content="#000000">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
@@ -13,13 +13,14 @@
         </title>
         <link rel="icon" type="image/png" href="/web/logo.png">
         <link rel="apple-touch-icon" href="/web/logo.png">
-        <link href="/manifest.json" rel="manifest">
+        <link rel="manifest" href="/manifest.json">
         <link type="text/css" rel="stylesheet" href="/app.css">
-        <script src="/wasm_exec.js" defer></script>
+        <script defer src="/wasm_exec.js"></script>
         <script defer src="/app.js"></script>
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
         <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
         <link type="text/css" rel="stylesheet" href="/web/lofimusic.css">
+        <link rel="stylesheet" href="/web/range.css" type="text/css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
 			<script>
@@ -33,8 +34,8 @@
     </head>
     <body>
         <div id="app-wasm-layout" class="goapp-app-info">
-            <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="/web/logo.png">
-            <p id="app-wasm-loader-label" class="goapp-label">
+            <img class="goapp-logo goapp-spin" src="/web/logo.png" id="app-wasm-loader-icon">
+            <p class="goapp-label" id="app-wasm-loader-label">
                 Lofi music player to work, study or relax.
             </p>
         </div>
