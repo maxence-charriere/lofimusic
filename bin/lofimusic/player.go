@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 
 	"github.com/maxence-charriere/go-app/v7/pkg/app"
+	"github.com/maxence-charriere/go-app/v7/pkg/errors"
 )
 
 var (
@@ -14,6 +16,7 @@ type player struct {
 	app.Compo
 
 	Channel channel
+	State   playerState
 
 	youtube                  app.Value
 	releaseIframe            func()
@@ -24,6 +27,9 @@ type player struct {
 }
 
 func (p *player) OnMount(ctx app.Context) {
+	p.State.load()
+	p.Update()
+
 	if !youtubeAPIReady {
 		onYouTubeIframeAPIReady := app.FuncOf(p.onYoutubeIframeAPIReady)
 		p.releaseIframe = onYouTubeIframeAPIReady.Release
@@ -32,7 +38,6 @@ func (p *player) OnMount(ctx app.Context) {
 	}
 
 	app.Dispatch(p.setupYoutubePlayer)
-	p.Update()
 }
 
 func (p *player) onYoutubeIframeAPIReady(this app.Value, args []app.Value) interface{} {
@@ -62,8 +67,26 @@ func (p *player) setupYoutubePlayer() {
 		})
 }
 
+func (p *player) OnDismount() {
+	if p.releaseIframe != nil {
+		p.releaseIframe()
+	}
+
+	if p.releaseOnPlayerReady != nil {
+		p.releaseOnPlayerReady()
+	}
+
+	if p.releasePlayerStateChange != nil {
+		p.releasePlayerStateChange()
+	}
+}
+
 func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
-	p.youtube.Call("playVideo")
+	app.Dispatch(func() {
+		p.setVolume(p.State.Volume)
+		p.play()
+	})
+
 	return nil
 }
 
@@ -93,17 +116,31 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 	return nil
 }
 
-func (p *player) OnDismount() {
-	if p.releaseIframe != nil {
-		p.releaseIframe()
+func (p *player) play() {
+	p.youtube.Call("playVideo")
+}
+
+func (p *player) setVolume(volume int) {
+	if volume == 0 {
+		p.youtube.Call("mute")
+	} else {
+		p.youtube.Call("unMute")
+		p.State.LastNonZeroVolume = volume
 	}
 
-	if p.releaseOnPlayerReady != nil {
-		p.releaseOnPlayerReady()
-	}
+	p.youtube.Call("setVolume", volume)
+	p.State.Volume = volume
+	p.saveState()
+	p.Update()
 
-	if p.releasePlayerStateChange != nil {
-		p.releasePlayerStateChange()
+	app.Dispatch(func() {
+		app.Window().GetElementByID("volume-bar").Set("value", volume)
+	})
+}
+
+func (p *player) saveState() {
+	if err := p.State.save(); err != nil {
+		app.Log("%s", errors.New("saving player state failed").Wrap(err))
 	}
 }
 
@@ -178,6 +215,72 @@ func (p *player) Render() app.UI {
 										),
 								),
 							),
+
+						app.Stack().
+							Class("volume").
+							Class(hide).
+							Center().
+							Content(
+								app.If(p.State.Volume > 66,
+									app.Button().
+										Class("button").
+										Title("Mute volume.").
+										OnClick(p.onMute).
+										Body(
+											app.Raw(`
+											<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    											<path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+											</svg>
+											`),
+										),
+								).ElseIf(p.State.Volume > 33,
+									app.Button().
+										Class("button").
+										Title("Mute volume.").
+										OnClick(p.onMute).
+										Body(
+											app.Raw(`
+											<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+												<path fill="currentColor" d="M5,9V15H9L14,20V4L9,9M18.5,12C18.5,10.23 17.5,8.71 16,7.97V16C17.5,15.29 18.5,13.76 18.5,12Z" />
+											</svg>
+											`),
+										),
+								).ElseIf(p.State.Volume > 0,
+									app.Button().
+										Class("button").
+										Title("Mute volume.").
+										OnClick(p.onMute).
+										Body(
+											app.Raw(`
+											<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+												<path fill="currentColor" d="M7,9V15H11L16,20V4L11,9H7Z" />
+											</svg>
+											`),
+										),
+								).Else(
+									app.Button().
+										Class("button").
+										Title("Unmute volume.").
+										OnClick(p.onUnMute).
+										Body(
+											app.Raw(`
+											<svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    											<path fill="currentColor" d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z" />
+											</svg>
+											`),
+										),
+								),
+								app.Input().
+									ID("volume-bar").
+									Class("volumebar").
+									Type("range").
+									Placeholder("Volume").
+									Min("0").
+									Max("100").
+									Value(strconv.Itoa(p.State.Volume)).
+									OnChange(p.onVolumeChange).
+									OnInput(p.onVolumeChange),
+							),
 					),
 				),
 		)
@@ -187,8 +290,17 @@ func (p *player) onPlay(ctx app.Context, e app.Event) {
 	p.play()
 }
 
-func (p *player) play() {
-	p.youtube.Call("playVideo")
+func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
+	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
+	p.setVolume(volume)
+}
+
+func (p *player) onMute(ctx app.Context, e app.Event) {
+	p.setVolume(0)
+}
+
+func (p *player) onUnMute(ctx app.Context, e app.Event) {
+	p.setVolume(p.State.LastNonZeroVolume)
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {
@@ -199,4 +311,33 @@ func (p *player) onShuffle(ctx app.Context, e app.Event) {
 			return
 		}
 	}
+}
+
+type playerState struct {
+	Volume            int
+	LastNonZeroVolume int
+	Muted             bool
+}
+
+func (s *playerState) load() error {
+	if err := app.LocalStorage.Get("player.state", s); err != nil {
+		return errors.New("getting player status from local storage failed").
+			Wrap(err)
+	}
+
+	if *s == (playerState{}) {
+		s.Volume = 100
+		s.LastNonZeroVolume = 100
+	}
+
+	return nil
+}
+
+func (s *playerState) save() error {
+	if err := app.LocalStorage.Set("player.state", s); err != nil {
+		return errors.New("saving player status in local storage failed").
+			Wrap(err)
+	}
+
+	return nil
 }

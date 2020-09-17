@@ -199,27 +199,56 @@ a:hover {
   margin: auto;
 }
 
-.player .controls .button {
+.player .controls .button,
+.player .volume .button {
   background-color: transparent;
   border: 1px solid currentColor;
   border-radius: 50%;
   color: currentColor;
   width: 54px;
+  min-width: 54px;
   height: 54px;
   cursor: pointer;
   outline: none;
   transition: 0.2s all;
-  margin: 24px;
+  margin: 24px 0;
 }
 
-.player .controls .button:hover {
+.player .volume {
+  position: absolute;
+  right: 30px;
+  bottom: 24px;
+  width: auto;
+  height: 54px;
+}
+
+@media (max-width: 480px) {
+  .player .volume {
+    display: none;
+  }
+}
+
+.player .volume .button {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  border: none;
+}
+
+.player .controls .button:hover,
+.player .volume .button:hover {
   color: white;
   transform: scale(1.3);
 }
 
-.player .controls .button:active {
+.player .controls .button:active,
+.player .volume .button:active {
   color: white;
   transform: scale(0.98);
+}
+
+.volumebar {
+  min-width: 100px;
 }
 
 .blur {
@@ -236,7 +265,7 @@ a:hover {
 .detail {
   max-width: 75%;
   position: absolute;
-  bottom: 15%;
+  bottom: 18%;
   right: 0;
   text-shadow: 1px 1px black;
 }

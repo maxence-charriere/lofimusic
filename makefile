@@ -11,6 +11,10 @@ build-github: build
 
 github: build-github clean 
 
+test:
+	go test ./bin/lofimusic
+	GOARCH=wasm GOOS=js go test ./bin/lofimusic
+
 clean:
 	@go clean ./...
 	@-rm docs/lofimusic
