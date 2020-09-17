@@ -214,9 +214,16 @@ func (p *player) Render() app.UI {
 											`),
 										),
 								),
+							),
+
+						app.Stack().
+							Class("volume").
+							Class(hide).
+							Center().
+							Content(
 								app.If(p.State.Volume > 66,
 									app.Button().
-										Class("button volume").
+										Class("button").
 										Title("Mute volume.").
 										OnClick(p.onMute).
 										Body(
@@ -228,7 +235,7 @@ func (p *player) Render() app.UI {
 										),
 								).ElseIf(p.State.Volume > 33,
 									app.Button().
-										Class("button volume").
+										Class("button").
 										Title("Mute volume.").
 										OnClick(p.onMute).
 										Body(
@@ -240,7 +247,7 @@ func (p *player) Render() app.UI {
 										),
 								).ElseIf(p.State.Volume > 0,
 									app.Button().
-										Class("button volume").
+										Class("button").
 										Title("Mute volume.").
 										OnClick(p.onMute).
 										Body(
@@ -252,7 +259,7 @@ func (p *player) Render() app.UI {
 										),
 								).Else(
 									app.Button().
-										Class("button volume").
+										Class("button").
 										Title("Unmute volume.").
 										OnClick(p.onUnMute).
 										Body(

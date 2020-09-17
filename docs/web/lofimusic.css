@@ -199,7 +199,8 @@ a:hover {
   margin: auto;
 }
 
-.player .controls .button {
+.player .controls .button,
+.player .volume .button {
   background-color: transparent;
   border: 1px solid currentColor;
   border-radius: 50%;
@@ -213,19 +214,35 @@ a:hover {
   margin: 24px 0;
 }
 
-.player .controls .button.volume {
+.player .volume {
+  position: absolute;
+  right: 30px;
+  bottom: 24px;
+  width: auto;
+  height: 54px;
+}
+
+@media (max-width: 480px) {
+  .player .volume {
+    display: none;
+  }
+}
+
+.player .volume .button {
   width: 36px;
   height: 36px;
-  margin: 0 0 0 24px;
+  margin: 0;
   border: none;
 }
 
-.player .controls .button:hover {
+.player .controls .button:hover,
+.player .volume .button:hover {
   color: white;
   transform: scale(1.3);
 }
 
-.player .controls .button:active {
+.player .controls .button:active,
+.player .volume .button:active {
   color: white;
   transform: scale(0.98);
 }
