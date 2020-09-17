@@ -139,6 +139,11 @@ a:hover {
   background: linear-gradient(black, rgba(0, 0, 0, 0.75), black);
 }
 
+.goapp-shell-menu-button-default {
+  font-size: 24px;
+  padding: 12px 18px;
+}
+
 /* -----------------------------------------------------------------------------
 // Player
 ------------------------------------------------------------------------------*/
