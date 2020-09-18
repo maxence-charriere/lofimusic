@@ -44,10 +44,20 @@ func main() {
 		},
 		Keywords: []string{
 			"lofi",
+			"lo-fi",
 			"music",
-			"chilled cow",
+			"lofimusic",
+			"chill",
+			"chilled",
+			"beats",
+			"relax",
+			"study",
+			"sleep",
+			"hiphop",
+			"app",
+			"pwa",
 		},
-		LoadingLabel: "Lofi music player to work, study or relax.",
+		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
 		RawHeaders: []string{
 			`<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -62,7 +72,7 @@ func main() {
 			`,
 			`<meta property="og:url" content="https://lofimusic.app">`,
 			`<meta property="og:title" content="Lofimusic.app">`,
-			`<meta property="og:description" content="Lofi music player to work, study or relax.">`,
+			`<meta property="og:description" content="Lofi music player to work, study and relax.">`,
 			`<meta property="og:image" content="https://lofimusic.app/web/lofimusic-1.png">`,
 		},
 		Styles: []string{
