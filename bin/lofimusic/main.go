@@ -60,6 +60,10 @@ func main() {
 			  gtag('config', 'UA-177947020-1');
 			</script>			
 			`,
+			`<meta property="og:url" content="https://lofimusic.app">`,
+			`<meta property="og:title" content="Lofimusic.app">`,
+			`<meta property="og:description" content="Lofi music player to work, study or relax.">`,
+			`<meta property="og:image" content="https://lofimusic.app/web/lofimusic-1.png">`,
 		},
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
