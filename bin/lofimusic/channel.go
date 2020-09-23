@@ -34,7 +34,7 @@ func newChannelStore() *channelStore {
 
 	c := []channel{
 		{
-			Name: "ChilledCow - relax & study",
+			Name: "ChilledCow - Study girl",
 			ID:   "5qap5aO4i9A",
 			Slug: "chilledcow",
 			SocialMedia: []link{
@@ -69,7 +69,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "ChilledCow - sleep & chill",
+			Name: "ChilledCow - Sleepy girl",
 			ID:   "DWcJFNfaw9c",
 			Slug: "chilledcow2",
 			SocialMedia: []link{
@@ -104,7 +104,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Chillhop Music - jazzy & hip hop",
+			Name: "Chillhop Music - Walking raccoon",
 			ID:   "5yx6BWlEVcY",
 			Slug: "chillhopmusic",
 			SocialMedia: []link{
@@ -135,7 +135,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Chillhop Music - study & relax",
+			Name: "Chillhop Music - Sleepy raccoon",
 			ID:   "7NOSDKb0HlU",
 			Slug: "chillhopmusic2",
 			SocialMedia: []link{
@@ -220,7 +220,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Homework Radio - relax & study",
+			Name: "Homework Radio - Roof girl",
 			ID:   "ZYMuB9y549s",
 			Slug: "homeworkradio",
 			SocialMedia: []link{
@@ -247,7 +247,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Homework Radio - chill & study & relax",
+			Name: "Homework Radio - Rainy window",
 			ID:   "nMhua5LJRWg",
 			Slug: "homeworkradio2",
 			SocialMedia: []link{
@@ -275,12 +275,12 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "STEEZYASFUCK - sleep & study",
-			ID:   "US6iyJKGNLI",
+			Name: "STEEZYASFUCK - Junky fluff",
+			ID:   "ePXRyWgWkTE",
 			Slug: "steezyasfuck",
 			SocialMedia: []link{
 				{
-					URL:       "https://youtu.be/US6iyJKGNLI",
+					URL:       "https://youtu.be/ePXRyWgWkTE",
 					MediaSlug: "youtube",
 				},
 				{
@@ -303,7 +303,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "STEEZYASFUCK - coffee shop radio",
+			Name: "STEEZYASFUCK - Coffee shop radio",
 			ID:   "-5KAN9_CzSA",
 			Slug: "steezyasfuck2",
 			SocialMedia: []link{
@@ -331,7 +331,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "the bootleg boy - sad & sleepy",
+			Name: "the bootleg boy - Smoking girl",
 			ID:   "l7TxwBhtTUY",
 			Slug: "thebootlegboy",
 			SocialMedia: []link{
@@ -363,7 +363,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Monstafluff Music",
+			Name: "Monstafluff Music - Spaceship girl",
 			ID:   "pH3xU1YcjaA",
 			Slug: "monstafluffmusic",
 			SocialMedia: []link{
@@ -378,12 +378,12 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "Aviencloud - Easy N' Smooth Relaxing Music ",
-			ID:   "bjZ_O1gWlx4",
+			Name: "Aviencloud - Beach girl",
+			ID:   "uMaWlgkm6rk",
 			Slug: "aviencloud",
 			SocialMedia: []link{
 				{
-					URL:       "https://youtu.be/bjZ_O1gWlx4",
+					URL:       "https://youtu.be/uMaWlgkm6rk",
 					MediaSlug: "youtube",
 				},
 				{
@@ -413,7 +413,7 @@ func newChannelStore() *channelStore {
 			},
 		},
 		{
-			Name: "InYourChill - relax & study",
+			Name: "InYourChill - Nerdy girl",
 			ID:   "B8tQ8RUbTW8",
 			Slug: "inyourchill",
 			SocialMedia: []link{
@@ -440,6 +440,64 @@ func newChannelStore() *channelStore {
 				{
 					URL:       "https://discord.com/invite/nTreycA",
 					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "College Music - Lonely girl",
+			ID:   "bM0Iw7PPoU4",
+			Slug: "collegemusic",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/bM0Iw7PPoU4",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://www.facebook.com/collegemusic",
+					MediaSlug: "facebook",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/6llX35G0q026dwt6HuX5or",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://www.instagram.com/collegemusic",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://twitter.com/collegemusicyt",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://discord.com/invite/collegemusic",
+					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "KozyPop - 같이해요",
+			ID:   "F5v_VqxbQPI",
+			Slug: "kozypop",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/F5v_VqxbQPI",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://www.facebook.com/kozypop",
+					MediaSlug: "facebook",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://www.instagram.com/kozypop",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://kozypop.com",
+					MediaSlug: "web",
 				},
 			},
 		},
