@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/url"
 
 	"github.com/maxence-charriere/go-app/v7/pkg/app"
 )
@@ -10,6 +11,10 @@ type menu struct {
 	app.Compo
 
 	CurrentChannel channel
+}
+
+func (m *menu) OnNav(ctx app.Context, u *url.URL) {
+	app.Window().ScrollToID(m.CurrentChannel.ID)
 }
 
 func (m *menu) Render() app.UI {
@@ -27,6 +32,7 @@ func (m *menu) Render() app.UI {
 						app.Range(chans).Slice(func(i int) app.UI {
 							c := chans[i]
 							return newMenuItem().
+								ID(c.ID).
 								Text(c.Name).
 								Selected(c.Slug == m.CurrentChannel.Slug).
 								Href("/" + c.Slug).
@@ -83,6 +89,7 @@ type menuItem struct {
 	Itext     string
 	Ihelp     string
 	Itarget   string
+	Iid       string
 }
 
 func newMenuItem() *menuItem {
@@ -121,8 +128,14 @@ func (i *menuItem) OpenAside() *menuItem {
 	return i
 }
 
+func (i *menuItem) ID(v string) *menuItem {
+	i.Iid = v
+	return i
+}
+
 func (i *menuItem) Render() app.UI {
 	return app.A().
+		ID(i.Iid).
 		Class("item").
 		Class(i.Iselected).
 		Href(i.Ihref).
