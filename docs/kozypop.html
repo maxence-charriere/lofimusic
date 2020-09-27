@@ -6,21 +6,21 @@
         <meta name="author" content="Maxence Charriere">
         <meta name="description" content="Lofi music player">
         <meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
-        <meta name="theme-color" content="#000000">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" name="viewport">
+        <meta content="#000000" name="theme-color">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
         <title>
             Lofimusic.app
         </title>
-        <link href="/web/logo.png" rel="icon" type="image/png">
+        <link type="image/png" href="/web/logo.png" rel="icon">
         <link rel="apple-touch-icon" href="/web/logo.png">
         <link rel="manifest" href="/manifest.json">
         <link href="/app.css" type="text/css" rel="stylesheet">
         <script defer src="/wasm_exec.js"></script>
         <script defer src="/app.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" type="text/css" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="/web/lofimusic.css">
-        <link href="/web/range.css" type="text/css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="/web/range.css">
         <!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
 			<script>
@@ -41,8 +41,8 @@
 
     </head>
     <body>
-        <div id="app-wasm-layout" class="goapp-app-info">
-            <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="/web/logo.png">
+        <div class="goapp-app-info" id="app-wasm-layout">
+            <img class="goapp-logo goapp-spin" src="/web/logo.png" id="app-wasm-loader-icon">
             <p id="app-wasm-loader-label" class="goapp-label">
                 Lofi music player to work, study and relax.
             </p>

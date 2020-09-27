@@ -276,11 +276,11 @@ func newChannelStore() *channelStore {
 		},
 		{
 			Name: "STEEZYASFUCK - Junky fluff",
-			ID:   "ePXRyWgWkTE",
+			ID:   "9_CcYN8MVO8",
 			Slug: "steezyasfuck",
 			SocialMedia: []link{
 				{
-					URL:       "https://youtu.be/ePXRyWgWkTE",
+					URL:       "https://youtu.be/9_CcYN8MVO8",
 					MediaSlug: "youtube",
 				},
 				{
