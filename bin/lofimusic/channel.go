@@ -27,6 +27,7 @@ type link struct {
 
 type channelStore struct {
 	channels []channel
+	playlist []channel
 }
 
 func newChannelStore() *channelStore {
@@ -526,8 +527,18 @@ func (s *channelStore) Get(slug string) channel {
 		}
 	}
 
-	idx := rand.Intn(len(s.channels))
-	return s.channels[idx]
+	if len(s.playlist) == 0 {
+		p := make([]channel, len(s.channels))
+		copy(p, s.channels)
+		s.playlist = p
+	}
+
+	idx := rand.Intn(len(s.playlist))
+	c := s.playlist[idx]
+	copy(s.playlist[idx:], s.playlist[idx+1:])
+	s.playlist = s.playlist[:len(s.playlist)-1]
+
+	return c
 }
 
 func (s *channelStore) Channels() []channel {
