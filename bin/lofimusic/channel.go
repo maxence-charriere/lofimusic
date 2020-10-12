@@ -378,41 +378,41 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "Aviencloud - Beach girl",
-			ID:   "uMaWlgkm6rk",
-			Slug: "aviencloud",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/uMaWlgkm6rk",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://open.spotify.com/user/aviencloud",
-					MediaSlug: "spotify",
-				},
-				{
-					URL:       "https://aviencloud.com",
-					MediaSlug: "web",
-				},
-				{
-					URL:       "https://www.instagram.com/aviencloud",
-					MediaSlug: "instagram",
-				},
-				{
-					URL:       "https://twitter.com/Aviencloud",
-					MediaSlug: "twitter",
-				},
-				{
-					URL:       "https://www.facebook.com/Aviencloud",
-					MediaSlug: "facebook",
-				},
-				{
-					URL:       "https://discord.me/aviencloud",
-					MediaSlug: "discord",
-				},
-			},
-		},
+		// {
+		// 	Name: "Aviencloud - Beach girl",
+		// 	ID:   "uMaWlgkm6rk",
+		// 	Slug: "aviencloud",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/uMaWlgkm6rk",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/user/aviencloud",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 		{
+		// 			URL:       "https://aviencloud.com",
+		// 			MediaSlug: "web",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.instagram.com/aviencloud",
+		// 			MediaSlug: "instagram",
+		// 		},
+		// 		{
+		// 			URL:       "https://twitter.com/Aviencloud",
+		// 			MediaSlug: "twitter",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.facebook.com/Aviencloud",
+		// 			MediaSlug: "facebook",
+		// 		},
+		// 		{
+		// 			URL:       "https://discord.me/aviencloud",
+		// 			MediaSlug: "discord",
+		// 		},
+		// 	},
+		// },
 		{
 			Name: "InYourChill - Nerdy girl",
 			ID:   "B8tQ8RUbTW8",
