@@ -275,34 +275,34 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "STEEZYASFUCK - Junky fluff",
-			ID:   "9_CcYN8MVO8",
-			Slug: "steezyasfuck",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/9_CcYN8MVO8",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
-					MediaSlug: "spotify",
-				},
-				{
-					URL:       "https://twitter.com/stzzyasfvck",
-					MediaSlug: "twitter",
-				},
-				{
-					URL:       "https://www.instagram.com/stzzyasfvck",
-					MediaSlug: "instagram",
-				},
+		// {
+		// 	Name: "STEEZYASFUCK - Junky fluff",
+		// 	ID:   "9_CcYN8MVO8",
+		// 	Slug: "steezyasfuck",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/9_CcYN8MVO8",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 		{
+		// 			URL:       "https://twitter.com/stzzyasfvck",
+		// 			MediaSlug: "twitter",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.instagram.com/stzzyasfvck",
+		// 			MediaSlug: "instagram",
+		// 		},
 
-				{
-					URL:       "https://www.stzzzy.com",
-					MediaSlug: "web",
-				},
-			},
-		},
+		// 		{
+		// 			URL:       "https://www.stzzzy.com",
+		// 			MediaSlug: "web",
+		// 		},
+		// 	},
+		// },
 		{
 			Name: "STEEZYASFUCK - Coffee shop radio",
 			ID:   "-5KAN9_CzSA",
@@ -475,33 +475,33 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "KozyPop - 같이해요",
-			ID:   "F5v_VqxbQPI",
-			Slug: "kozypop",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/F5v_VqxbQPI",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://www.facebook.com/kozypop",
-					MediaSlug: "facebook",
-				},
-				{
-					URL:       "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
-					MediaSlug: "spotify",
-				},
-				{
-					URL:       "https://www.instagram.com/kozypop",
-					MediaSlug: "instagram",
-				},
-				{
-					URL:       "https://kozypop.com",
-					MediaSlug: "web",
-				},
-			},
-		},
+		// {
+		// 	Name: "KozyPop - 같이해요",
+		// 	ID:   "F5v_VqxbQPI",
+		// 	Slug: "kozypop",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/F5v_VqxbQPI",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.facebook.com/kozypop",
+		// 			MediaSlug: "facebook",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.instagram.com/kozypop",
+		// 			MediaSlug: "instagram",
+		// 		},
+		// 		{
+		// 			URL:       "https://kozypop.com",
+		// 			MediaSlug: "web",
+		// 		},
+		// 	},
+		// },
 	}
 
 	sort.Slice(c, func(a, b int) bool {
