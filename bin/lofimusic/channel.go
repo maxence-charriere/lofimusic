@@ -247,34 +247,34 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "Homework Radio - Rainy window",
-			ID:   "nMhua5LJRWg",
-			Slug: "homeworkradio2",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/nMhua5LJRWg",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
-					MediaSlug: "spotify",
-				},
-				{
-					URL:       "https://twitter.com/HomeworkRadio",
-					MediaSlug: "twitter",
-				},
-				{
-					URL:       "https://www.instagram.com/homework_radio",
-					MediaSlug: "instagram",
-				},
+		// {
+		// 	Name: "Homework Radio - Rainy window",
+		// 	ID:   "nMhua5LJRWg",
+		// 	Slug: "homeworkradio2",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/nMhua5LJRWg",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 		{
+		// 			URL:       "https://twitter.com/HomeworkRadio",
+		// 			MediaSlug: "twitter",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.instagram.com/homework_radio",
+		// 			MediaSlug: "instagram",
+		// 		},
 
-				{
-					URL:       "https://discord.com/invite/SmD2Pu2",
-					MediaSlug: "discord",
-				},
-			},
-		},
+		// 		{
+		// 			URL:       "https://discord.com/invite/SmD2Pu2",
+		// 			MediaSlug: "discord",
+		// 		},
+		// 	},
+		// },
 		// {
 		// 	Name: "STEEZYASFUCK - Junky fluff",
 		// 	ID:   "9_CcYN8MVO8",
@@ -363,21 +363,21 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "Monstafluff Music - Spaceship girl",
-			ID:   "pH3xU1YcjaA",
-			Slug: "monstafluffmusic",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/pH3xU1YcjaA",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
-					MediaSlug: "spotify",
-				},
-			},
-		},
+		// {
+		// 	Name: "Monstafluff Music - Spaceship girl",
+		// 	ID:   "pH3xU1YcjaA",
+		// 	Slug: "monstafluffmusic",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/pH3xU1YcjaA",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 	},
+		// },
 		// {
 		// 	Name: "Aviencloud - Beach girl",
 		// 	ID:   "uMaWlgkm6rk",
