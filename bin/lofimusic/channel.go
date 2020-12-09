@@ -502,6 +502,40 @@ func newChannelStore() *channelStore {
 		// 		},
 		// 	},
 		// },
+		{
+			Name: "Lofi Code Beats - Dev guy",
+			ID:   "bmVKaAV_7-A",
+			Slug: "lofi-code-beats",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/bmVKaAV_7-A",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/34HMPdg2ywHWz0EmCE64yo?si=fpkW2O30T7mZKvv4rGrIdw",
+					MediaSlug: "spotify",
+				},
+			},
+		},
+		{
+			Name: "Star Wars - Ahsoka Tano",
+			ID:   "oNfKzRP8-Q0",
+			Slug: "starwars",
+			SocialMedia: []link{
+				{
+					URL:       "https://youtu.be/oNfKzRP8-Q0",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://discord.com/invite/Kvq5VJSrgx",
+					MediaSlug: "discord",
+				},
+				{
+					URL:       "https://www.instagram.com/closedonsundayy",
+					MediaSlug: "instagram",
+				},
+			},
+		},
 	}
 
 	sort.Slice(c, func(a, b int) bool {
