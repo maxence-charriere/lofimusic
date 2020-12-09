@@ -534,6 +534,10 @@ func newChannelStore() *channelStore {
 					URL:       "https://www.instagram.com/closedonsundayy",
 					MediaSlug: "instagram",
 				},
+				{
+					URL:       "https://open.spotify.com/playlist/34HMPdg2ywHWz0EmCE64yo?si=fpkW2O30T7mZKvv4rGrIdw",
+					MediaSlug: "spotify",
+				},
 			},
 		},
 	}
