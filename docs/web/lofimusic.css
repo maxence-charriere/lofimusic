@@ -203,6 +203,7 @@ a:hover {
 .player .controls {
   margin: auto;
   width: fit-content;
+  width: -moz-fit-content;
 }
 
 .player .controls .button,
@@ -282,6 +283,7 @@ a:hover {
 
 .detail .social {
   width: fit-content;
+  width: -moz-fit-content;
   margin: 6px 24px 0 auto;
 }
 
