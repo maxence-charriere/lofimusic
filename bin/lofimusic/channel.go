@@ -199,11 +199,11 @@ func newChannelStore() *channelStore {
 		},
 		{
 			Name: "The Jazz Hop Café",
-			ID:   "OVPPOwMpSpQ",
+			ID:   "bDBS-V6zf68",
 			Slug: "thejazzhopcafe",
 			SocialMedia: []link{
 				{
-					URL:       "https://youtu.be/OVPPOwMpSpQ",
+					URL:       "https://youtu.be/bDBS-V6zf68",
 					MediaSlug: "youtube",
 				},
 				{
