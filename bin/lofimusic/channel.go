@@ -220,33 +220,33 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		{
-			Name: "Homework Radio - Roof girl",
-			ID:   "ZYMuB9y549s",
-			Slug: "homeworkradio",
-			SocialMedia: []link{
-				{
-					URL:       "https://youtu.be/ZYMuB9y549s",
-					MediaSlug: "youtube",
-				},
-				{
-					URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
-					MediaSlug: "spotify",
-				},
-				{
-					URL:       "https://twitter.com/HomeworkRadio",
-					MediaSlug: "twitter",
-				},
-				{
-					URL:       "https://www.instagram.com/homework_radio/",
-					MediaSlug: "instagram",
-				},
-				{
-					URL:       "https://discord.com/invite/SmD2Pu2",
-					MediaSlug: "discord",
-				},
-			},
-		},
+		// {
+		// 	Name: "Homework Radio - Roof girl",
+		// 	ID:   "ZYMuB9y549s",
+		// 	Slug: "homeworkradio",
+		// 	SocialMedia: []link{
+		// 		{
+		// 			URL:       "https://youtu.be/ZYMuB9y549s",
+		// 			MediaSlug: "youtube",
+		// 		},
+		// 		{
+		// 			URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+		// 			MediaSlug: "spotify",
+		// 		},
+		// 		{
+		// 			URL:       "https://twitter.com/HomeworkRadio",
+		// 			MediaSlug: "twitter",
+		// 		},
+		// 		{
+		// 			URL:       "https://www.instagram.com/homework_radio/",
+		// 			MediaSlug: "instagram",
+		// 		},
+		// 		{
+		// 			URL:       "https://discord.com/invite/SmD2Pu2",
+		// 			MediaSlug: "discord",
+		// 		},
+		// 	},
+		// },
 		// {
 		// 	Name: "Homework Radio - Rainy window",
 		// 	ID:   "nMhua5LJRWg",
