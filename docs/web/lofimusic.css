@@ -1,21 +1,3 @@
-html,
-body {
-  overflow: hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  border: none;
-  color: silver;
-  background-color: black;
-}
-
 h1,
 h2,
 h3,
@@ -50,15 +32,11 @@ a:hover {
   color: white;
 }
 
-.focus {
-  color: white;
-}
-
 .hidden {
   display: none;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   width: 6px;
@@ -70,7 +48,7 @@ a:hover {
   border-radius: 12px;
   width: 6px;
   height: 10px;
-}
+} */
 
 /* -----------------------------------------------------------------------------
 // Menu
@@ -302,4 +280,206 @@ a:hover {
 .detail .button:active {
   color: white;
   transform: scale(0.98);
+}
+
+/* -----------------------------------------------------------------------------
+// Lofimusic
+------------------------------------------------------------------------------*/
+html,
+body {
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+  color: silver;
+  background-color: black;
+
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.08);
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.hApp,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.heading {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 400;
+}
+
+.hApp {
+  font-size: 32px;
+  letter-spacing: 6px;
+}
+
+.app-title {
+  height: 108px;
+}
+
+.app-title-offset {
+  margin-top: 108px;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.hspace-out {
+  margin-left: 36px;
+  margin-right: 36px;
+  width: calc(100% - 36px - 36px);
+}
+
+.vspace-top {
+  margin-top: 18px;
+}
+
+.vspace-bottom {
+  margin-bottom: 12px;
+}
+
+.focus {
+  color: white !important;
+}
+
+.glow {
+  text-shadow: 1px 1px black;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* -----------------------------------------------------------------------------
+// Radio
+------------------------------------------------------------------------------*/
+.radio {
+}
+
+.radio-shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* -----------------------------------------------------------------------------
+// Nav
+------------------------------------------------------------------------------*/
+.nav {
+  position: relative;
+  z-index: 15;
+}
+
+.nav-content {
+  height: calc(100% - 108px);
+}
+
+.nav-radios {
+  height: calc(100% - 120px - 24px - 18px);
+  overflow-y: scroll;
+}
+
+.nav-radios-stack {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.nav-support {
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+/* -----------------------------------------------------------------------------
+// Link
+------------------------------------------------------------------------------*/
+.link {
+  display: block;
+  padding: 3px 0;
+  cursor: pointer;
+  transition: 0.2s all;
+  color: currentColor;
+}
+
+.link:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.link:active {
+  color: white;
+  transform: scale(0.98);
+}
+
+.link-icon {
+  margin-right: 12px;
+}
+
+.link-update {
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  transform-origin: bottom;
+}
+
+.link-update .link-icon {
+  margin-right: 3px;
+}
+
+/* -----------------------------------------------------------------------------
+// Youtube
+------------------------------------------------------------------------------*/
+.youtube {
+  position: relative;
+}
+
+.youtube-controls {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: 150px;
+  /* background-color: dimgray; */
 }

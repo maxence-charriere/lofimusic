@@ -13,16 +13,16 @@ var (
 )
 
 type channel struct {
-	Name        string
-	ID          string
-	Slug        string
-	Description string
-	SocialMedia []link
+	Name        string      `json:"name"`
+	Slug        string      `json:"slug"`
+	ID          string      `json:"url"`
+	Description []string    `json:"cards"`
+	SocialMedia []radioLink `json:"links"`
 }
 
-type link struct {
-	URL       string
-	MediaSlug string
+type radioLink struct {
+	MediaSlug string `json:"slug"`
+	URL       string `json:"url"`
 }
 
 type channelStore struct {
@@ -38,7 +38,7 @@ func newChannelStore() *channelStore {
 			Name: "ChilledCow - Study girl",
 			ID:   "5qap5aO4i9A",
 			Slug: "chilledcow",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/5qap5aO4i9A",
 					MediaSlug: "youtube",
@@ -73,7 +73,7 @@ func newChannelStore() *channelStore {
 			Name: "ChilledCow - Sleepy girl",
 			ID:   "DWcJFNfaw9c",
 			Slug: "chilledcow2",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/DWcJFNfaw9c",
 					MediaSlug: "youtube",
@@ -108,7 +108,7 @@ func newChannelStore() *channelStore {
 			Name: "Chillhop Music - Walking raccoon",
 			ID:   "5yx6BWlEVcY",
 			Slug: "chillhopmusic",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/5yx6BWlEVcY",
 					MediaSlug: "youtube",
@@ -139,7 +139,7 @@ func newChannelStore() *channelStore {
 			Name: "Chillhop Music - Sleepy raccoon",
 			ID:   "7NOSDKb0HlU",
 			Slug: "chillhopmusic2",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/7NOSDKb0HlU",
 					MediaSlug: "youtube",
@@ -170,7 +170,7 @@ func newChannelStore() *channelStore {
 			Name: "Tokyo LosT Tracks - サクラチル",
 			ID:   "WBfbkPTqUtU",
 			Slug: "tokyolosttracks",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/WBfbkPTqUtU",
 					MediaSlug: "youtube",
@@ -201,7 +201,7 @@ func newChannelStore() *channelStore {
 			Name: "The Jazz Hop Café",
 			ID:   "bDBS-V6zf68",
 			Slug: "thejazzhopcafe",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/bDBS-V6zf68",
 					MediaSlug: "youtube",
@@ -220,94 +220,94 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		// {
-		// 	Name: "Homework Radio - Roof girl",
-		// 	ID:   "ZYMuB9y549s",
-		// 	Slug: "homeworkradio",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/ZYMuB9y549s",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 		{
-		// 			URL:       "https://twitter.com/HomeworkRadio",
-		// 			MediaSlug: "twitter",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.instagram.com/homework_radio/",
-		// 			MediaSlug: "instagram",
-		// 		},
-		// 		{
-		// 			URL:       "https://discord.com/invite/SmD2Pu2",
-		// 			MediaSlug: "discord",
-		// 		},
-		// 	},
-		// },
-		// {
-		// 	Name: "Homework Radio - Rainy window",
-		// 	ID:   "nMhua5LJRWg",
-		// 	Slug: "homeworkradio2",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/nMhua5LJRWg",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 		{
-		// 			URL:       "https://twitter.com/HomeworkRadio",
-		// 			MediaSlug: "twitter",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.instagram.com/homework_radio",
-		// 			MediaSlug: "instagram",
-		// 		},
+		{
+			Name: "Homework Radio - Roof girl",
+			ID:   "ZYMuB9y549s",
+			Slug: "homeworkradio",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/ZYMuB9y549s",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/HomeworkRadio",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/homework_radio/",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://discord.com/invite/SmD2Pu2",
+					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "Homework Radio - Rainy window",
+			ID:   "nMhua5LJRWg",
+			Slug: "homeworkradio2",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/nMhua5LJRWg",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/HomeworkRadio",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/homework_radio",
+					MediaSlug: "instagram",
+				},
 
-		// 		{
-		// 			URL:       "https://discord.com/invite/SmD2Pu2",
-		// 			MediaSlug: "discord",
-		// 		},
-		// 	},
-		// },
-		// {
-		// 	Name: "STEEZYASFUCK - Junky fluff",
-		// 	ID:   "9_CcYN8MVO8",
-		// 	Slug: "steezyasfuck",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/9_CcYN8MVO8",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 		{
-		// 			URL:       "https://twitter.com/stzzyasfvck",
-		// 			MediaSlug: "twitter",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.instagram.com/stzzyasfvck",
-		// 			MediaSlug: "instagram",
-		// 		},
+				{
+					URL:       "https://discord.com/invite/SmD2Pu2",
+					MediaSlug: "discord",
+				},
+			},
+		},
+		{
+			Name: "STEEZYASFUCK - Junky fluff",
+			ID:   "9_CcYN8MVO8",
+			Slug: "steezyasfuck",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/9_CcYN8MVO8",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://twitter.com/stzzyasfvck",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.instagram.com/stzzyasfvck",
+					MediaSlug: "instagram",
+				},
 
-		// 		{
-		// 			URL:       "https://www.stzzzy.com",
-		// 			MediaSlug: "web",
-		// 		},
-		// 	},
-		// },
+				{
+					URL:       "https://www.stzzzy.com",
+					MediaSlug: "web",
+				},
+			},
+		},
 		{
 			Name: "STEEZYASFUCK - Coffee shop radio",
 			ID:   "-5KAN9_CzSA",
 			Slug: "steezyasfuck2",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/-5KAN9_CzSA",
 					MediaSlug: "youtube",
@@ -335,7 +335,7 @@ func newChannelStore() *channelStore {
 			Name: "the bootleg boy - Smoking girl",
 			ID:   "l7TxwBhtTUY",
 			Slug: "thebootlegboy",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/l7TxwBhtTUY",
 					MediaSlug: "youtube",
@@ -363,61 +363,61 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		// {
-		// 	Name: "Monstafluff Music - Spaceship girl",
-		// 	ID:   "pH3xU1YcjaA",
-		// 	Slug: "monstafluffmusic",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/pH3xU1YcjaA",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 	},
-		// },
-		// {
-		// 	Name: "Aviencloud - Beach girl",
-		// 	ID:   "uMaWlgkm6rk",
-		// 	Slug: "aviencloud",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/uMaWlgkm6rk",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/user/aviencloud",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 		{
-		// 			URL:       "https://aviencloud.com",
-		// 			MediaSlug: "web",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.instagram.com/aviencloud",
-		// 			MediaSlug: "instagram",
-		// 		},
-		// 		{
-		// 			URL:       "https://twitter.com/Aviencloud",
-		// 			MediaSlug: "twitter",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.facebook.com/Aviencloud",
-		// 			MediaSlug: "facebook",
-		// 		},
-		// 		{
-		// 			URL:       "https://discord.me/aviencloud",
-		// 			MediaSlug: "discord",
-		// 		},
-		// 	},
-		// },
+		{
+			Name: "Monstafluff Music - Spaceship girl",
+			ID:   "pH3xU1YcjaA",
+			Slug: "monstafluffmusic",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/pH3xU1YcjaA",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
+					MediaSlug: "spotify",
+				},
+			},
+		},
+		{
+			Name: "Aviencloud - Beach girl",
+			ID:   "uMaWlgkm6rk",
+			Slug: "aviencloud",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/uMaWlgkm6rk",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://open.spotify.com/user/aviencloud",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://aviencloud.com",
+					MediaSlug: "web",
+				},
+				{
+					URL:       "https://www.instagram.com/aviencloud",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://twitter.com/Aviencloud",
+					MediaSlug: "twitter",
+				},
+				{
+					URL:       "https://www.facebook.com/Aviencloud",
+					MediaSlug: "facebook",
+				},
+				{
+					URL:       "https://discord.me/aviencloud",
+					MediaSlug: "discord",
+				},
+			},
+		},
 		{
 			Name: "InYourChill - Nerdy girl",
 			ID:   "B8tQ8RUbTW8",
 			Slug: "inyourchill",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/B8tQ8RUbTW8",
 					MediaSlug: "youtube",
@@ -448,7 +448,7 @@ func newChannelStore() *channelStore {
 			Name: "College Music - Lonely girl",
 			ID:   "bM0Iw7PPoU4",
 			Slug: "collegemusic",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/bM0Iw7PPoU4",
 					MediaSlug: "youtube",
@@ -475,38 +475,38 @@ func newChannelStore() *channelStore {
 				},
 			},
 		},
-		// {
-		// 	Name: "KozyPop - 같이해요",
-		// 	ID:   "F5v_VqxbQPI",
-		// 	Slug: "kozypop",
-		// 	SocialMedia: []link{
-		// 		{
-		// 			URL:       "https://youtu.be/F5v_VqxbQPI",
-		// 			MediaSlug: "youtube",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.facebook.com/kozypop",
-		// 			MediaSlug: "facebook",
-		// 		},
-		// 		{
-		// 			URL:       "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
-		// 			MediaSlug: "spotify",
-		// 		},
-		// 		{
-		// 			URL:       "https://www.instagram.com/kozypop",
-		// 			MediaSlug: "instagram",
-		// 		},
-		// 		{
-		// 			URL:       "https://kozypop.com",
-		// 			MediaSlug: "web",
-		// 		},
-		// 	},
-		// },
+		{
+			Name: "KozyPop - 같이해요",
+			ID:   "F5v_VqxbQPI",
+			Slug: "kozypop",
+			SocialMedia: []radioLink{
+				{
+					URL:       "https://youtu.be/F5v_VqxbQPI",
+					MediaSlug: "youtube",
+				},
+				{
+					URL:       "https://www.facebook.com/kozypop",
+					MediaSlug: "facebook",
+				},
+				{
+					URL:       "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
+					MediaSlug: "spotify",
+				},
+				{
+					URL:       "https://www.instagram.com/kozypop",
+					MediaSlug: "instagram",
+				},
+				{
+					URL:       "https://kozypop.com",
+					MediaSlug: "web",
+				},
+			},
+		},
 		{
 			Name: "Lofi Code Beats - Dev guy",
 			ID:   "bmVKaAV_7-A",
 			Slug: "lofi-code-beats",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/bmVKaAV_7-A",
 					MediaSlug: "youtube",
@@ -521,7 +521,7 @@ func newChannelStore() *channelStore {
 			Name: "Star Wars - Ahsoka Tano",
 			ID:   "oNfKzRP8-Q0",
 			Slug: "starwars",
-			SocialMedia: []link{
+			SocialMedia: []radioLink{
 				{
 					URL:       "https://youtu.be/oNfKzRP8-Q0",
 					MediaSlug: "youtube",

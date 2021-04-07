@@ -2,9 +2,8 @@ package main
 
 import (
 	"fmt"
-	"net/url"
 
-	"github.com/maxence-charriere/go-app/v7/pkg/app"
+	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
 
 type menu struct {
@@ -13,7 +12,7 @@ type menu struct {
 	CurrentChannel channel
 }
 
-func (m *menu) OnNav(ctx app.Context, u *url.URL) {
+func (m *menu) OnNav(ctx app.Context) {
 	app.Window().ScrollToID(m.CurrentChannel.ID)
 }
 

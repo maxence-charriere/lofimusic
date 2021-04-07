@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.com/maxence-charriere/go-app/v7/pkg/app"
-	"github.com/maxence-charriere/go-app/v7/pkg/errors"
+	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v8/pkg/errors"
 )
 
 var (
@@ -27,7 +27,7 @@ type player struct {
 }
 
 func (p *player) OnMount(ctx app.Context) {
-	p.State.load()
+	p.State.load(ctx)
 	p.Update()
 
 	if !youtubeAPIReady {
@@ -37,19 +37,19 @@ func (p *player) OnMount(ctx app.Context) {
 		return
 	}
 
-	app.Dispatch(p.setupYoutubePlayer)
+	p.Defer(p.setupYoutubePlayer)
 }
 
 func (p *player) onYoutubeIframeAPIReady(this app.Value, args []app.Value) interface{} {
-	app.Dispatch(func() {
+	p.Defer(func(ctx app.Context) {
 		youtubeAPIReady = true
-		p.setupYoutubePlayer()
+		p.setupYoutubePlayer(ctx)
 	})
 
 	return nil
 }
 
-func (p *player) setupYoutubePlayer() {
+func (p *player) setupYoutubePlayer(ctx app.Context) {
 	onPlayerReady := app.FuncOf(p.onPlayerReady)
 	p.releaseOnPlayerReady = onPlayerReady.Release
 
@@ -82,8 +82,8 @@ func (p *player) OnDismount() {
 }
 
 func (p *player) onPlayerReady(this app.Value, args []app.Value) interface{} {
-	app.Dispatch(func() {
-		p.setVolume(p.State.Volume)
+	p.Defer(func(ctx app.Context) {
+		p.setVolume(ctx, p.State.Volume)
 		p.play()
 	})
 
@@ -107,7 +107,7 @@ func (p *player) onPlayerStateChange(this app.Value, args []app.Value) interface
 		ready = false
 	}
 
-	app.Dispatch(func() {
+	p.Defer(func(ctx app.Context) {
 		p.ready = ready
 		p.playing = playing
 		p.Update()
@@ -120,7 +120,7 @@ func (p *player) play() {
 	p.youtube.Call("playVideo")
 }
 
-func (p *player) setVolume(volume int) {
+func (p *player) setVolume(ctx app.Context, volume int) {
 	if volume == 0 {
 		p.youtube.Call("mute")
 	} else {
@@ -130,17 +130,17 @@ func (p *player) setVolume(volume int) {
 
 	p.youtube.Call("setVolume", volume)
 	p.State.Volume = volume
-	p.saveState()
+	p.saveState(ctx)
 	p.Update()
 
-	app.Dispatch(func() {
+	p.Defer(func(ctx app.Context) {
 		app.Window().GetElementByID("volume-bar").Set("value", volume)
 	})
 }
 
-func (p *player) saveState() {
-	if err := p.State.save(); err != nil {
-		app.Log("%s", errors.New("saving player state failed").Wrap(err))
+func (p *player) saveState(ctx app.Context) {
+	if err := p.State.save(ctx); err != nil {
+		app.Logf("%s", errors.New("saving player state failed").Wrap(err))
 	}
 }
 
@@ -292,22 +292,22 @@ func (p *player) onPlay(ctx app.Context, e app.Event) {
 
 func (p *player) onVolumeChange(ctx app.Context, e app.Event) {
 	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
-	p.setVolume(volume)
+	p.setVolume(ctx, volume)
 }
 
 func (p *player) onMute(ctx app.Context, e app.Event) {
-	p.setVolume(0)
+	p.setVolume(ctx, 0)
 }
 
 func (p *player) onUnMute(ctx app.Context, e app.Event) {
-	p.setVolume(p.State.LastNonZeroVolume)
+	p.setVolume(ctx, p.State.LastNonZeroVolume)
 }
 
 func (p *player) onShuffle(ctx app.Context, e app.Event) {
 	for {
 		c := channels.Get("/")
 		if c.Slug != p.Channel.Slug {
-			app.Navigate("/" + c.Slug)
+			ctx.Navigate("/" + c.Slug)
 			return
 		}
 	}
@@ -319,8 +319,8 @@ type playerState struct {
 	Muted             bool
 }
 
-func (s *playerState) load() error {
-	if err := app.LocalStorage.Get("player.state", s); err != nil {
+func (s *playerState) load(ctx app.Context) error {
+	if err := ctx.LocalStorage().Get("player.state", s); err != nil {
 		return errors.New("getting player status from local storage failed").
 			Wrap(err)
 	}
@@ -333,8 +333,8 @@ func (s *playerState) load() error {
 	return nil
 }
 
-func (s *playerState) save() error {
-	if err := app.LocalStorage.Set("player.state", s); err != nil {
+func (s *playerState) save(ctx app.Context) error {
+	if err := ctx.LocalStorage().Set("player.state", s); err != nil {
 		return errors.New("saving player status in local storage failed").
 			Wrap(err)
 	}
