@@ -240,10 +240,6 @@ a:hover {
   filter: blur(1.5rem);
 }
 
-.hide {
-  display: none;
-}
-
 /* -----------------------------------------------------------------------------
 // Detail
 ------------------------------------------------------------------------------*/
@@ -341,6 +337,15 @@ body {
   letter-spacing: 6px;
 }
 
+.h1 {
+  font-size: 36px;
+}
+
+.h2 {
+  font-size: 26px;
+  letter-spacing: 4px;
+}
+
 .app-title {
   height: 108px;
 }
@@ -365,12 +370,27 @@ body {
   width: calc(100% - 36px - 36px);
 }
 
+.hspace-in {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.vspace-out {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  height: calc(100% - 18px - 12px);
+}
+
 .vspace-top {
   margin-top: 18px;
 }
 
 .vspace-bottom {
   margin-bottom: 12px;
+}
+
+.vspace-stretch {
+  height: 100%;
 }
 
 .center {
@@ -385,6 +405,15 @@ body {
   text-shadow: 1px 1px black;
 }
 
+.hide {
+  display: none !important;
+}
+
+.disabled {
+  color: dimgray !important;
+  pointer-events: none !important;
+}
+
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -393,6 +422,39 @@ body {
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+
+/*------------------------------------------------------------------------------
+** Animations
+------------------------------------------------------------------------------*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-6px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-6px);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* -----------------------------------------------------------------------------
@@ -530,6 +592,13 @@ body {
   }
 }
 
+.youtube-noplay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
 .youtube-controls {
   position: absolute;
   left: 0;
@@ -562,4 +631,31 @@ body {
 
 .control-main {
   padding: 24px;
+}
+
+/* -----------------------------------------------------------------------------
+// Loader
+------------------------------------------------------------------------------*/
+.loader .icon {
+  border: 2px solid silver;
+  border-radius: 50%;
+}
+
+.loader .icon.active {
+  border-top: 2px solid white;
+  animation: spin 0.55s linear infinite;
+}
+
+.loader p {
+  padding: 0;
+  margin: 3px 0 6px;
+  white-space: pre;
+}
+
+.page-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-image: linear-gradient(#2e343a, #1c1d1f);
 }

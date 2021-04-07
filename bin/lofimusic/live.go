@@ -343,7 +343,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "steezyasfuck-junky-fluff",
-			Name:  "Steezy Junky fluff",
+			Name:  "Steezy Junky Fluff",
 			URL:   "https://youtu.be/rc9cjjEun_k",
 			Cards: []string{},
 			Links: []socialLink{
@@ -459,7 +459,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "thebootlegboy",
-			Name:  "Bootleg girl",
+			Name:  "Bootleg Smoke",
 			URL:   "https://youtu.be/l7TxwBhtTUY",
 			Cards: []string{},
 			Links: []socialLink{

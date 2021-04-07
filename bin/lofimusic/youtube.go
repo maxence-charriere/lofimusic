@@ -9,12 +9,9 @@ import (
 )
 
 const (
+	loaderSize          = 78
 	controlIconSize     = 18
 	controlMainIconSize = 30
-)
-
-var (
-	isOnYouTubeIframeAPIReady bool
 )
 
 type youtubeState int
@@ -33,10 +30,11 @@ type youTubePlayer struct {
 
 	Iradio liveRadio
 
-	once                 sync.Once
+	initPlayer           sync.Once
 	radio                liveRadio
 	player               app.Value
 	isPlaying            bool
+	isBuffering          bool
 	realeaseOnReady      func()
 	releaseOnStateChange func()
 }
@@ -48,19 +46,6 @@ func newYouTubePlayer() *youTubePlayer {
 func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
 	p.Iradio = v
 	return p
-}
-
-func (p *youTubePlayer) OnMount(ctx app.Context) {
-	if !isOnYouTubeIframeAPIReady {
-		releaseOnYouTubeIframeAPIReady := func() {}
-		onYouTubeIframeAPIReady := app.FuncOf(func(this app.Value, args []app.Value) interface{} {
-			isOnYouTubeIframeAPIReady = true
-			releaseOnYouTubeIframeAPIReady()
-			return nil
-		})
-		releaseOnYouTubeIframeAPIReady = onYouTubeIframeAPIReady.Release
-		app.Window().Set("onYouTubeIframeAPIReady", onYouTubeIframeAPIReady)
-	}
 }
 
 func (p *youTubePlayer) OnNav(ctx app.Context) {
@@ -78,9 +63,9 @@ func (p *youTubePlayer) OnDismount() {
 }
 
 func (p *youTubePlayer) loadVideo(ctx app.Context) {
-	if !isOnYouTubeIframeAPIReady {
+	if isOnYouTubeIframeAPIReady := app.Window().Get("isOnYouTubeIframeAPIReady").Bool(); !isOnYouTubeIframeAPIReady {
 		ctx.Async(func() {
-			time.Sleep(time.Millisecond * 100)
+			time.Sleep(time.Millisecond * 1000)
 			p.Defer(p.loadVideo)
 		})
 		return
@@ -89,13 +74,12 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 	if p.Iradio.Slug != p.radio.Slug {
 		p.radio = p.Iradio
 		if p.player != nil {
-			fmt.Println("loading video:", p.radio.Slug, p.radio.youtubeID())
 			p.loadVideoByID(ctx, p.radio.youtubeID())
 			return
 		}
 	}
 
-	p.once.Do(func() {
+	p.initPlayer.Do(func() {
 		onReady := app.FuncOf(func(this app.Value, args []app.Value) interface{} {
 			p.Defer(p.play)
 			return nil
@@ -133,11 +117,13 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 
 		case playing:
 			p.isPlaying = true
+			p.isBuffering = false
 
 		case paused:
 			p.isPlaying = false
 
 		case buffering:
+			p.isBuffering = true
 		}
 		p.Update()
 	})
@@ -145,13 +131,14 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 }
 
 func (p *youTubePlayer) Render() app.UI {
-	if p.radio.Slug != p.Iradio.Slug {
+	if p.Iradio.Slug != "" && p.radio.Slug != p.Iradio.Slug {
 		p.Defer(p.loadVideo)
 	}
 
 	return app.Div().
 		Class("youtube").
 		Class("fill").
+		Class("unselectable").
 		Body(
 			app.Div().
 				Class("youtube-video").
@@ -159,11 +146,23 @@ func (p *youTubePlayer) Render() app.UI {
 					app.Div().
 						ID("youtube-player").
 						Body(
-							app.Script().
-								Src("https://www.youtube.com/iframe_api").
-								Async(true),
+							app.Script().Src("https://www.youtube.com/iframe_api"),
 						),
 				),
+			app.If(!p.isPlaying || p.isBuffering,
+				app.Div().
+					Class("youtube-noplay").
+					Class("fill").
+					Body(
+						newLoader().
+							Class("hspace-out").
+							Class("vspace-stretch").
+							Size(loaderSize).
+							Title("Buffering").
+							Description(p.radio.Name).
+							Loading(p.isBuffering),
+					),
+			),
 			app.Div().
 				Class("youtube-controls").
 				Class("hspace-out").
@@ -175,15 +174,17 @@ func (p *youTubePlayer) Render() app.UI {
 						Class("center").
 						Center().
 						Content(
-							app.If(p.isPlaying,
+							app.If(p.isPlaying || p.isBuffering,
 								newControl().Icon(newSVGIcon().
 									Size(controlIconSize).
 									RawSVG(pauseSVG)).
+									Disabled(p.player == nil).
 									OnClick(p.onPauseClicked),
 							).Else(
 								newControl().Icon(newSVGIcon().
 									Size(controlIconSize).
 									RawSVG(playSVG)).
+									Disabled(p.player == nil).
 									OnClick(p.onPlayClicked),
 							),
 							newControl().
@@ -195,14 +196,11 @@ func (p *youTubePlayer) Render() app.UI {
 							newControl().Icon(newSVGIcon().
 								Size(controlIconSize).
 								RawSVG(soundHighSVG)).
+								Disabled(p.player == nil).
 								OnClick(p.onMuteClicked),
 						),
 				),
 		)
-}
-
-func (p *youTubePlayer) onScriptLoaded(ctx app.Context, e app.Event) {
-	fmt.Println("youtube scrip loaded")
 }
 
 func (p *youTubePlayer) onPlayClicked(ctx app.Context, e app.Event) {
@@ -225,10 +223,10 @@ func (p *youTubePlayer) loadVideoByID(ctx app.Context, id string) {
 	p.player.Call("loadVideoById", id, 0)
 }
 
-func (p youTubePlayer) play(ctx app.Context) {
+func (p *youTubePlayer) play(ctx app.Context) {
 	p.player.Call("playVideo")
 }
 
-func (p youTubePlayer) pause(ctx app.Context) {
+func (p *youTubePlayer) pause(ctx app.Context) {
 	p.player.Call("pauseVideo")
 }

@@ -68,6 +68,7 @@ func main() {
 		},
 		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
+		Image:        "https://lofimusic.app/web/lofimusic-1.png",
 		RawHeaders: []string{
 			`<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
@@ -79,14 +80,15 @@ func main() {
 			  gtag('config', 'UA-177947020-1');
 			</script>			
 			`,
-			`<meta property="og:url" content="https://lofimusic.app">`,
-			`<meta property="og:title" content="Lofimusic.app">`,
-			`<meta property="og:description" content="Lofi music player to work, study and relax.">`,
-			`<meta property="og:image" content="https://lofimusic.app/web/lofimusic-1.png">`,
+			`<script>
+			var isOnYouTubeIframeAPIReady = false;
+			function onYouTubeIframeAPIReady() {
+				isOnYouTubeIframeAPIReady = true;
+			}
+			</script>`,
 		},
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
-			"https://fonts.googleapis.com/css2?family=Roboto&display=swap",
 			"/web/lofimusic.css",
 			"/web/range.css",
 		},

@@ -5,9 +5,10 @@ import "github.com/maxence-charriere/go-app/v8/pkg/app"
 type control struct {
 	app.Compo
 
-	Iclass   string
-	Iicon    app.UI
-	IonClick app.EventHandler
+	Iclass    string
+	Iicon     app.UI
+	Idisabled bool
+	IonClick  app.EventHandler
 }
 
 func newControl() *control {
@@ -30,14 +31,25 @@ func (c *control) Icon(v app.UI) *control {
 	return c
 }
 
+func (c *control) Disabled(v bool) *control {
+	c.Idisabled = v
+	return c
+}
+
 func (c *control) OnClick(v app.EventHandler) *control {
 	c.IonClick = v
 	return c
 }
 
 func (c *control) Render() app.UI {
+	disabled := ""
+	if c.Idisabled {
+		disabled = "disabled"
+	}
+
 	return app.Div().
 		Class("control").
+		Class(disabled).
 		Class(c.Iclass).
 		OnClick(c.onClick).
 		Body(c.Iicon)
