@@ -497,6 +497,7 @@ body {
     black
   );
   content: "";
+  pointer-events: none;
 }
 
 .youtube-video {

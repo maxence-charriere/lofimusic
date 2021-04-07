@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	youtubeAPIReady bool
+	iSyoutubeAPIReady bool
 )
 
 type player struct {
@@ -30,7 +30,7 @@ func (p *player) OnMount(ctx app.Context) {
 	p.State.load(ctx)
 	p.Update()
 
-	if !youtubeAPIReady {
+	if !iSyoutubeAPIReady {
 		onYouTubeIframeAPIReady := app.FuncOf(p.onYoutubeIframeAPIReady)
 		p.releaseIframe = onYouTubeIframeAPIReady.Release
 		app.Window().Set("onYouTubeIframeAPIReady", onYouTubeIframeAPIReady)
@@ -42,7 +42,7 @@ func (p *player) OnMount(ctx app.Context) {
 
 func (p *player) onYoutubeIframeAPIReady(this app.Value, args []app.Value) interface{} {
 	p.Defer(func(ctx app.Context) {
-		youtubeAPIReady = true
+		iSyoutubeAPIReady = true
 		p.setupYoutubePlayer(ctx)
 	})
 

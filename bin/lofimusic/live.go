@@ -1,6 +1,7 @@
 package main
 
 import (
+	"path"
 	"sort"
 	"strings"
 )
@@ -11,6 +12,10 @@ type liveRadio struct {
 	URL   string
 	Cards []string
 	Links []socialLink
+}
+
+func (r liveRadio) youtubeID() string {
+	return path.Base(r.URL)
 }
 
 type socialLink struct {
@@ -174,7 +179,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "collegemusic",
-			Name:  "College Study Girl",
+			Name:  "College Girl",
 			URL:   "https://youtu.be/MCkTebktHVc",
 			Cards: []string{},
 			Links: []socialLink{
@@ -210,7 +215,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "collegemusic-guy",
-			Name:  "College Study Guy",
+			Name:  "College Guy",
 			URL:   "https://youtu.be/2atQnvunGCo",
 			Cards: []string{},
 			Links: []socialLink{
@@ -246,7 +251,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "collegemusic-lonely",
-			Name:  "College Lonely Girl",
+			Name:  "College Lonely",
 			URL:   "https://youtu.be/bM0Iw7PPoU4",
 			Cards: []string{},
 			Links: []socialLink{
@@ -282,7 +287,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "lofi-code-beats",
-			Name:  "Coding Guy",
+			Name:  "Coding Beats",
 			URL:   "https://youtu.be/bmVKaAV_7-A",
 			Cards: []string{},
 			Links: []socialLink{
@@ -306,7 +311,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "steezyasfuck-coffee-show",
-			Name:  "Steezy Coffee shop radio",
+			Name:  "Steezy Coffee Shop",
 			URL:   "https://youtu.be/-5KAN9_CzSA",
 			Cards: []string{},
 			Links: []socialLink{
@@ -370,7 +375,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "closedonsunday-pop-culture",
-			Name:  "Pop Culture Girl",
+			Name:  "Pop Culture Sunday",
 			URL:   "https://youtu.be/mOe8VEMuPo0",
 			Cards: []string{},
 			Links: []socialLink{
@@ -394,7 +399,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "closedonsunday-starwars",
-			Name:  "Ahsoka Tano",
+			Name:  "Star Wars Sunday",
 			URL:   "https://youtu.be/o33l32ZrIy8",
 			Cards: []string{},
 			Links: []socialLink{

@@ -2,7 +2,8 @@ package main
 
 import (
 	"fmt"
-	"path"
+	"sync"
+	"time"
 
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
@@ -12,13 +13,32 @@ const (
 	controlMainIconSize = 30
 )
 
+var (
+	isOnYouTubeIframeAPIReady bool
+)
+
+type youtubeState int
+
+const (
+	unstarted = -1
+	ended     = 0
+	playing   = 1
+	paused    = 2
+	buffering = 3
+	videoCued = 5
+)
+
 type youTubePlayer struct {
 	app.Compo
 
 	Iradio liveRadio
 
-	player    app.Value
-	isPlaying bool
+	once                 sync.Once
+	radio                liveRadio
+	player               app.Value
+	isPlaying            bool
+	realeaseOnReady      func()
+	releaseOnStateChange func()
 }
 
 func newYouTubePlayer() *youTubePlayer {
@@ -31,12 +51,104 @@ func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
 }
 
 func (p *youTubePlayer) OnMount(ctx app.Context) {
+	if !isOnYouTubeIframeAPIReady {
+		releaseOnYouTubeIframeAPIReady := func() {}
+		onYouTubeIframeAPIReady := app.FuncOf(func(this app.Value, args []app.Value) interface{} {
+			isOnYouTubeIframeAPIReady = true
+			releaseOnYouTubeIframeAPIReady()
+			return nil
+		})
+		releaseOnYouTubeIframeAPIReady = onYouTubeIframeAPIReady.Release
+		app.Window().Set("onYouTubeIframeAPIReady", onYouTubeIframeAPIReady)
+	}
+}
+
+func (p *youTubePlayer) OnNav(ctx app.Context) {
+	p.Update()
 }
 
 func (p *youTubePlayer) OnDismount() {
+	if p.realeaseOnReady != nil {
+		p.realeaseOnReady()
+	}
+	if p.releaseOnStateChange != nil {
+		p.releaseOnStateChange()
+	}
+	p.player = nil
+}
+
+func (p *youTubePlayer) loadVideo(ctx app.Context) {
+	if !isOnYouTubeIframeAPIReady {
+		ctx.Async(func() {
+			time.Sleep(time.Millisecond * 100)
+			p.Defer(p.loadVideo)
+		})
+		return
+	}
+
+	if p.Iradio.Slug != p.radio.Slug {
+		p.radio = p.Iradio
+		if p.player != nil {
+			fmt.Println("loading video:", p.radio.Slug, p.radio.youtubeID())
+			p.loadVideoByID(ctx, p.radio.youtubeID())
+			return
+		}
+	}
+
+	p.once.Do(func() {
+		onReady := app.FuncOf(func(this app.Value, args []app.Value) interface{} {
+			p.Defer(p.play)
+			return nil
+		})
+		p.realeaseOnReady = onReady.Release
+
+		onStateChange := app.FuncOf(p.onStateChange)
+		p.releaseOnStateChange = onStateChange.Release
+
+		p.player = app.Window().
+			Get("YT").
+			Get("Player").
+			New("youtube-player", map[string]interface{}{
+				"videoId": p.radio.youtubeID(),
+				"playerVars": map[string]interface{}{
+					"controls":       0,
+					"modestbranding": 1,
+				},
+				"events": map[string]interface{}{
+					"onReady":       onReady,
+					"onStateChange": onStateChange,
+				},
+			})
+	})
+}
+
+func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interface{} {
+	p.Defer(func(ctx app.Context) {
+		switch args[0].Get("data").Int() {
+		case unstarted:
+			p.isPlaying = false
+
+		case ended:
+			p.isPlaying = false
+
+		case playing:
+			p.isPlaying = true
+
+		case paused:
+			p.isPlaying = false
+
+		case buffering:
+		}
+		p.Update()
+	})
+	return nil
 }
 
 func (p *youTubePlayer) Render() app.UI {
+	if p.radio.Slug != p.Iradio.Slug {
+		p.Defer(p.loadVideo)
+	}
+
 	return app.Div().
 		Class("youtube").
 		Class("fill").
@@ -44,21 +156,13 @@ func (p *youTubePlayer) Render() app.UI {
 			app.Div().
 				Class("youtube-video").
 				Body(
-					app.Script().
-						Src("//www.youtube.com/iframe_api").
-						Async(true).
-						OnLoad(p.onScriptLoaded),
-					app.IFrame().
-						ID("youtube-"+p.Iradio.Slug).
-						Allow("autoplay").
-						Allow("accelerometer").
-						Allow("encrypted-media").
-						Allow("picture-in-picture").
-						Sandbox("allow-presentation allow-same-origin allow-scripts allow-popups").
-						Src(fmt.Sprintf(
-							"https://www.youtube.com/embed/%s?controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playsinline=1",
-							path.Base(p.Iradio.URL),
-						)),
+					app.Div().
+						ID("youtube-player").
+						Body(
+							app.Script().
+								Src("https://www.youtube.com/iframe_api").
+								Async(true),
+						),
 				),
 			app.Div().
 				Class("youtube-controls").
@@ -115,6 +219,10 @@ func (p *youTubePlayer) onShuffleClicked(ctx app.Context, e app.Event) {
 
 func (p *youTubePlayer) onMuteClicked(ctx app.Context, e app.Event) {
 	fmt.Println("mute clicked")
+}
+
+func (p *youTubePlayer) loadVideoByID(ctx app.Context, id string) {
+	p.player.Call("loadVideoById", id, 0)
 }
 
 func (p youTubePlayer) play(ctx app.Context) {
