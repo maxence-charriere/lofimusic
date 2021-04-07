@@ -10,7 +10,7 @@ type nav struct {
 	app.Compo
 
 	IliveRadios   []liveRadio
-	IcurrentRadio string
+	IcurrentRadio liveRadio
 
 	isFirstLoad bool
 }
@@ -24,7 +24,7 @@ func (n *nav) LiveRadios(v []liveRadio) *nav {
 	return n
 }
 
-func (n *nav) CurrentRadio(v string) *nav {
+func (n *nav) CurrentRadio(v liveRadio) *nav {
 	n.IcurrentRadio = v
 	return n
 }
@@ -82,7 +82,7 @@ func (n *nav) Render() app.UI {
 													Icon(newSVGIcon().RawSVG(playSVG)).
 													Label(lr.Name).
 													Href("/" + lr.Slug).
-													Focus(lr.Slug == n.IcurrentRadio)
+													Focus(lr.Slug == n.IcurrentRadio.Slug)
 											}),
 										),
 								),

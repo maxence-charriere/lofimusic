@@ -22,6 +22,24 @@ const (
 	playSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg>`
+	pauseSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+    	<path fill="currentColor" d="M14,19H18V5H14M6,19H10V5H6V19Z" />
+	</svg>`
+	shuffleSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+    	<path fill="currentColor" d="M14.83,13.41L13.42,14.82L16.55,17.95L14.5,20H20V14.5L17.96,16.54L14.83,13.41M14.5,4L16.54,6.04L4,18.59L5.41,20L17.96,7.46L20,9.5V4M10.59,9.17L5.41,4L4,5.41L9.17,10.58L10.59,9.17Z" />
+	</svg>`
+	soundHighSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+		<path fill="currentColor" d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z" />
+	</svg>`
+	soundMediumSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+		<path fill="currentColor" d="M5,9V15H9L14,20V4L9,9M18.5,12C18.5,10.23 17.5,8.71 16,7.97V16C17.5,15.29 18.5,13.76 18.5,12Z" />
+	</svg>`
+	soundLowSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+		<path fill="currentColor" d="M7,9V15H11L16,20V4L11,9H7Z" />
+	</svg>`
+	soundMutedSVG = `<svg style="width:%vpx;height:%vpx" viewBox="0 0 24 24">
+		<path fill="currentColor" d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z" />
+	</svg>`
 )
 
 type svgIcon struct {
