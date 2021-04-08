@@ -90,7 +90,6 @@ func main() {
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
 			"/web/lofimusic.css",
-			"/web/range.css",
 		},
 
 		ThemeColor: backgroundColor,

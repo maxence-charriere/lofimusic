@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"sync"
 	"time"
 
@@ -35,6 +36,7 @@ type youTubePlayer struct {
 	player               app.Value
 	isPlaying            bool
 	isBuffering          bool
+	canBack              bool
 	realeaseOnReady      func()
 	releaseOnStateChange func()
 }
@@ -49,6 +51,7 @@ func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
 }
 
 func (p *youTubePlayer) OnNav(ctx app.Context) {
+	p.canBack = app.Window().Get("history").Get("length").Int() > 1
 	p.Update()
 }
 
@@ -163,41 +166,56 @@ func (p *youTubePlayer) Render() app.UI {
 							Loading(p.isBuffering),
 					),
 			),
-			app.Div().
+			app.Stack().
 				Class("youtube-controls").
 				Class("hspace-out").
 				Class("vspace-top").
 				Class("vspace-bottom").
-				Body(
-					app.Stack().
-						Class("fit").
-						Class("center").
-						Center().
-						Content(
-							app.If(p.isPlaying || p.isBuffering,
-								newControl().Icon(newSVGIcon().
-									Size(controlIconSize).
-									RawSVG(pauseSVG)).
-									Disabled(p.player == nil).
-									OnClick(p.onPauseClicked),
-							).Else(
-								newControl().Icon(newSVGIcon().
-									Size(controlIconSize).
-									RawSVG(playSVG)).
-									Disabled(p.player == nil).
-									OnClick(p.onPlayClicked),
-							),
-							newControl().
-								Class("control-main").
-								Icon(newSVGIcon().
-									Size(controlMainIconSize).
-									RawSVG(shuffleSVG)).
-								OnClick(p.onShuffleClicked),
-							newControl().Icon(newSVGIcon().
-								Size(controlIconSize).
-								RawSVG(soundHighSVG)).
-								Disabled(p.player == nil).
-								OnClick(p.onMuteClicked),
+				Center().
+				Content(
+					app.Div().Class("youtube-left-space"),
+					newControl().
+						Class("youtube-back").
+						Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(backwardSVG)).
+						Disabled(!p.canBack).
+						OnClick(p.onBackClicked),
+					app.If(p.isPlaying || p.isBuffering,
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(pauseSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onPauseClicked),
+					).Else(
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(playSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onPlayClicked),
+					),
+					newControl().
+						Class("control-main").
+						Icon(newSVGIcon().
+							Size(controlMainIconSize).
+							RawSVG(shuffleSVG)).
+						OnClick(p.onShuffleClicked),
+					newControl().Icon(newSVGIcon().
+						Size(controlIconSize).
+						RawSVG(soundHighSVG)).
+						Disabled(p.player == nil).
+						OnClick(p.onMuteClicked),
+					app.Div().
+						Class("youtube-volume").
+						Body(
+							app.Input().
+								ID("youtube-volume").
+								Type("range").
+								Min("0").
+								Max("100").
+								Value(50).
+								OnChange(p.onVolumeChanged).
+								OnInput(p.onVolumeChanged),
 						),
 				),
 		)
@@ -211,12 +229,21 @@ func (p *youTubePlayer) onPauseClicked(ctx app.Context, e app.Event) {
 	p.pause(ctx)
 }
 
+func (p *youTubePlayer) onBackClicked(ctx app.Context, e app.Event) {
+	app.Window().Get("history").Call("back")
+}
+
 func (p *youTubePlayer) onShuffleClicked(ctx app.Context, e app.Event) {
 	fmt.Println("shuffle clicked")
 }
 
 func (p *youTubePlayer) onMuteClicked(ctx app.Context, e app.Event) {
 	fmt.Println("mute clicked")
+}
+
+func (p *youTubePlayer) onVolumeChanged(ctx app.Context, e app.Event) {
+	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
+	fmt.Println(volume)
 }
 
 func (p *youTubePlayer) loadVideoByID(ctx app.Context, id string) {
