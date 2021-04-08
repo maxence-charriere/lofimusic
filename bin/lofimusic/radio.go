@@ -13,8 +13,10 @@ const (
 type radio struct {
 	app.Compo
 
-	lives   []liveRadio
-	current liveRadio
+	lives             []liveRadio
+	current           liveRadio
+	isPlaying         bool
+	isUpdateAvailable bool
 }
 
 func newRadio() *radio {
@@ -35,6 +37,14 @@ func (r *radio) OnNav(ctx app.Context) {
 			break
 		}
 	}
+
+	r.isUpdateAvailable = ctx.AppUpdateAvailable
+	r.isPlaying = false
+	r.Update()
+}
+
+func (r *radio) OnAppUpdate(ctx app.Context) {
+	r.isUpdateAvailable = ctx.AppUpdateAvailable
 	r.Update()
 }
 
@@ -43,7 +53,9 @@ func (r *radio) Render() app.UI {
 		Class("radio").
 		Class("fill").
 		Body(
-			newYouTubePlayer().Radio(r.current),
+			newYouTubePlayer().
+				Radio(r.current).
+				OnPlaybackChange(r.onPlaybackChange),
 			app.Shell().
 				Class("radio-shell").
 				MenuWidth(menuWidth).
@@ -54,6 +66,44 @@ func (r *radio) Render() app.UI {
 					Class("background-overlay").
 					LiveRadios(r.lives).
 					CurrentRadio(r.current)).
-				Content(newInfo().Radio(r.current)),
+				Content(
+					app.Aside().
+						Class("app-title").
+						Class("hspace-out").
+						Body(
+							app.Stack().
+								Class("fit").
+								Class("vspace-stretch").
+								Class("right").
+								Center().
+								Content(
+									app.If(r.isUpdateAvailable,
+										newLink().
+											Class("link-update").
+											Class("glow").
+											Label("Update").
+											Icon(newSVGIcon().RawSVG(downloadSVG)).
+											OnClick(r.onUpdateClick),
+									),
+								),
+						),
+					app.Div().
+						Class("hspace-out").
+						Class("vspace-content").
+						Body(
+							newInfo().
+								Radio(r.current).
+								Playing(r.isPlaying),
+						),
+				),
 		)
+}
+
+func (r *radio) onPlaybackChange(ctx app.Context, isPlaying bool) {
+	r.isPlaying = isPlaying
+	r.Update()
+}
+
+func (r *radio) onUpdateClick(ctx app.Context) {
+	ctx.Reload()
 }

@@ -14,8 +14,9 @@ const (
 type info struct {
 	app.Compo
 
-	Iclass string
-	Iradio liveRadio
+	Iclass   string
+	Iradio   liveRadio
+	Iplaying bool
 }
 
 func newInfo() *info {
@@ -38,45 +39,51 @@ func (i *info) Radio(v liveRadio) *info {
 	return i
 }
 
+func (i *info) Playing(v bool) *info {
+	i.Iplaying = v
+	return i
+}
+
 func (i *info) Render() app.UI {
-	return app.Div().
+	titleVisibility := ""
+	if i.Iplaying {
+		titleVisibility = "info-title-show"
+	}
+
+	return app.Article().
 		Class("info").
 		Class("fill").
+		Class("no-overflow").
 		Body(
-			app.Div().Class("app-title"),
-			app.Article().
-				Class("hspace-out").
-				Class("vspace-content").
+			app.Header().
+				Class("info-title").
+				Class(titleVisibility).
+				Class("center").
+				Class("fit").
 				Body(
-					app.Header().
-						Class("info-title").
-						Class("center").
+					app.H1().
+						Class("h1").
+						Class("glow").
+						Text(i.Iradio.Name),
+					app.Div().Class("info-title-separator"),
+					app.Stack().
+						Class("info-links").
 						Class("fit").
-						Body(
-							app.H1().
-								Class("h1").
-								Class("glow").
-								Text(i.Iradio.Name),
-							app.Div().Class("info-title-separator"),
-							app.Stack().
-								Class("info-links").
-								Class("fit").
-								Class("center").
-								Center().
-								Content(
-									app.Range(i.Iradio.Links).Slice(func(j int) app.UI {
-										l := i.Iradio.Links[j]
-										return newInfoLink().
-											Help(fmt.Sprintf("Visit %s's %s.",
-												i.Iradio.Name,
-												strings.Title(l.Slug),
-											)).
-											Href(l.URL).
-											Icon(newSVGIcon().
-												Size(infoLinkIconSize).
-												RawSVG(socialIcon(l.Slug)))
-									}),
-								),
+						Class("center").
+						Center().
+						Content(
+							app.Range(i.Iradio.Links).Slice(func(j int) app.UI {
+								l := i.Iradio.Links[j]
+								return newInfoLink().
+									Help(fmt.Sprintf("Visit %s's %s.",
+										i.Iradio.Name,
+										strings.Title(l.Slug),
+									)).
+									Href(l.URL).
+									Icon(newSVGIcon().
+										Size(infoLinkIconSize).
+										RawSVG(socialIcon(l.Slug)))
+							}),
 						),
 				),
 		)

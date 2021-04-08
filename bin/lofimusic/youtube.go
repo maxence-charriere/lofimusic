@@ -29,7 +29,8 @@ const (
 type youTubePlayer struct {
 	app.Compo
 
-	Iradio liveRadio
+	Iradio            liveRadio
+	IonPlaybackChange func(app.Context, bool)
 
 	initPlayer           sync.Once
 	radio                liveRadio
@@ -48,6 +49,11 @@ func newYouTubePlayer() *youTubePlayer {
 
 func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
 	p.Iradio = v
+	return p
+}
+
+func (p *youTubePlayer) OnPlaybackChange(v func(app.Context, bool)) *youTubePlayer {
+	p.IonPlaybackChange = v
 	return p
 }
 
@@ -138,6 +144,12 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 			p.isBuffering = true
 		}
 		p.Update()
+
+		if p.IonPlaybackChange != nil {
+			p.Defer(func(ctx app.Context) {
+				p.IonPlaybackChange(ctx, p.isPlaying)
+			})
+		}
 	})
 	return nil
 }

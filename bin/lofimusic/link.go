@@ -11,7 +11,7 @@ type link struct {
 	Ihelp    string
 	Ihref    string
 	Ifocus   bool
-	IonClick func()
+	IonClick func(app.Context)
 	Iicon    app.UI
 }
 
@@ -55,7 +55,7 @@ func (l *link) Focus(v bool) *link {
 	return l
 }
 
-func (l *link) OnClick(v func()) *link {
+func (l *link) OnClick(v func(app.Context)) *link {
 	l.IonClick = v
 	return l
 }
@@ -105,7 +105,7 @@ func (l *link) onClick(ctx app.Context, e app.Event) {
 	}
 
 	e.PreventDefault()
-	l.IonClick()
+	l.IonClick(ctx)
 }
 
 type infoLink struct {

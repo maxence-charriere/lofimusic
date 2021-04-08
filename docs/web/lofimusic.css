@@ -161,6 +161,10 @@ a {
   user-select: none;
 }
 
+.no-overflow {
+  overflow: hidden;
+}
+
 input {
   color: currentColor;
 }
@@ -232,6 +236,10 @@ input[type="range"]:hover::-moz-range-thumb {
 
 .background-overlay {
   background-color: rgba(0, 0, 0, 0.94);
+}
+
+.right {
+  margin-left: auto;
 }
 
 /*------------------------------------------------------------------------------
@@ -491,8 +499,7 @@ input[type="range"]:hover::-moz-range-thumb {
 /* -----------------------------------------------------------------------------
 // Info
 ------------------------------------------------------------------------------*/
-.info,
-.info article {
+.info {
   position: relative;
 }
 
@@ -500,6 +507,19 @@ input[type="range"]:hover::-moz-range-thumb {
   position: absolute;
   right: 0;
   bottom: 25%;
+  transform: translateX(500px);
+  opacity: 0;
+}
+
+.info-title-hide {
+  transform: translateX(500px);
+  opacity: 0;
+}
+
+.info-title-show {
+  transition: 0.5s all;
+  transform: translateX(0);
+  opacity: 100%;
 }
 
 .info-title .h1 {
