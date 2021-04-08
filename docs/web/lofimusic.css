@@ -517,7 +517,7 @@ input[type="range"]:hover::-moz-range-thumb {
 }
 
 .info-title-show {
-  transition: 0.5s all;
+  transition: 1s all;
   transform: translateX(0);
   opacity: 100%;
 }
