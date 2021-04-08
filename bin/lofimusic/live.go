@@ -191,10 +191,6 @@ func getLiveRadios() []liveRadio {
 					URL:  "https://open.spotify.com/playlist/32hJXySZtt9YvnwcYINGZ0",
 				},
 				{
-					Slug: "reddit",
-					URL:  "https://www.reddit.com/r/chillhop",
-				},
-				{
 					Slug: "instagram",
 					URL:  "https://www.instagram.com/collegemusic",
 				},
@@ -227,10 +223,6 @@ func getLiveRadios() []liveRadio {
 					URL:  "https://open.spotify.com/playlist/32hJXySZtt9YvnwcYINGZ0",
 				},
 				{
-					Slug: "reddit",
-					URL:  "https://www.reddit.com/r/chillhop",
-				},
-				{
 					Slug: "instagram",
 					URL:  "https://www.instagram.com/collegemusic",
 				},
@@ -261,10 +253,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "spotify",
 					URL:  "https://open.spotify.com/playlist/32hJXySZtt9YvnwcYINGZ0",
-				},
-				{
-					Slug: "reddit",
-					URL:  "https://www.reddit.com/r/chillhop",
 				},
 				{
 					Slug: "instagram",
@@ -323,10 +311,6 @@ func getLiveRadios() []liveRadio {
 					URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
 				},
 				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/lofigirl",
-				},
-				{
 					Slug: "instagram",
 					URL:  "https://www.instagram.com/stzzyasfvck/",
 				},
@@ -353,10 +337,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "spotify",
 					URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/lofigirl",
 				},
 				{
 					Slug: "instagram",
