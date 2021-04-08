@@ -8,6 +8,7 @@ type link struct {
 	Iid      string
 	Iclass   string
 	Ilabel   string
+	Ihelp    string
 	Ihref    string
 	Ifocus   bool
 	IonClick func()
@@ -36,6 +37,11 @@ func (l *link) Class(v string) *link {
 
 func (l *link) Label(v string) *link {
 	l.Ilabel = v
+	return l
+}
+
+func (l *link) Help(v string) *link {
+	l.Ihelp = v
 	return l
 }
 
@@ -77,6 +83,7 @@ func (l *link) Render() app.UI {
 		Class("fit").
 		Class(l.Iclass).
 		Class(focus).
+		Title(l.Ihelp).
 		Href(l.Ihref).
 		OnClick(l.onClick).
 		Body(
@@ -99,4 +106,54 @@ func (l *link) onClick(ctx app.Context, e app.Event) {
 
 	e.PreventDefault()
 	l.IonClick()
+}
+
+type infoLink struct {
+	app.Compo
+
+	Iclass string
+	Ihref  string
+	Ihelp  string
+	Iicon  app.UI
+}
+
+func newInfoLink() *infoLink {
+	return &infoLink{}
+}
+
+func (l *infoLink) Class(v string) *infoLink {
+	if v == "" {
+		return l
+	}
+	if l.Iclass != "" {
+		l.Iclass += " "
+	}
+	l.Iclass += v
+	return l
+}
+
+func (l *infoLink) Href(v string) *infoLink {
+	l.Ihref = v
+	return l
+}
+
+func (l *infoLink) Help(v string) *infoLink {
+	l.Ihelp = v
+	return l
+}
+
+func (l *infoLink) Icon(v app.UI) *infoLink {
+	l.Iicon = v
+	return l
+}
+
+func (l *infoLink) Render() app.UI {
+	return app.A().
+		Class("infolink").
+		Class(l.Iclass).
+		Title(l.Ihelp).
+		Href(l.Ihref).
+		Body(
+			l.Iicon,
+		)
 }

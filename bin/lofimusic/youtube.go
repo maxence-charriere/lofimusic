@@ -147,6 +147,11 @@ func (p *youTubePlayer) Render() app.UI {
 		p.Defer(p.loadVideo)
 	}
 
+	volumeDisplay := ""
+	if p.player == nil {
+		volumeDisplay = "disabled"
+	}
+
 	return app.Div().
 		Class("youtube").
 		Class("fill").
@@ -165,6 +170,7 @@ func (p *youTubePlayer) Render() app.UI {
 			app.If(!p.isPlaying || p.isBuffering,
 				app.Div().
 					Class("youtube-noplay").
+					Class("background-overlay").
 					Class("fill").
 					Body(
 						newLoader().
@@ -237,6 +243,7 @@ func (p *youTubePlayer) Render() app.UI {
 					),
 					app.Div().
 						Class("youtube-volume").
+						Class(volumeDisplay).
 						Body(
 							app.Input().
 								ID("youtube-volume").

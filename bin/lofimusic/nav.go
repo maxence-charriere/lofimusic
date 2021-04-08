@@ -9,6 +9,7 @@ import (
 type nav struct {
 	app.Compo
 
+	Iclass        string
 	IliveRadios   []liveRadio
 	IcurrentRadio liveRadio
 
@@ -17,6 +18,17 @@ type nav struct {
 
 func newNav() *nav {
 	return &nav{}
+}
+
+func (n *nav) Class(v string) *nav {
+	if v == "" {
+		return n
+	}
+	if n.Iclass != "" {
+		n.Iclass += " "
+	}
+	n.Iclass += v
+	return n
 }
 
 func (n *nav) LiveRadios(v []liveRadio) *nav {
@@ -45,6 +57,7 @@ func (n *nav) Render() app.UI {
 		Class("nav").
 		Class("fill").
 		Class("unselectable").
+		Class(n.Iclass).
 		Body(
 			app.Stack().
 				Class("app-title").

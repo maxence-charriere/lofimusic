@@ -18,11 +18,6 @@ func (r liveRadio) youtubeID() string {
 	return path.Base(r.URL)
 }
 
-type socialLink struct {
-	Slug string
-	URL  string
-}
-
 func getLiveRadios() []liveRadio {
 	radios := []liveRadio{
 		{
@@ -32,7 +27,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://lofigirl.com",
 				},
 				{
@@ -72,7 +67,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://lofigirl.com",
 				},
 				{
@@ -112,7 +107,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://chillhop.com",
 				},
 				{
@@ -148,7 +143,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://chillhop.com",
 				},
 				{
@@ -184,7 +179,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.collegemusic.co.uk/",
 				},
 				{
@@ -220,7 +215,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.collegemusic.co.uk/",
 				},
 				{
@@ -256,7 +251,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.collegemusic.co.uk/",
 				},
 				{
@@ -316,7 +311,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.stzzzy.com",
 				},
 				{
@@ -348,7 +343,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.stzzzy.com",
 				},
 				{
@@ -464,7 +459,7 @@ func getLiveRadios() []liveRadio {
 			Cards: []string{},
 			Links: []socialLink{
 				{
-					Slug: "web",
+					Slug: "website",
 					URL:  "https://www.thebootlegboy.com",
 				},
 				{
@@ -495,5 +490,47 @@ func getLiveRadios() []liveRadio {
 		return strings.Compare(radios[a].Name, radios[b].Name) < 0
 	})
 
+	for _, r := range radios {
+		sort.Slice(r.Links, func(a, b int) bool {
+			return strings.Compare(r.Links[a].Slug, r.Links[b].Slug) < 0
+		})
+	}
+
 	return radios
+}
+
+type socialLink struct {
+	Slug string
+	URL  string
+}
+
+func socialIcon(slug string) string {
+	switch slug {
+	case "youtube":
+		return youtubeSVG
+
+	case "reddit":
+		return redditSVG
+
+	case "facebook":
+		return facebookSVG
+
+	case "instagram":
+		return instagramSVG
+
+	case "twitter":
+		return twitterSVG
+
+	case "spotify":
+		return spotifySVG
+
+	case "discord":
+		return discordSVG
+
+	case "website":
+		return websiteSVG
+
+	default:
+		return linkSVG
+	}
 }

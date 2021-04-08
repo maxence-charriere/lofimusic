@@ -6,6 +6,10 @@ import (
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
 
+const (
+	menuWidth = 282
+)
+
 type radio struct {
 	app.Compo
 
@@ -42,11 +46,14 @@ func (r *radio) Render() app.UI {
 			newYouTubePlayer().Radio(r.current),
 			app.Shell().
 				Class("radio-shell").
+				MenuWidth(menuWidth).
 				Menu(newNav().
 					LiveRadios(r.lives).
 					CurrentRadio(r.current)).
 				OverlayMenu(newNav().
+					Class("background-overlay").
 					LiveRadios(r.lives).
-					CurrentRadio(r.current)),
+					CurrentRadio(r.current)).
+				Content(newInfo().Radio(r.current)),
 		)
 }
