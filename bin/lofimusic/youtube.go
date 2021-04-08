@@ -1,12 +1,12 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"sync"
 	"time"
 
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v8/pkg/errors"
 )
 
 const (
@@ -37,6 +37,7 @@ type youTubePlayer struct {
 	isPlaying            bool
 	isBuffering          bool
 	canBack              bool
+	volume               volume
 	realeaseOnReady      func()
 	releaseOnStateChange func()
 }
@@ -48,6 +49,11 @@ func newYouTubePlayer() *youTubePlayer {
 func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
 	p.Iradio = v
 	return p
+}
+
+func (p *youTubePlayer) OnMount(ctx app.Context) {
+	p.volume = loadVolume(ctx)
+	p.Update()
 }
 
 func (p *youTubePlayer) OnNav(ctx app.Context) {
@@ -84,7 +90,10 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 
 	p.initPlayer.Do(func() {
 		onReady := app.FuncOf(func(this app.Value, args []app.Value) interface{} {
-			p.Defer(p.play)
+			p.Defer(func(ctx app.Context) {
+				p.setVolume(ctx, p.volume.Value)
+				p.play(ctx)
+			})
 			return nil
 		})
 		p.realeaseOnReady = onReady.Release
@@ -148,6 +157,7 @@ func (p *youTubePlayer) Render() app.UI {
 				Body(
 					app.Div().
 						ID("youtube-player").
+						Class("unselectable").
 						Body(
 							app.Script().Src("https://www.youtube.com/iframe_api"),
 						),
@@ -200,11 +210,31 @@ func (p *youTubePlayer) Render() app.UI {
 							Size(controlMainIconSize).
 							RawSVG(shuffleSVG)).
 						OnClick(p.onShuffleClicked),
-					newControl().Icon(newSVGIcon().
-						Size(controlIconSize).
-						RawSVG(soundHighSVG)).
-						Disabled(p.player == nil).
-						OnClick(p.onMuteClicked),
+					app.If(p.volume.Value > 60,
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(soundHighSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onSoundClicked),
+					).ElseIf(p.volume.Value > 20,
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(soundMediumSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onSoundClicked),
+					).ElseIf(p.volume.Value > 0,
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(soundLowSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onSoundClicked),
+					).Else(
+						newControl().Icon(newSVGIcon().
+							Size(controlIconSize).
+							RawSVG(soundMutedSVG)).
+							Disabled(p.player == nil).
+							OnClick(p.onSoundClicked),
+					),
 					app.Div().
 						Class("youtube-volume").
 						Body(
@@ -213,7 +243,7 @@ func (p *youTubePlayer) Render() app.UI {
 								Type("range").
 								Min("0").
 								Max("100").
-								Value(50).
+								Value(p.volume.Value).
 								OnChange(p.onVolumeChanged).
 								OnInput(p.onVolumeChanged),
 						),
@@ -234,16 +264,20 @@ func (p *youTubePlayer) onBackClicked(ctx app.Context, e app.Event) {
 }
 
 func (p *youTubePlayer) onShuffleClicked(ctx app.Context, e app.Event) {
-	fmt.Println("shuffle clicked")
+	ctx.Navigate("/")
 }
 
-func (p *youTubePlayer) onMuteClicked(ctx app.Context, e app.Event) {
-	fmt.Println("mute clicked")
+func (p *youTubePlayer) onSoundClicked(ctx app.Context, e app.Event) {
+	if p.volume.Value == 0 {
+		p.setVolume(ctx, p.volume.LastHearableValue)
+		return
+	}
+	p.setVolume(ctx, 0)
 }
 
 func (p *youTubePlayer) onVolumeChanged(ctx app.Context, e app.Event) {
 	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
-	fmt.Println(volume)
+	p.setVolume(ctx, volume)
 }
 
 func (p *youTubePlayer) loadVideoByID(ctx app.Context, id string) {
@@ -256,4 +290,45 @@ func (p *youTubePlayer) play(ctx app.Context) {
 
 func (p *youTubePlayer) pause(ctx app.Context) {
 	p.player.Call("pauseVideo")
+}
+
+func (p *youTubePlayer) setVolume(ctx app.Context, v int) {
+	defer p.Update()
+
+	if v == 0 {
+		p.player.Call("mute")
+	} else {
+		p.volume.LastHearableValue = v
+		p.player.Call("unMute")
+		p.player.Call("setVolume", v)
+	}
+
+	p.volume.Value = v
+	saveVolume(ctx, p.volume)
+}
+
+type volume struct {
+	Value             int
+	LastHearableValue int
+}
+
+func saveVolume(ctx app.Context, v volume) {
+	if err := ctx.LocalStorage().Set("player-volume", v); err != nil {
+		app.Log(errors.New("saving volume values in local storage failed").
+			Wrap(err))
+	}
+}
+
+func loadVolume(ctx app.Context) volume {
+	var v volume
+	if err := ctx.LocalStorage().Get("player-volume", &v); err != nil {
+		app.Log(errors.New("saving player status in local storage failed").
+			Wrap(err))
+	}
+
+	if v == (volume{}) {
+		v.Value = 100
+		v.LastHearableValue = 100
+	}
+	return v
 }

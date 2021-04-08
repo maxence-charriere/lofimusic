@@ -702,6 +702,8 @@ input[type="range"]:hover::-moz-range-thumb {
   border-radius: 50%;
   padding: 12px;
   margin: 6px;
+  outline: none;
+  background-color: transparent;
   color: currentColor;
   cursor: pointer;
   transition: 0.2s all;

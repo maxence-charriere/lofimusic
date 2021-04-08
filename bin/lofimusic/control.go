@@ -47,7 +47,7 @@ func (c *control) Render() app.UI {
 		disabled = "disabled"
 	}
 
-	return app.Div().
+	return app.Button().
 		Class("control").
 		Class(disabled).
 		Class(c.Iclass).
