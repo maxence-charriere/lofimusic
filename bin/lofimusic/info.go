@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	infoLinkIconSize = 24
+	infoLinkIconSize = 18
 )
 
 type info struct {
@@ -76,7 +76,7 @@ func (i *info) Render() app.UI {
 								l := i.Iradio.Links[j]
 								return newInfoLink().
 									Help(fmt.Sprintf("Visit %s's %s.",
-										i.Iradio.Name,
+										strings.Title(i.Iradio.Owner),
 										strings.Title(l.Slug),
 									)).
 									Href(l.URL).

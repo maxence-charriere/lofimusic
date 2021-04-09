@@ -68,7 +68,7 @@ func main() {
 		},
 		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
-		Image:        "https://lofimusic.app/web/lofimusic-1.png",
+		Image:        "https://lofimusic.app/web/lofimusic.png",
 		RawHeaders: []string{
 			`<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>

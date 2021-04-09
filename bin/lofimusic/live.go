@@ -9,6 +9,7 @@ import (
 type liveRadio struct {
 	Slug  string
 	Name  string
+	Owner string
 	URL   string
 	Cards []string
 	Links []socialLink
@@ -23,6 +24,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "lofigirl",
 			Name:  "Lofi Girl",
+			Owner: "Lofi Girl",
 			URL:   "https://youtu.be/5qap5aO4i9A",
 			Cards: []string{},
 			Links: []socialLink{
@@ -63,6 +65,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "lofigirl-sleepy",
 			Name:  "Lofi Sleepy Girl",
+			Owner: "Lofi Girl",
 			URL:   "https://youtu.be/DWcJFNfaw9c",
 			Cards: []string{},
 			Links: []socialLink{
@@ -103,6 +106,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "chillhop",
 			Name:  "Chillhop Raccoon",
+			Owner: "Chillhop Music",
 			URL:   "https://youtu.be/5yx6BWlEVcY",
 			Cards: []string{},
 			Links: []socialLink{
@@ -139,6 +143,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "chillhop-relax",
 			Name:  "Chillhop Relaxing Raccoon",
+			Owner: "Chillhop Music",
 			URL:   "https://youtu.be/7NOSDKb0HlU",
 			Cards: []string{},
 			Links: []socialLink{
@@ -175,6 +180,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "collegemusic",
 			Name:  "College Girl",
+			Owner: "College Music",
 			URL:   "https://youtu.be/MCkTebktHVc",
 			Cards: []string{},
 			Links: []socialLink{
@@ -207,6 +213,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "collegemusic-guy",
 			Name:  "College Guy",
+			Owner: "College Music",
 			URL:   "https://youtu.be/2atQnvunGCo",
 			Cards: []string{},
 			Links: []socialLink{
@@ -239,6 +246,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "collegemusic-lonely",
 			Name:  "College Lonely",
+			Owner: "College Music",
 			URL:   "https://youtu.be/bM0Iw7PPoU4",
 			Cards: []string{},
 			Links: []socialLink{
@@ -271,6 +279,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "lofi-code-beats",
 			Name:  "Coding Beats",
+			Owner: "Joma Tech",
 			URL:   "https://youtu.be/bmVKaAV_7-A",
 			Cards: []string{},
 			Links: []socialLink{
@@ -295,6 +304,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "steezyasfuck-coffee-show",
 			Name:  "Steezy Coffee Shop",
+			Owner: "STEEZYASFUCK",
 			URL:   "https://youtu.be/-5KAN9_CzSA",
 			Cards: []string{},
 			Links: []socialLink{
@@ -323,6 +333,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "steezyasfuck-junky-fluff",
 			Name:  "Steezy Junky Fluff",
+			Owner: "STEEZYASFUCK",
 			URL:   "https://youtu.be/rc9cjjEun_k",
 			Cards: []string{},
 			Links: []socialLink{
@@ -351,6 +362,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
+			Owner: "Closed on Sunday",
 			URL:   "https://youtu.be/mOe8VEMuPo0",
 			Cards: []string{},
 			Links: []socialLink{
@@ -375,6 +387,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
+			Owner: "Closed on Sunday",
 			URL:   "https://youtu.be/o33l32ZrIy8",
 			Cards: []string{},
 			Links: []socialLink{
@@ -399,6 +412,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "tokyolosttracks",
 			Name:  "サクラチル",
+			Owner: "Tokyo LosT Track -Sakura Chill-",
 			URL:   "https://youtu.be/WBfbkPTqUtU",
 			Cards: []string{},
 			Links: []socialLink{
@@ -435,6 +449,7 @@ func getLiveRadios() []liveRadio {
 		{
 			Slug:  "thebootlegboy",
 			Name:  "Bootleg Smoke",
+			Owner: "the bootleg boy",
 			URL:   "https://youtu.be/l7TxwBhtTUY",
 			Cards: []string{},
 			Links: []socialLink{

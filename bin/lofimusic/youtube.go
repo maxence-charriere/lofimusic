@@ -78,7 +78,7 @@ func (p *youTubePlayer) OnDismount() {
 }
 
 func (p *youTubePlayer) loadVideo(ctx app.Context) {
-	if isOnYouTubeIframeAPIReady := app.Window().Get("isOnYouTubeIframeAPIReady").Bool(); !isOnYouTubeIframeAPIReady {
+	if isOnYouTubeIframeAPIReady := app.Window().Get("isOnYouTubeIframeAPIReady").Bool(); !isOnYouTubeIframeAPIReady && app.IsClient {
 		ctx.Async(func() {
 			time.Sleep(time.Millisecond * 1000)
 			p.Defer(p.loadVideo)
