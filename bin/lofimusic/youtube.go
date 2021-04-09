@@ -133,6 +133,7 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 					"modestbranding": 1,
 					"disablekb":      1,
 					"iv_load_policy": 3,
+					"playsinline":    1,
 					"origin":         "lofimusic.app",
 				},
 				"events": map[string]interface{}{

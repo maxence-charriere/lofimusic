@@ -4,21 +4,21 @@
 <meta charset="UTF-8">
 <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="author" content="Maxence Charriere">
-<meta content="Listen to Lo-fi music radio Chillhop Raccoon on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang)." name="description">
-<meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
+<meta name="description" content="Listen to Lo-fi music radio Chillhop Raccoon on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
+<meta content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa" name="keywords">
 <meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-<meta property="og:url" content="http://127.0.0.1:60952/chillhop">
+<meta property="og:url" content="http://127.0.0.1:61796/chillhop">
 <meta property="og:title" content="Chillhop Raccoon Radio">
-<meta content="Listen to Lo-fi music radio Chillhop Raccoon on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang)." property="og:description">
-<meta content="website" property="og:type">
+<meta property="og:description" content="Listen to Lo-fi music radio Chillhop Raccoon on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
+<meta property="og:type" content="website">
 <meta property="og:image" content="https://lofimusic.app/web/covers/chillhop.png">
 <title>
 Chillhop Raccoon Radio
 </title>
-<link rel="icon" type="image/png" href="/web/logo.png">
-<link rel="apple-touch-icon" href="/web/logo.png">
-<link href="/manifest.webmanifest" rel="manifest">
+<link href="/web/logo.png" rel="icon" type="image/png">
+<link href="/web/logo.png" rel="apple-touch-icon">
+<link rel="manifest" href="/manifest.webmanifest">
 <link type="text/css" rel="stylesheet" href="/app.css">
 <script defer src="/wasm_exec.js"></script>
 <script defer src="/app.js"></script>
@@ -52,7 +52,7 @@ Chillhop Raccoon Radio
 </div>
 <div class="youtube-noplay background-overlay fill">
 <aside class="loader hide hspace-out vspace-stretch">
-<div class="goapp-stack vspace-stretch fit center" style="flex-direction:row;align-items:center;" id>
+<div id class="goapp-stack vspace-stretch fit center" style="flex-direction:row;align-items:center;">
 <div style="width:78px;height:78px;">
 <div class="icon active" style="width:76px;height:76px;"></div>
 </div>
@@ -98,11 +98,11 @@ Buffering
 </div>
 </button>
 <div class="youtube-volume disabled">
-<input id="youtube-volume" type="range" min="0" max="100" value="0">
+<input type="range" min="0" max="100" value="0" id="youtube-volume">
 </div>
 </div>
 </div>
-<div class="goapp-shell radio-shell" id="goapp-shell-39e24bc6-5e7f-4a1a-9905-11cac01f731c">
+<div id="goapp-shell-dbec0871-0533-4cf6-b65f-cbd69d831397" class="goapp-shell radio-shell">
 <div class="goapp-shell-layout" style="align-items:stretch;">
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;">
 <div class="nav fill unselectable ">
@@ -115,7 +115,7 @@ Lofimusic
 </div>
 <nav class="nav-content">
 <div class="nav-radios">
-<div id class="goapp-stack nav-radios-stack" style="flex-direction:row;align-items:center;">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack nav-radios-stack">
 <div class="hspace-out">
 <a id="thebootlegboy" class="link heading fit glow " title href="/thebootlegboy">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
@@ -131,7 +131,7 @@ Bootleg Smoke
 </div>
 </div>
 </a>
-<a class="link heading fit glow focus" title href="/chillhop" id="chillhop">
+<a id="chillhop" class="link heading fit glow focus" title href="/chillhop">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -145,7 +145,7 @@ Chillhop Raccoon
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="/chillhop-relax" id="chillhop-relax">
+<a id="chillhop-relax" class="link heading fit glow " title href="/chillhop-relax">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -159,8 +159,8 @@ Chillhop Relaxing Raccoon
 </div>
 </div>
 </a>
-<a href="/lofi-code-beats" id="lofi-code-beats" class="link heading fit glow " title>
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a id="lofi-code-beats" class="link heading fit glow " title href="/lofi-code-beats">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -173,7 +173,7 @@ Coding Beats
 </div>
 </div>
 </a>
-<a href="/collegemusic" id="collegemusic" class="link heading fit glow " title>
+<a class="link heading fit glow " title href="/collegemusic" id="collegemusic">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -187,7 +187,7 @@ College Girl
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="/collegemusic-guy" id="collegemusic-guy">
+<a id="collegemusic-guy" class="link heading fit glow " title href="/collegemusic-guy">
 <div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -201,7 +201,7 @@ College Guy
 </div>
 </div>
 </a>
-<a title href="/collegemusic-lonely" id="collegemusic-lonely" class="link heading fit glow ">
+<a id="collegemusic-lonely" class="link heading fit glow " title href="/collegemusic-lonely">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -215,7 +215,7 @@ College Lonely
 </div>
 </div>
 </a>
-<a id="everything-fades-to-blue" class="link heading fit glow " title href="/everything-fades-to-blue">
+<a href="/everything-fades-to-blue" id="everything-fades-to-blue" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -229,7 +229,7 @@ Everything Fades To Blue
 </div>
 </div>
 </a>
-<a id="lofigirl" class="link heading fit glow " title href="/lofigirl">
+<a href="/lofigirl" id="lofigirl" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -243,8 +243,8 @@ Lofi Girl
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="/lofigirl-sleepy" id="lofigirl-sleepy">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a id="lofigirl-sleepy" class="link heading fit glow " title href="/lofigirl-sleepy">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -257,8 +257,8 @@ Lofi Sleepy Girl
 </div>
 </div>
 </a>
-<a id="closedonsunday-pop-culture" class="link heading fit glow " title href="/closedonsunday-pop-culture">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a href="/closedonsunday-pop-culture" id="closedonsunday-pop-culture" class="link heading fit glow " title>
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -271,7 +271,7 @@ Pop Culture Sunday
 </div>
 </div>
 </a>
-<a id="closedonsunday-starwars" class="link heading fit glow " title href="/closedonsunday-starwars">
+<a href="/closedonsunday-starwars" id="closedonsunday-starwars" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -286,7 +286,7 @@ Star Wars Sunday
 </div>
 </a>
 <a id="steezyasfuck-coffee-show" class="link heading fit glow " title href="/steezyasfuck-coffee-show">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -345,8 +345,8 @@ Buy me a coffee
 </div>
 </div>
 </a>
-<a title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae" id class="link heading fit glow ">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a id class="link heading fit glow " title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -359,7 +359,7 @@ Donate cryptos
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="https://github.com/maxence-charriere/lofimusic" id>
+<a href="https://github.com/maxence-charriere/lofimusic" id class="link heading fit glow " title>
 <div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -373,7 +373,7 @@ GitHub
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="https://twitter.com/jonhymaxoo" id>
+<a id class="link heading fit glow " title href="https://twitter.com/jonhymaxoo">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -394,7 +394,7 @@ Twitter
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;"></div>
 <div class="goapp-shell-item" style="flex-basis:480px;flex-grow:1;">
 <aside class="app-title hspace-out">
-<div id class="goapp-stack fit vspace-stretch right" style="flex-direction:row;align-items:center;"></div>
+<div class="goapp-stack fit vspace-stretch right" style="flex-direction:row;align-items:center;" id></div>
 </aside>
 <div class="hspace-out vspace-content">
 <article class="info fill no-overflow">
@@ -403,7 +403,7 @@ Twitter
 Chillhop Raccoon
 </h1>
 <div class="info-title-separator"></div>
-<div class="goapp-stack info-links fit center" style="flex-direction:row;align-items:center;" id>
+<div id class="goapp-stack info-links fit center" style="flex-direction:row;align-items:center;">
 <a class="infolink " title="Visit Chillhop Music's Discord." href="https://discord.com/invite/chillhop">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
@@ -439,14 +439,14 @@ Chillhop Raccoon
 	</svg>
 </div>
 </a>
-<a href="https://chillhop.com" class="infolink " title="Visit Chillhop Music's Website.">
+<a class="infolink " title="Visit Chillhop Music's Website." href="https://chillhop.com">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M16.36,14C16.44,13.34 16.5,12.68 16.5,12C16.5,11.32 16.44,10.66 16.36,10H19.74C19.9,10.64 20,11.31 20,12C20,12.69 19.9,13.36 19.74,14M14.59,19.56C15.19,18.45 15.65,17.25 15.97,16H18.92C17.96,17.65 16.43,18.93 14.59,19.56M14.34,14H9.66C9.56,13.34 9.5,12.68 9.5,12C9.5,11.32 9.56,10.65 9.66,10H14.34C14.43,10.65 14.5,11.32 14.5,12C14.5,12.68 14.43,13.34 14.34,14M12,19.96C11.17,18.76 10.5,17.43 10.09,16H13.91C13.5,17.43 12.83,18.76 12,19.96M8,8H5.08C6.03,6.34 7.57,5.06 9.4,4.44C8.8,5.55 8.35,6.75 8,8M5.08,16H8C8.35,17.25 8.8,18.45 9.4,19.56C7.57,18.93 6.03,17.65 5.08,16M4.26,14C4.1,13.36 4,12.69 4,12C4,11.31 4.1,10.64 4.26,10H7.64C7.56,10.66 7.5,11.32 7.5,12C7.5,12.68 7.56,13.34 7.64,14M12,4.03C12.83,5.23 13.5,6.57 13.91,8H10.09C10.5,6.57 11.17,5.23 12,4.03M18.92,8H15.97C15.65,6.75 15.19,5.55 14.59,4.44C16.43,5.07 17.96,6.34 18.92,8M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
 	</svg>
 </div>
 </a>
-<a href="https://youtu.be/5yx6BWlEVcY" class="infolink " title="Visit Chillhop Music's Youtube.">
+<a class="infolink " title="Visit Chillhop Music's Youtube." href="https://youtu.be/5yx6BWlEVcY">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z" />
@@ -463,7 +463,7 @@ Chillhop Raccoon
 </main>
 </div>
 <div id="app-wasm-loader" class="goapp-app-info">
-<img src="/web/logo.png" id="app-wasm-loader-icon" class="goapp-logo goapp-spin">
+<img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="/web/logo.png">
 <p class="goapp-label" id="app-wasm-loader-label">
 Lofi music player to work, study and relax.
 </p>
