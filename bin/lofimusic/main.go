@@ -68,7 +68,7 @@ func main() {
 		},
 		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
-		Image:        "https://lofimusic.app/web/lofimusic.png",
+		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
 		RawHeaders: []string{
 			`<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
@@ -93,7 +93,7 @@ func main() {
 		},
 
 		ThemeColor: backgroundColor,
-		Title:      "Lofimusic.app",
+		Title:      "Lofimusic",
 	}
 
 	opts := options{Port: 4000}
@@ -138,7 +138,13 @@ func runLocal(ctx context.Context, h http.Handler, opts options) {
 }
 
 func generateGitHubPages(ctx context.Context, h *app.Handler, opts githubOptions) {
-	if err := app.GenerateStaticWebsite(opts.Output, h, channels.Slugs()...); err != nil {
+	radios := getLiveRadios()
+	slugs := make([]string, len(radios))
+	for i, r := range radios {
+		slugs[i] = r.Slug
+	}
+
+	if err := app.GenerateStaticWebsite(opts.Output, h, slugs...); err != nil {
 		panic(err)
 	}
 }

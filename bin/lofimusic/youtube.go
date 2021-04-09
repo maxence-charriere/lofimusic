@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"sync"
 	"time"
@@ -202,6 +203,8 @@ func (p *youTubePlayer) onError(this app.Value, args []app.Value) interface{} {
 		p.err = errors.New("youtube player error").
 			Tag("code", code).
 			Tag("description", msg)
+
+		fmt.Println("error:", p.err)
 		p.Update()
 	})
 	return nil
