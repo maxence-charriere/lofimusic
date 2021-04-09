@@ -33,7 +33,7 @@ func getLiveRadios() []liveRadio {
 				"Sleepy Fish is one of the few Lo-fi artists who actually sing in its creations.",
 				"Everything Fades To Blue is the 3rd episode of a story where a tidal wave destroys an island along with the home where Sleepy Fish used to live.",
 				"Toppled into the sea, on its own for the first time, Sleepy Fish uses its glow to search for family, to guide others, and to find its way.",
-				"The episode comes after My Room Becomes the Sea and Beneath Your Waves ones.",
+				`The episode comes after "My Room Becomes the Sea" and "Beneath Your Waves".`,
 				"The undersea-themed animation has been made in collaboration with Tristan Gion and Bien à Vous Studio, a French studio based in Nantes.",
 			},
 			Links: []socialLink{

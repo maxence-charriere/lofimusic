@@ -40,6 +40,10 @@ func (r *radio) OnNav(ctx app.Context) {
 	r.load(ctx)
 }
 
+func (r *radio) OnResize(ctx app.Context) {
+	r.Update()
+}
+
 func (r *radio) init(ctx app.Context) {
 	rand.Seed(uint64(time.Now().UnixNano()))
 	r.lives = getLiveRadios()
