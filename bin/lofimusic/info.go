@@ -3,12 +3,15 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
 
 const (
-	infoLinkIconSize = 18
+	infoLinkIconSize    = 18
+	cardVisibleDuration = time.Second * 8
+	cardHiddenDuration  = time.Millisecond * 3500
 )
 
 type info struct {
@@ -17,6 +20,9 @@ type info struct {
 	Iclass   string
 	Iradio   liveRadio
 	Iplaying bool
+
+	currentCard   int
+	isCardVisible bool
 }
 
 func newInfo() *info {
@@ -42,6 +48,50 @@ func (i *info) Radio(v liveRadio) *info {
 func (i *info) Playing(v bool) *info {
 	i.Iplaying = v
 	return i
+}
+
+func (i *info) OnMount(ctx app.Context) {
+	i.currentCard = -1
+
+	ticker := time.NewTicker(cardHiddenDuration)
+	ctx.Async(func() {
+		for {
+			select {
+			case <-ctx.Done():
+				return
+
+			case <-ticker.C:
+				i.Defer(func(ctx app.Context) {
+					if i.isCardVisible {
+						ticker.Reset(cardHiddenDuration)
+						i.isCardVisible = false
+					} else {
+						ticker.Reset(cardVisibleDuration)
+						i.isCardVisible = true
+						i.Defer(i.showNewCard)
+					}
+					i.Update()
+				})
+			}
+		}
+	})
+}
+
+func (i *info) showNewCard(ctx app.Context) {
+	defer i.Update()
+
+	count := len(i.Iradio.Cards)
+	if count == 0 {
+		i.currentCard = -1
+		return
+	}
+
+	i.currentCard++
+	if i.currentCard >= count {
+		i.currentCard = 0
+	}
+
+	fmt.Println("showing card", i.currentCard)
 }
 
 func (i *info) Render() app.UI {
@@ -86,5 +136,18 @@ func (i *info) Render() app.UI {
 							}),
 						),
 				),
+			app.Range(i.Iradio.Cards).Slice(func(j int) app.UI {
+				cardVisibility := ""
+				if j == i.currentCard && i.Iplaying && i.isCardVisible {
+					cardVisibility = "info-card-show"
+				}
+
+				return app.P().
+					Class("info-card").
+					Class("glow").
+					Class("focus").
+					Class(cardVisibility).
+					Text(i.Iradio.Cards[j])
+			}),
 		)
 }

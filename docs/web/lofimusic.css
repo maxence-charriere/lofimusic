@@ -107,6 +107,14 @@ a {
   width: calc(100% - 36px - 36px);
 }
 
+@media (max-width: 500px) {
+  .hspace-out {
+    margin-left: 18px;
+    margin-right: 18px;
+    width: calc(100% - 18px - 18px);
+  }
+}
+
 .hspace-in {
   padding-left: 24px;
   padding-right: 24px;
@@ -537,6 +545,30 @@ input[type="range"]:hover::-moz-range-thumb {
 
 .info-links {
   margin-top: 3px;
+}
+
+.info-card {
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  max-width: 480px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 300;
+  transition: 2s all ease-out;
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .info-card {
+    left: 0;
+  }
+}
+
+.info-card-show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* -----------------------------------------------------------------------------

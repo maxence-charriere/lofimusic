@@ -4,15 +4,17 @@ import (
 	"path"
 	"sort"
 	"strings"
+	"time"
 )
 
 type liveRadio struct {
-	Slug  string
-	Name  string
-	Owner string
-	URL   string
-	Cards []string
-	Links []socialLink
+	Slug    string
+	Name    string
+	Owner   string
+	URL     string
+	Cards   []string
+	Links   []socialLink
+	AddedAt time.Time
 }
 
 func (r liveRadio) youtubeID() string {
@@ -21,6 +23,38 @@ func (r liveRadio) youtubeID() string {
 
 func getLiveRadios() []liveRadio {
 	radios := []liveRadio{
+		{
+			Slug:  "everything-fades-to-blue",
+			Name:  "Everything Fades To Blue",
+			Owner: "Sleepy Fish",
+			URL:   "https://youtu.be/PfgS405CdXk",
+			Cards: []string{
+				"Everything Fades To Blue is a mix of indie/emo and ambient music produced by Sleep Fish, a Pennsylvania-based producer that is also a student in statistics, data science, and machine learning.",
+				"Sleepy Fish is one of the few Lo-fi artists who actually sing in its creations.",
+				"Everything Fades To Blue is the 3rd episode of a story where a tidal wave destroys an island along with the home where Sleepy Fish used to live.",
+				"Toppled into the sea, on its own for the first time, Sleepy Fish uses its glow to search for family, to guide others, and to find its way.",
+				"The episode comes after My Room Becomes the Sea and Beneath Your Waves ones.",
+				"The undersea-themed animation has been made in collaboration with Tristan Gion and Bien à Vous Studio, a French studio based in Nantes.",
+			},
+			Links: []socialLink{
+				{
+					Slug: "website",
+					URL:  "https://chillhop.com/releases/sleepy-fish-everything-fades-to-blue",
+				},
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/PfgS405CdXk",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/artist/1IJe80moz409PtxW4llPFw",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/sleepyfishmusic",
+				},
+			},
+		},
 		{
 			Slug:  "lofigirl",
 			Name:  "Lofi Girl",

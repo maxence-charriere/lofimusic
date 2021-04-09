@@ -113,8 +113,14 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 			New("youtube-player", map[string]interface{}{
 				"videoId": p.radio.youtubeID(),
 				"playerVars": map[string]interface{}{
+					"autoplay":       1,
 					"controls":       0,
 					"modestbranding": 1,
+					"disablekb":      1,
+					"enablejsapi":    1,
+					"iv_load_policy": 3,
+					"playsinline":    1,
+					"origin":         "lofimusic.app",
 				},
 				"events": map[string]interface{}{
 					"onReady":       onReady,
