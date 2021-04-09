@@ -17,9 +17,11 @@ body {
   border: none;
   color: silver;
   background-color: black;
-
   scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.08);
   scrollbar-width: none;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a {
