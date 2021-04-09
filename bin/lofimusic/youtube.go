@@ -150,9 +150,11 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 		switch args[0].Get("data").Int() {
 		case unstarted:
 			p.isPlaying = false
+			p.isBuffering = false
 
 		case ended:
 			p.isPlaying = false
+			p.isBuffering = false
 			if p.err == nil {
 				p.play(ctx)
 			}
@@ -164,6 +166,7 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 
 		case paused:
 			p.isPlaying = false
+			p.isBuffering = false
 
 		case buffering:
 			p.isBuffering = true
