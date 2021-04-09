@@ -170,6 +170,7 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 
 		case buffering:
 			p.isBuffering = true
+			p.isPlaying = true
 			p.err = nil
 		}
 		p.Update()
