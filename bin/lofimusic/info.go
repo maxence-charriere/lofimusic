@@ -90,8 +90,6 @@ func (i *info) showNewCard(ctx app.Context) {
 	if i.currentCard >= count {
 		i.currentCard = 0
 	}
-
-	fmt.Println("showing card", i.currentCard)
 }
 
 func (i *info) Render() app.UI {

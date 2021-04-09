@@ -32,15 +32,18 @@ type youTubePlayer struct {
 	Iradio            liveRadio
 	IonPlaybackChange func(app.Context, bool)
 
-	initPlayer           sync.Once
-	radio                liveRadio
-	player               app.Value
-	isPlaying            bool
-	isBuffering          bool
-	canBack              bool
-	volume               volume
+	initPlayer  sync.Once
+	radio       liveRadio
+	player      app.Value
+	isPlaying   bool
+	isBuffering bool
+	canBack     bool
+	volume      volume
+	err         error
+
 	realeaseOnReady      func()
 	releaseOnStateChange func()
+	releaseOnError       func()
 }
 
 func newYouTubePlayer() *youTubePlayer {
@@ -58,6 +61,7 @@ func (p *youTubePlayer) OnPlaybackChange(v func(app.Context, bool)) *youTubePlay
 }
 
 func (p *youTubePlayer) OnMount(ctx app.Context) {
+	p.isBuffering = true
 	p.volume = loadVolume(ctx)
 	p.Update()
 }
@@ -73,6 +77,9 @@ func (p *youTubePlayer) OnDismount() {
 	}
 	if p.releaseOnStateChange != nil {
 		p.releaseOnStateChange()
+	}
+	if p.releaseOnError != nil {
+		p.releaseOnError()
 	}
 	p.player = nil
 }
@@ -107,6 +114,9 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 		onStateChange := app.FuncOf(p.onStateChange)
 		p.releaseOnStateChange = onStateChange.Release
 
+		onError := app.FuncOf(p.onError)
+		p.releaseOnError = onError.Release
+
 		p.player = app.Window().
 			Get("YT").
 			Get("Player").
@@ -125,6 +135,7 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 				"events": map[string]interface{}{
 					"onReady":       onReady,
 					"onStateChange": onStateChange,
+					"onError":       onError,
 				},
 			})
 	})
@@ -138,16 +149,21 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 
 		case ended:
 			p.isPlaying = false
+			if p.err == nil {
+				p.play(ctx)
+			}
 
 		case playing:
 			p.isPlaying = true
 			p.isBuffering = false
+			p.err = nil
 
 		case paused:
 			p.isPlaying = false
 
 		case buffering:
 			p.isBuffering = true
+			p.err = nil
 		}
 		p.Update()
 
@@ -156,6 +172,37 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 				p.IonPlaybackChange(ctx, p.isPlaying)
 			})
 		}
+	})
+	return nil
+}
+
+func (p *youTubePlayer) onError(this app.Value, args []app.Value) interface{} {
+	p.Defer(func(ctx app.Context) {
+		code := args[0].Get("data").Int()
+		msg := ""
+
+		switch code {
+		case 2:
+			msg = "invalid video parameter values"
+
+		case 5:
+			msg = "loading video failed"
+
+		case 100:
+			msg = "video not found"
+
+		case 101, 150:
+			msg = "video cannot be played in embedded players"
+
+		default:
+			msg = "unkown error"
+
+		}
+
+		p.err = errors.New("youtube player error").
+			Tag("code", code).
+			Tag("description", msg)
+		p.Update()
 	})
 	return nil
 }
@@ -185,7 +232,7 @@ func (p *youTubePlayer) Render() app.UI {
 							app.Script().Src("https://www.youtube.com/iframe_api"),
 						),
 				),
-			app.If(!p.isPlaying || p.isBuffering,
+			app.If(!p.isPlaying || p.isBuffering || p.err != nil,
 				app.Div().
 					Class("youtube-noplay").
 					Class("background-overlay").
@@ -197,7 +244,8 @@ func (p *youTubePlayer) Render() app.UI {
 							Size(loaderSize).
 							Title("Buffering").
 							Description(p.radio.Name).
-							Loading(p.isBuffering),
+							Loading(p.isBuffering).
+							Err(p.err),
 					),
 			),
 			app.Stack().
