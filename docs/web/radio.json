@@ -1,0 +1,354 @@
+[
+  {
+    "Name": "Aviencloud - Beach girl",
+    "ID": "uMaWlgkm6rk",
+    "Slug": "aviencloud",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/uMaWlgkm6rk", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/user/aviencloud",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://aviencloud.com", "MediaSlug": "web" },
+      {
+        "URL": "https://www.instagram.com/aviencloud",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://twitter.com/Aviencloud", "MediaSlug": "twitter" },
+      { "URL": "https://www.facebook.com/Aviencloud", "MediaSlug": "facebook" },
+      { "URL": "https://discord.me/aviencloud", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "ChilledCow - Sleepy girl",
+    "ID": "DWcJFNfaw9c",
+    "Slug": "chilledcow2",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/DWcJFNfaw9c", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM?si=sQXk5Y-GTUeB7OlCRKZ__Q",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://chilledcow.com/password", "MediaSlug": "web" },
+      {
+        "URL": "https://www.instagram.com/chilledcow_yt",
+        "MediaSlug": "instagram"
+      },
+      {
+        "URL": "https://www.facebook.com/TheChilledCow",
+        "MediaSlug": "facebook"
+      },
+      { "URL": "https://twitter.com/chilledcow", "MediaSlug": "twitter" },
+      { "URL": "https://discord.com/invite/hUKvJnw", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "ChilledCow - Study girl",
+    "ID": "5qap5aO4i9A",
+    "Slug": "chilledcow",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/5qap5aO4i9A", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/0vvXsWCC9xrXsKd4FyS8kM?si=sQXk5Y-GTUeB7OlCRKZ__Q",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://chilledcow.com/password", "MediaSlug": "web" },
+      {
+        "URL": "https://www.instagram.com/chilledcow_yt",
+        "MediaSlug": "instagram"
+      },
+      {
+        "URL": "https://www.facebook.com/TheChilledCow",
+        "MediaSlug": "facebook"
+      },
+      { "URL": "https://twitter.com/chilledcow", "MediaSlug": "twitter" },
+      { "URL": "https://discord.com/invite/hUKvJnw", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "Chillhop Music - Sleepy raccoon",
+    "ID": "7NOSDKb0HlU",
+    "Slug": "chillhopmusic2",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/7NOSDKb0HlU", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/0CFuMybe6s77w6QQrJjW7d",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://chillhop.com", "MediaSlug": "web" },
+      {
+        "URL": "https://www.instagram.com/chillhopmusic",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://discord.com/invite/chillhop", "MediaSlug": "discord" },
+      { "URL": "https://www.reddit.com/r/chillhop", "MediaSlug": "reddit" }
+    ]
+  },
+  {
+    "Name": "Chillhop Music - Walking raccoon",
+    "ID": "5yx6BWlEVcY",
+    "Slug": "chillhopmusic",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/5yx6BWlEVcY", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/0CFuMybe6s77w6QQrJjW7d",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://chillhop.com", "MediaSlug": "web" },
+      {
+        "URL": "https://www.instagram.com/chillhopmusic",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://discord.com/invite/chillhop", "MediaSlug": "discord" },
+      { "URL": "https://www.reddit.com/r/chillhop", "MediaSlug": "reddit" }
+    ]
+  },
+  {
+    "Name": "College Music - Lonely girl",
+    "ID": "bM0Iw7PPoU4",
+    "Slug": "collegemusic",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/bM0Iw7PPoU4", "MediaSlug": "youtube" },
+      {
+        "URL": "https://www.facebook.com/collegemusic",
+        "MediaSlug": "facebook"
+      },
+      {
+        "URL": "https://open.spotify.com/playlist/6llX35G0q026dwt6HuX5or",
+        "MediaSlug": "spotify"
+      },
+      {
+        "URL": "https://www.instagram.com/collegemusic",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://twitter.com/collegemusicyt", "MediaSlug": "twitter" },
+      {
+        "URL": "https://discord.com/invite/collegemusic",
+        "MediaSlug": "discord"
+      }
+    ]
+  },
+  {
+    "Name": "Homework Radio - Rainy window",
+    "ID": "nMhua5LJRWg",
+    "Slug": "homeworkradio2",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/nMhua5LJRWg", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/HomeworkRadio", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.instagram.com/homework_radio",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://discord.com/invite/SmD2Pu2", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "Homework Radio - Roof girl",
+    "ID": "ZYMuB9y549s",
+    "Slug": "homeworkradio",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/ZYMuB9y549s", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/user/qpjtj9amkbzwlmt6ora8qmoih",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/HomeworkRadio", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.instagram.com/homework_radio/",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://discord.com/invite/SmD2Pu2", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "InYourChill - Nerdy girl",
+    "ID": "B8tQ8RUbTW8",
+    "Slug": "inyourchill",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/B8tQ8RUbTW8", "MediaSlug": "youtube" },
+      { "URL": "https://inyourchill.com", "MediaSlug": "web" },
+      {
+        "URL": "https://open.spotify.com/user/ersxxojg18hnzmir1jweb1oav",
+        "MediaSlug": "spotify"
+      },
+      {
+        "URL": "https://www.instagram.com/InYourChillMusic",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://twitter.com/InYourChill", "MediaSlug": "twitter" },
+      { "URL": "https://discord.com/invite/nTreycA", "MediaSlug": "discord" }
+    ]
+  },
+  {
+    "Name": "KozyPop - 같이해요",
+    "ID": "F5v_VqxbQPI",
+    "Slug": "kozypop",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/F5v_VqxbQPI", "MediaSlug": "youtube" },
+      { "URL": "https://www.facebook.com/kozypop", "MediaSlug": "facebook" },
+      {
+        "URL": "https://open.spotify.com/playlist/7FF5lMMpCWJKHzbJk47Cnh?si=0GySMJBESb6Yc7Fj9JNgYA",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://www.instagram.com/kozypop", "MediaSlug": "instagram" },
+      { "URL": "https://kozypop.com", "MediaSlug": "web" }
+    ]
+  },
+  {
+    "Name": "Lofi Code Beats - Dev guy",
+    "ID": "bmVKaAV_7-A",
+    "Slug": "lofi-code-beats",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/bmVKaAV_7-A", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/34HMPdg2ywHWz0EmCE64yo?si=fpkW2O30T7mZKvv4rGrIdw",
+        "MediaSlug": "spotify"
+      }
+    ]
+  },
+  {
+    "Name": "Monstafluff Music - Spaceship girl",
+    "ID": "pH3xU1YcjaA",
+    "Slug": "monstafluffmusic",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/pH3xU1YcjaA", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
+        "MediaSlug": "spotify"
+      }
+    ]
+  },
+  {
+    "Name": "STEEZYASFUCK - Coffee shop radio",
+    "ID": "-5KAN9_CzSA",
+    "Slug": "steezyasfuck2",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/-5KAN9_CzSA", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/stzzyasfvck", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.instagram.com/stzzyasfvck",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://www.stzzzy.com", "MediaSlug": "web" }
+    ]
+  },
+  {
+    "Name": "STEEZYASFUCK - Junky fluff",
+    "ID": "9_CcYN8MVO8",
+    "Slug": "steezyasfuck",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/9_CcYN8MVO8", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/28gkj3su0EjS9tD20XTG9T",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/stzzyasfvck", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.instagram.com/stzzyasfvck",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://www.stzzzy.com", "MediaSlug": "web" }
+    ]
+  },
+  {
+    "Name": "Star Wars - Ahsoka Tano",
+    "ID": "oNfKzRP8-Q0",
+    "Slug": "starwars",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/oNfKzRP8-Q0", "MediaSlug": "youtube" },
+      {
+        "URL": "https://discord.com/invite/Kvq5VJSrgx",
+        "MediaSlug": "discord"
+      },
+      {
+        "URL": "https://www.instagram.com/closedonsundayy",
+        "MediaSlug": "instagram"
+      },
+      {
+        "URL": "https://open.spotify.com/playlist/34HMPdg2ywHWz0EmCE64yo?si=fpkW2O30T7mZKvv4rGrIdw",
+        "MediaSlug": "spotify"
+      }
+    ]
+  },
+  {
+    "Name": "The Jazz Hop Café",
+    "ID": "bDBS-V6zf68",
+    "Slug": "thejazzhopcafe",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/bDBS-V6zf68", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/user/thejazz",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/jazzhopcafe", "MediaSlug": "twitter" },
+      { "URL": "https://www.facebook.com/jazzhopcafe", "MediaSlug": "facebook" }
+    ]
+  },
+  {
+    "Name": "Tokyo LosT Tracks - サクラチル",
+    "ID": "WBfbkPTqUtU",
+    "Slug": "tokyolosttracks",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/WBfbkPTqUtU", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/37i9dQZF1DX87D1EaNZxW1",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://discord.com/invite/fHkhEgc", "MediaSlug": "discord" },
+      { "URL": "https://twitter.com/TTT_SakuraChill", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.facebook.com/TokyoLosTTracks",
+        "MediaSlug": "facebook"
+      },
+      {
+        "URL": "https://www.instagram.com/TokyoLosTTracks/",
+        "MediaSlug": "instagram"
+      }
+    ]
+  },
+  {
+    "Name": "the bootleg boy - Smoking girl",
+    "ID": "l7TxwBhtTUY",
+    "Slug": "thebootlegboy",
+    "Description": "",
+    "SocialMedia": [
+      { "URL": "https://youtu.be/l7TxwBhtTUY", "MediaSlug": "youtube" },
+      {
+        "URL": "https://open.spotify.com/playlist/71019EDcRamfMmOEEoTdEu?si=XePP-REWQDSuzJT6-SXwSQ",
+        "MediaSlug": "spotify"
+      },
+      { "URL": "https://twitter.com/thebootlegboy", "MediaSlug": "twitter" },
+      {
+        "URL": "https://www.instagram.com/thebootlegboy",
+        "MediaSlug": "instagram"
+      },
+      { "URL": "https://www.thebootlegboy.com", "MediaSlug": "web" },
+      { "URL": "https://discord.com/invite/FZrUkey", "MediaSlug": "discord" }
+    ]
+  }
+]

@@ -1,5 +1,3 @@
-// +build !wasm
-
 package main
 
 import (
@@ -9,14 +7,19 @@ import (
 	"os"
 	"syscall"
 
-	"github.com/maxence-charriere/go-app/v7/pkg/app"
-	"github.com/maxence-charriere/go-app/v7/pkg/cli"
-	"github.com/maxence-charriere/go-app/v7/pkg/errors"
-	"github.com/maxence-charriere/go-app/v7/pkg/logs"
+	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v8/pkg/cli"
+	"github.com/maxence-charriere/go-app/v8/pkg/errors"
+	"github.com/maxence-charriere/go-app/v8/pkg/logs"
 )
 
 const (
 	backgroundColor = "#000000"
+
+	buyMeACoffeeURL     = "https://www.buymeacoffee.com/maxence"
+	githubURL           = "https://github.com/maxence-charriere/lofimusic"
+	twitterURL          = "https://twitter.com/jonhymaxoo"
+	coinbaseBusinessURL = "https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"
 )
 
 type options struct {
@@ -28,6 +31,12 @@ type githubOptions struct {
 }
 
 func main() {
+	for _, l := range getLiveRadios() {
+		app.Route("/"+l.Slug, newRadio())
+	}
+	app.Route("/", newRadio())
+	app.RunWhenOnBrowser()
+
 	ctx, cancel := cli.ContextWithSignals(context.Background(),
 		os.Interrupt,
 		syscall.SIGTERM,
@@ -59,6 +68,7 @@ func main() {
 		},
 		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
+		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
 		RawHeaders: []string{
 			`<!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
@@ -70,20 +80,20 @@ func main() {
 			  gtag('config', 'UA-177947020-1');
 			</script>			
 			`,
-			`<meta property="og:url" content="https://lofimusic.app">`,
-			`<meta property="og:title" content="Lofimusic.app">`,
-			`<meta property="og:description" content="Lofi music player to work, study and relax.">`,
-			`<meta property="og:image" content="https://lofimusic.app/web/lofimusic-1.png">`,
+			`<script>
+			var isOnYouTubeIframeAPIReady = false;
+			function onYouTubeIframeAPIReady() {
+				isOnYouTubeIframeAPIReady = true;
+			}
+			</script>`,
 		},
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
-			"https://fonts.googleapis.com/css2?family=Roboto&display=swap",
 			"/web/lofimusic.css",
-			"/web/range.css",
 		},
 
 		ThemeColor: backgroundColor,
-		Title:      "Lofimusic.app",
+		Title:      "Lofimusic",
 	}
 
 	opts := options{Port: 4000}
@@ -108,7 +118,7 @@ func main() {
 }
 
 func runLocal(ctx context.Context, h http.Handler, opts options) {
-	app.Log("%s", logs.New("starting lofimusic app server").
+	app.Logf("%s", logs.New("starting lofimusic app server").
 		Tag("port", opts.Port),
 	)
 
@@ -128,7 +138,13 @@ func runLocal(ctx context.Context, h http.Handler, opts options) {
 }
 
 func generateGitHubPages(ctx context.Context, h *app.Handler, opts githubOptions) {
-	if err := app.GenerateStaticWebsite(opts.Output, h, channels.Slugs()...); err != nil {
+	radios := getLiveRadios()
+	slugs := make([]string, len(radios))
+	for i, r := range radios {
+		slugs[i] = r.Slug
+	}
+
+	if err := app.GenerateStaticWebsite(opts.Output, h, slugs...); err != nil {
 		panic(err)
 	}
 }
@@ -136,7 +152,7 @@ func generateGitHubPages(ctx context.Context, h *app.Handler, opts githubOptions
 func exit() {
 	err := recover()
 	if err != nil {
-		app.Log("command failed: %s", errors.Newf("%v", err))
+		app.Logf("command failed: %s", errors.Newf("%v", err))
 		os.Exit(-1)
 	}
 }

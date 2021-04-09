@@ -1,3 +1,6 @@
+/* -----------------------------------------------------------------------------
+// Lofimusic
+------------------------------------------------------------------------------*/
 html,
 body {
   overflow: hidden;
@@ -14,26 +17,9 @@ body {
   border: none;
   color: silver;
   background-color: black;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 18px 30px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 400;
-}
-
-h1 {
-  padding: 0 30px 0;
-  font-size: 20px;
-  letter-spacing: 5px;
+  scrollbar-color: rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.08);
+  scrollbar-width: none;
 }
 
 a {
@@ -41,8 +27,18 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: white;
+::-webkit-scrollbar {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .goapp-app-info {
@@ -50,127 +46,357 @@ a:hover {
   color: white;
 }
 
-.focus {
+.hApp,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.heading {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
   color: white;
+  font-weight: 400;
 }
 
-.hidden {
-  display: none;
+.hApp {
+  font-size: 32px;
+  letter-spacing: 6px;
 }
 
-::-webkit-scrollbar {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  width: 6px;
-  height: 10px;
+.h1 {
+  font-size: 38px;
+  letter-spacing: 7px;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  width: 6px;
-  height: 10px;
+.h2 {
+  font-size: 26px;
+  letter-spacing: 4px;
 }
 
-/* -----------------------------------------------------------------------------
-// Menu
-------------------------------------------------------------------------------*/
-.menu {
+.app-title {
+  height: 108px;
+}
+
+.app-title-offset {
+  margin-top: 108px;
+}
+
+.vspace-content {
+  height: calc(100% - 108px - 18px);
+  margin-bottom: 18px;
+  overflow-y: hidden;
+}
+
+.fill {
+  width: 100%;
   height: 100%;
-  text-shadow: 1px 1px black;
-  max-height: calc(100% - 24px);
-  padding: 0 0 24px 0;
+}
+
+.fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.hspace-out {
+  margin-left: 36px;
+  margin-right: 36px;
+  width: calc(100% - 36px - 36px);
+}
+
+@media (max-width: 500px) {
+  .hspace-out {
+    margin-left: 18px;
+    margin-right: 18px;
+    width: calc(100% - 18px - 18px);
+  }
+}
+
+.hspace-in {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.vspace-out {
+  margin-top: 18px;
+  margin-bottom: 12px;
+  height: calc(100% - 18px - 12px);
+}
+
+.vspace-top {
+  margin-top: 18px;
+}
+
+.vspace-bottom {
+  margin-bottom: 12px;
+}
+
+.vspace-stretch {
+  height: 100%;
+}
+
+.center {
+  margin: auto;
+}
+
+.focus {
+  color: white !important;
+}
+
+.error {
+  color: #f06372 !important;
+}
+
+.glow {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.hide {
+  display: none !important;
+}
+
+.disabled {
+  color: dimgray !important;
+  pointer-events: none !important;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.no-overflow {
   overflow: hidden;
 }
 
-.channels {
-  margin: 42px 0;
-  height: calc(100% - 57px - 96px - 42px - 42px);
-  overflow-y: auto;
-  overflow-x: hidden;
+input {
+  color: currentColor;
 }
 
-.channels section {
-  max-height: 100%;
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+  background: transparent;
 }
 
-.menu h1 {
-  font-size: 32px;
-  letter-spacing: 7px;
-  padding-top: 18px;
+input[type="range"]:focus {
+  outline: none;
 }
 
-.menu .item {
-  display: block;
-  padding: 12px 30px 0;
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: currentColor;
+  border-radius: 12px;
+  border: none;
 }
 
-.menu .item {
-  transition: 0.2s all;
+input[type="range"]::-webkit-slider-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
 }
 
-.menu .item:hover {
-  transform: scale(1.15);
+input[type="range"]:hover::-webkit-slider-runnable-track {
+  background: white;
 }
 
-.menu .item:active {
-  transform: scale(0.98);
+input[type="range"]:hover::-webkit-slider-thumb {
+  background: white;
 }
 
-.menu .item:first-child {
-  padding: 0 30px;
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+  background: currentColor;
+  border-radius: 12px;
+  border: none;
 }
 
-.menu .item .icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 18px;
+input[type="range"]::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
 }
 
-.menu .item {
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: block;
+input[type="range"]:hover::-moz-range-track {
+  background: white;
 }
 
-.overlay-menu {
-  height: 100%;
-  background: linear-gradient(black, rgba(0, 0, 0, 0.75), black);
+input[type="range"]:hover::-moz-range-thumb {
+  background: white;
 }
 
-.goapp-shell-menu-button-default {
-  font-size: 24px;
-  padding: 12px 18px;
+.background-overlay {
+  background-color: rgba(0, 0, 0, 0.94);
+}
+
+.right {
+  margin-left: auto;
+}
+
+/*------------------------------------------------------------------------------
+** Animations
+------------------------------------------------------------------------------*/
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-6px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-6px);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* -----------------------------------------------------------------------------
-// Player
+// Radio
 ------------------------------------------------------------------------------*/
-.player {
+.radio-shell {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* -----------------------------------------------------------------------------
+// Nav
+------------------------------------------------------------------------------*/
+.nav {
+  position: relative;
+  z-index: 15;
+}
+
+.nav-content {
+  height: calc(100% - 108px);
+}
+
+.nav-radios {
+  height: calc(100% - 120px - 24px - 18px);
+  overflow-y: scroll;
+}
+
+.nav-radios-stack {
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.nav-support {
+  margin-top: 24px;
+  margin-bottom: 18px;
+}
+
+/* -----------------------------------------------------------------------------
+// Link
+------------------------------------------------------------------------------*/
+.link {
+  display: block;
+  padding: 3px 0;
+  cursor: pointer;
+  transition: 0.2s all;
+  color: currentColor;
+}
+
+.link:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.link:active {
+  color: white;
+  transform: scale(0.98);
+}
+
+.link-icon {
+  margin-right: 12px;
+}
+
+.link-update {
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce;
+  transform-origin: bottom;
+}
+
+.link-update .link-icon {
+  margin-right: 3px;
+}
+
+/* -----------------------------------------------------------------------------
+// Youtube
+------------------------------------------------------------------------------*/
+.youtube {
+  position: relative;
   width: 100%;
   max-width: 100%;
   height: 100%;
   max-height: 100%;
 }
 
-.player .video {
+.youtube::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    black,
+    transparent,
+    transparent,
+    transparent,
+    transparent,
+    black
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.youtube-video {
   position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-.player .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(black, transparent, transparent, black);
-}
-
-.player iframe {
+.youtube-video iframe {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -182,124 +408,191 @@ a:hover {
 }
 
 @media (min-aspect-ratio: 16/9) {
-  .player iframe {
+  .youtube-video iframe {
     height: 56.25vw;
   }
 }
 
 @media (max-aspect-ratio: 16/9) {
-  .player iframe {
+  .youtube-video iframe {
     width: 177.78vh;
   }
 }
 
-.player footer {
+.youtube-noplay {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
-  width: 100%;
+  z-index: 9;
 }
 
-.player .controls {
-  margin: auto;
-  width: fit-content;
-  width: -moz-fit-content;
-}
-
-.player .controls .button,
-.player .volume .button {
-  background-color: transparent;
-  border: 1px solid currentColor;
-  border-radius: 50%;
-  color: currentColor;
-  width: 54px;
-  min-width: 54px;
-  height: 54px;
-  cursor: pointer;
-  outline: none;
-  transition: 0.2s all;
-  margin: 24px 0;
-}
-
-.player .volume {
+.youtube-controls {
   position: absolute;
-  right: 30px;
-  bottom: 24px;
-  width: auto;
-  height: 54px;
+  left: 0;
+  bottom: 0;
+  justify-content: center;
+  z-index: 10;
 }
 
-@media (max-width: 480px) {
-  .player .volume {
+.youtube-left-space {
+  margin: 6px;
+  width: calc(102px - 6px - 12px - 18px - 12px);
+}
+
+.youtube-volume {
+  width: 102px;
+  margin: 6px;
+}
+
+@media (max-width: 500px) {
+  .youtube-left-space,
+  .youtube-back,
+  .youtube-volume {
     display: none;
   }
 }
 
-.player .volume .button {
-  width: 36px;
-  height: 36px;
-  margin: 0;
-  border: none;
+/* -----------------------------------------------------------------------------
+// Control
+------------------------------------------------------------------------------*/
+.control {
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  padding: 12px;
+  margin: 6px;
+  outline: none;
+  background-color: transparent;
+  color: currentColor;
+  cursor: pointer;
+  transition: 0.2s all;
 }
 
-.player .controls .button:hover,
-.player .volume .button:hover {
+.control:hover {
   color: white;
-  transform: scale(1.3);
+  transform: scale(1.15);
 }
 
-.player .controls .button:active,
-.player .volume .button:active {
+.control:active {
   color: white;
   transform: scale(0.98);
 }
 
-.volumebar {
-  min-width: 100px;
-}
-
-.blur {
-  filter: blur(1.5rem);
-}
-
-.hide {
-  display: none;
+.control-main {
+  padding: 24px;
 }
 
 /* -----------------------------------------------------------------------------
-// Detail
+// Loader
 ------------------------------------------------------------------------------*/
-.detail {
-  max-width: 75%;
+.loader .icon {
+  border: 2px solid silver;
+  border-radius: 50%;
+}
+
+.loader .icon.active {
+  border-top: 2px solid white;
+  animation: spin 0.55s linear infinite;
+}
+
+.loader p {
+  padding: 0;
+  margin: 3px 0 6px;
+  white-space: pre;
+}
+
+.page-loader {
   position: absolute;
-  bottom: 18%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-image: linear-gradient(#2e343a, #1c1d1f);
+}
+
+/* -----------------------------------------------------------------------------
+// Info
+------------------------------------------------------------------------------*/
+.info {
+  position: relative;
+}
+
+.info-title {
+  position: absolute;
   right: 0;
-  text-shadow: 1px 1px black;
+  bottom: 25%;
+  transform: translateX(500px);
+  opacity: 0;
 }
 
-.detail .channel {
-  text-align: right;
+.info-title-hide {
+  transform: translateX(500px);
+  opacity: 0;
 }
 
-.detail .social {
-  width: fit-content;
-  width: -moz-fit-content;
-  margin: 6px 24px 0 auto;
+.info-title-show {
+  transition: 1s all;
+  transform: translateX(0);
+  opacity: 100%;
 }
 
-.detail .button {
+.info-title .h1 {
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;
+}
+
+.info-title-separator {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+}
+
+.info-links {
+  margin-top: 3px;
+}
+
+.info-card {
+  position: absolute;
+  top: 6%;
+  left: 3%;
+  max-width: 480px;
+  font-size: 17px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 300;
+  transition: 2s all ease-out;
+  opacity: 0;
+}
+
+@media (max-width: 480px) {
+  .info-card {
+    left: 0;
+  }
+}
+
+.info-card-show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -----------------------------------------------------------------------------
+// Info Link
+------------------------------------------------------------------------------*/
+.infolink {
+  padding: 3px;
+  margin: 0 3px;
   display: block;
-  padding: 6px;
-  margin-left: 6px;
+  color: currentColor;
+  cursor: pointer;
   transition: 0.2s all;
 }
 
-.detail .button:hover {
+.infolink:hover {
   color: white;
-  transform: scale(1.6);
+  transform: scale(1.4);
 }
 
-.detail .button:active {
+.infolink:active {
   color: white;
   transform: scale(0.98);
 }
