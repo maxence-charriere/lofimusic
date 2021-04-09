@@ -85,6 +85,10 @@ func (p *youTubePlayer) OnDismount() {
 	p.player = nil
 }
 
+func (p *youTubePlayer) OnResize(ctx app.Context) {
+	p.Update()
+}
+
 func (p *youTubePlayer) loadVideo(ctx app.Context) {
 	if isOnYouTubeIframeAPIReady := app.Window().Get("isOnYouTubeIframeAPIReady").Bool(); !isOnYouTubeIframeAPIReady && app.IsClient {
 		ctx.Async(func() {
@@ -128,9 +132,7 @@ func (p *youTubePlayer) loadVideo(ctx app.Context) {
 					"controls":       0,
 					"modestbranding": 1,
 					"disablekb":      1,
-					"enablejsapi":    1,
 					"iv_load_policy": 3,
-					"playsinline":    1,
 					"origin":         "lofimusic.app",
 				},
 				"events": map[string]interface{}{
