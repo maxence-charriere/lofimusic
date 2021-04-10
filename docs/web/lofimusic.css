@@ -48,6 +48,10 @@ a {
   color: white;
 }
 
+.goapp-shell-menu-button {
+  z-index: 15;
+}
+
 .hApp,
 .h1,
 .h2,
@@ -307,6 +311,12 @@ input[type="range"]:hover::-moz-range-thumb {
   position: absolute;
   top: 0;
   left: 0;
+  overflow: scroll;
+}
+
+.radio-update {
+  position: relative;
+  z-index: 10;
 }
 
 /* -----------------------------------------------------------------------------
@@ -432,6 +442,7 @@ input[type="range"]:hover::-moz-range-thumb {
   top: 0;
   left: 0;
   z-index: 9;
+  overflow: hidden;
 }
 
 .youtube-controls {
@@ -440,6 +451,7 @@ input[type="range"]:hover::-moz-range-thumb {
   bottom: 0;
   justify-content: center;
   z-index: 10;
+  overflow: hidden;
 }
 
 .youtube-left-space {

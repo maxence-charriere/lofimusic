@@ -123,6 +123,7 @@ func (r *radio) Render() app.UI {
 					CurrentRadio(r.current)).
 				Content(
 					app.Aside().
+						Class("radio-update").
 						Class("app-title").
 						Class("hspace-out").
 						Body(
