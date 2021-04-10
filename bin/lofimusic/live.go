@@ -60,7 +60,12 @@ func getLiveRadios() []liveRadio {
 			Name:  "Lofi Girl",
 			Owner: "Lofi Girl",
 			URL:   "https://youtu.be/5qap5aO4i9A",
-			Cards: []string{},
+			Cards: []string{
+				"Lofi girl is a radio that broadcasts lo-fi hip hop songs created by a French fellow named Dimitri in 2017.",
+				`The animation, made by Juan Pablo Machado, is modeled after Shizuku Tsukishima, a girl character from the Studio Ghibli film "Whisper of the Heart".`,
+				"Named Jade, the Lofi girl is shown studying in Lyon, a city from France where her designer Juan Pablo used to live.",
+				"The view through the window depicts the buildings on the slopes of Croix-Rousse, where the bell tower of the Bon-Pasteur church can be spotted.",
+			},
 			Links: []socialLink{
 				{
 					Slug: "website",
@@ -101,7 +106,11 @@ func getLiveRadios() []liveRadio {
 			Name:  "Lofi Sleepy Girl",
 			Owner: "Lofi Girl",
 			URL:   "https://youtu.be/DWcJFNfaw9c",
-			Cards: []string{},
+			Cards: []string{
+				"Lofi girl is a radio that broadcasts lo-fi hip hop songs created by a French fellow named Dimitri in 2017.",
+				`The animation, made by Juan Pablo Machado, is modeled after Shizuku Tsukishima, a girl character from the Studio Ghibli film "Whisper of the Heart".`,
+				"Named Jade, the Lofi girl is living in Lyon, a city from France where her designer Juan Pablo used to live.",
+			},
 			Links: []socialLink{
 				{
 					Slug: "website",
