@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="author" content="Maxence Charriere">
-<meta name="description" content="Listen to Lo-fi music radio Lofi Girl on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
+<meta content="Listen to Lo-fi music radio Lofi Girl on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang)." name="description">
 <meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
 <meta name="theme-color" content="#000000">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" name="viewport">
-<meta property="og:url" content="http://127.0.0.1:57992/lofigirl">
-<meta content="Lofi Girl Radio" property="og:title">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+<meta content="http://127.0.0.1:64191/lofigirl" property="og:url">
+<meta property="og:title" content="Lofi Girl Radio">
 <meta property="og:description" content="Listen to Lo-fi music radio Lofi Girl on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lofimusic.app/web/covers/lofigirl.png">
@@ -44,13 +44,13 @@ Lofi Girl Radio
 <div>
 <div id="app-pre-render">
 <main class="radio fill">
-<div class="youtube fill unselectable">
+<div class="youtube radio-player fill">
 <div class="youtube-video">
-<div id="youtube-player" class="unselectable">
+<div class="unselectable" id="youtube-player">
 <script src="https://www.youtube.com/iframe_api"></script>
 </div>
 </div>
-<div class="youtube-noplay background-overlay fill">
+<div class="youtube-noplay fill background-overlay">
 <aside class="loader hide hspace-out vspace-stretch">
 <div id class="goapp-stack vspace-stretch fit center" style="flex-direction:row;align-items:center;">
 <div style="width:78px;height:78px;">
@@ -98,11 +98,11 @@ Buffering
 </div>
 </button>
 <div class="youtube-volume disabled">
-<input type="range" min="0" max="100" value="0" id="youtube-volume">
+<input id="youtube-volume" type="range" min="0" max="100" value="0">
 </div>
 </div>
 </div>
-<div id="goapp-shell-d3f483c2-1388-41cd-ad88-37e969a76457" class="goapp-shell radio-shell">
+<div class="goapp-shell radio-shell fill" id="goapp-shell-315e9927-3104-46b2-8180-60a7476b9075">
 <div class="goapp-shell-layout" style="align-items:stretch;">
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;">
 <div class="nav fill unselectable ">
@@ -115,10 +115,10 @@ Lofimusic
 </div>
 <nav class="nav-content">
 <div class="nav-radios">
-<div id class="goapp-stack nav-radios-stack" style="flex-direction:row;align-items:center;">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack nav-radios-stack">
 <div class="hspace-out">
 <a id="thebootlegboy" class="link heading fit glow " title href="/thebootlegboy">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -131,8 +131,8 @@ Bootleg Smoke
 </div>
 </div>
 </a>
-<a href="/chillhop" id="chillhop" class="link heading fit glow " title>
-<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
+<a title href="/chillhop" id="chillhop" class="link heading fit glow ">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ Chillhop Raccoon
 </div>
 </div>
 </a>
-<a title href="/chillhop-relax" id="chillhop-relax" class="link heading fit glow ">
+<a id="chillhop-relax" class="link heading fit glow " title href="/chillhop-relax">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -159,7 +159,7 @@ Chillhop Relaxing Raccoon
 </div>
 </div>
 </a>
-<a id="lofi-code-beats" class="link heading fit glow " title href="/lofi-code-beats">
+<a href="/lofi-code-beats" id="lofi-code-beats" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -174,7 +174,7 @@ Coding Beats
 </div>
 </a>
 <a id="collegemusic" class="link heading fit glow " title href="/collegemusic">
-<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
+<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@ College Guy
 </div>
 </div>
 </a>
-<a href="/collegemusic-lonely" id="collegemusic-lonely" class="link heading fit glow " title>
+<a id="collegemusic-lonely" class="link heading fit glow " title href="/collegemusic-lonely">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -243,8 +243,8 @@ Lofi Girl
 </div>
 </div>
 </a>
-<a id="lofigirl-sleepy" class="link heading fit glow " title href="/lofigirl-sleepy">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a class="link heading fit glow " title href="/lofigirl-sleepy" id="lofigirl-sleepy">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -257,7 +257,7 @@ Lofi Sleepy Girl
 </div>
 </div>
 </a>
-<a href="/closedonsunday-pop-culture" id="closedonsunday-pop-culture" class="link heading fit glow " title>
+<a id="closedonsunday-pop-culture" class="link heading fit glow " title href="/closedonsunday-pop-culture">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -313,7 +313,7 @@ Steezy Junky Fluff
 </div>
 </div>
 </a>
-<a href="/tokyolosttracks" id="tokyolosttracks" class="link heading fit glow " title>
+<a id="tokyolosttracks" class="link heading fit glow " title href="/tokyolosttracks">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -346,7 +346,7 @@ Buy me a coffee
 </div>
 </a>
 <a id class="link heading fit glow " title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -360,7 +360,7 @@ Donate cryptos
 </div>
 </a>
 <a id class="link heading fit glow " title href="https://github.com/maxence-charriere/lofimusic">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -373,7 +373,7 @@ GitHub
 </div>
 </div>
 </a>
-<a href="https://twitter.com/jonhymaxoo" id class="link heading fit glow " title>
+<a title href="https://twitter.com/jonhymaxoo" id class="link heading fit glow ">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -391,10 +391,10 @@ Twitter
 </nav>
 </div>
 </div>
-<div style="display:bloc;width:282px;max-width:282px;" class="goapp-shell-item"></div>
-<div style="flex-basis:480px;flex-grow:1;" class="goapp-shell-item">
+<div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;"></div>
+<div class="goapp-shell-item" style="flex-basis:480px;flex-grow:1;">
 <aside class="app-title hspace-out">
-<div style="flex-direction:row;align-items:center;" id class="goapp-stack fit vspace-stretch right"></div>
+<div id class="goapp-stack fit vspace-stretch right" style="flex-direction:row;align-items:center;"></div>
 </aside>
 <div class="hspace-out vspace-content">
 <article class="info fill no-overflow">
@@ -403,8 +403,8 @@ Twitter
 Lofi Girl
 </h1>
 <div class="info-title-separator"></div>
-<div style="flex-direction:row;align-items:center;" id class="goapp-stack info-links fit center">
-<a title="Visit Lofi Girl's Discord." href="https://discord.com/invite/lofigirl" class="infolink ">
+<div id class="goapp-stack info-links fit center" style="flex-direction:row;align-items:center;">
+<a class="infolink " title="Visit Lofi Girl's Discord." href="https://discord.com/invite/lofigirl">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M22,24L16.75,19L17.38,21H4.5A2.5,2.5 0 0,1 2,18.5V3.5A2.5,2.5 0 0,1 4.5,1H19.5A2.5,2.5 0 0,1 22,3.5V24M12,6.8C9.32,6.8 7.44,7.95 7.44,7.95C8.47,7.03 10.27,6.5 10.27,6.5L10.1,6.33C8.41,6.36 6.88,7.53 6.88,7.53C5.16,11.12 5.27,14.22 5.27,14.22C6.67,16.03 8.75,15.9 8.75,15.9L9.46,15C8.21,14.73 7.42,13.62 7.42,13.62C7.42,13.62 9.3,14.9 12,14.9C14.7,14.9 16.58,13.62 16.58,13.62C16.58,13.62 15.79,14.73 14.54,15L15.25,15.9C15.25,15.9 17.33,16.03 18.73,14.22C18.73,14.22 18.84,11.12 17.12,7.53C17.12,7.53 15.59,6.36 13.9,6.33L13.73,6.5C13.73,6.5 15.53,7.03 16.56,7.95C16.56,7.95 14.68,6.8 12,6.8M9.93,10.59C10.58,10.59 11.11,11.16 11.1,11.86C11.1,12.55 10.58,13.13 9.93,13.13C9.29,13.13 8.77,12.55 8.77,11.86C8.77,11.16 9.28,10.59 9.93,10.59M14.1,10.59C14.75,10.59 15.27,11.16 15.27,11.86C15.27,12.55 14.75,13.13 14.1,13.13C13.46,13.13 12.94,12.55 12.94,11.86C12.94,11.16 13.45,10.59 14.1,10.59Z" />
@@ -470,8 +470,8 @@ Lofi Girl
 </main>
 </div>
 <div id="app-wasm-loader" class="goapp-app-info">
-<img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="/web/logo.png">
-<p id="app-wasm-loader-label" class="goapp-label">
+<img src="/web/logo.png" id="app-wasm-loader-icon" class="goapp-logo goapp-spin">
+<p class="goapp-label" id="app-wasm-loader-label">
 Lofi music player to work, study and relax.
 </p>
 </div>

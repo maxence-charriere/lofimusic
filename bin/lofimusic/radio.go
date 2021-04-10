@@ -41,6 +41,7 @@ func (r *radio) OnNav(ctx app.Context) {
 }
 
 func (r *radio) OnResize(ctx app.Context) {
+	r.ResizeContent()
 	r.Update()
 }
 
@@ -105,10 +106,13 @@ func (r *radio) Render() app.UI {
 		Class("fill").
 		Body(
 			newYouTubePlayer().
+				Class("radio-player").
+				Class("fill").
 				Radio(r.current).
 				OnPlaybackChange(r.onPlaybackChange),
 			app.Shell().
 				Class("radio-shell").
+				Class("fill").
 				MenuWidth(menuWidth).
 				Menu(newNav().
 					LiveRadios(r.lives).

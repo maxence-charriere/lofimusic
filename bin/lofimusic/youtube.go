@@ -30,6 +30,7 @@ const (
 type youTubePlayer struct {
 	app.Compo
 
+	Iclass            string
 	Iradio            liveRadio
 	IonPlaybackChange func(app.Context, bool)
 
@@ -49,6 +50,17 @@ type youTubePlayer struct {
 
 func newYouTubePlayer() *youTubePlayer {
 	return &youTubePlayer{}
+}
+
+func (p *youTubePlayer) Class(v string) *youTubePlayer {
+	if v == "" {
+		return p
+	}
+	if p.Iclass != "" {
+		p.Iclass += " "
+	}
+	p.Iclass += v
+	return p
 }
 
 func (p *youTubePlayer) Radio(v liveRadio) *youTubePlayer {
@@ -229,8 +241,7 @@ func (p *youTubePlayer) Render() app.UI {
 
 	return app.Div().
 		Class("youtube").
-		Class("fill").
-		Class("unselectable").
+		Class(p.Iclass).
 		Body(
 			app.Div().
 				Class("youtube-video").
@@ -245,8 +256,8 @@ func (p *youTubePlayer) Render() app.UI {
 			app.If(!p.isPlaying || p.isBuffering || p.err != nil,
 				app.Div().
 					Class("youtube-noplay").
-					Class("background-overlay").
 					Class("fill").
+					Class("background-overlay").
 					Body(
 						newLoader().
 							Class("hspace-out").

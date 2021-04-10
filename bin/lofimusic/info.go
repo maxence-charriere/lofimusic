@@ -10,8 +10,8 @@ import (
 
 const (
 	infoLinkIconSize    = 18
-	cardVisibleDuration = time.Second * 8
-	cardHiddenDuration  = time.Millisecond * 3500
+	cardVisibleDuration = time.Second * 10
+	cardHiddenDuration  = time.Second * 5
 )
 
 type info struct {
