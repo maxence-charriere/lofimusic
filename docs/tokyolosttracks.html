@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta httpequiv="Content-Type" content="text/html; charset=utf-8">
-<meta content="Maxence Charriere" name="author">
+<meta name="author" content="Maxence Charriere">
 <meta name="description" content="Listen to Lo-fi music radio サクラチル on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
 <meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-<meta property="og:url" content="http://127.0.0.1:54808/tokyolosttracks">
-<meta content="サクラチル Radio" property="og:title">
+<meta property="og:url" content="http://127.0.0.1:58020/tokyolosttracks">
+<meta property="og:title" content="サクラチル Radio">
 <meta property="og:description" content="Listen to Lo-fi music radio サクラチル on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lofimusic.app/web/covers/tokyolosttracks.png">
 <title>
 サクラチル Radio
 </title>
-<link href="/web/logo.png" rel="icon" type="image/png">
-<link rel="apple-touch-icon" href="/web/logo.png">
+<link rel="icon" type="image/png" href="/web/logo.png">
+<link href="/web/logo.png" rel="apple-touch-icon">
 <link rel="manifest" href="/manifest.webmanifest">
 <link type="text/css" rel="stylesheet" href="/app.css">
-<script src="/wasm_exec.js" defer></script>
-<script src="/app.js" defer></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" type="text/css" rel="stylesheet">
-<link href="/web/lofimusic.css" type="text/css" rel="stylesheet">
+<script defer src="/wasm_exec.js"></script>
+<script defer src="/app.js"></script>
+<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
+<link type="text/css" rel="stylesheet" href="/web/lofimusic.css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
 			<script>
@@ -102,7 +102,7 @@ Buffering
 </div>
 </div>
 </div>
-<div id="goapp-shell-a1320a50-c360-458f-a4db-4d53d4dbf475" class="goapp-shell radio-shell fill">
+<div id="goapp-shell-894f2cf8-9401-4a3e-81af-3743dc672ade" class="goapp-shell radio-shell fill">
 <div class="goapp-shell-layout" style="align-items:stretch;">
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;">
 <div class="nav fill unselectable ">
@@ -117,8 +117,8 @@ Lofimusic
 <div class="nav-radios">
 <div id class="goapp-stack nav-radios-stack" style="flex-direction:row;align-items:center;">
 <div class="hspace-out">
-<a id="thebootlegboy" class="link heading fit glow " title href="/thebootlegboy">
-<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
+<a class="link heading fit glow " title href="/thebootlegboy" id="thebootlegboy">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -131,8 +131,8 @@ Bootleg Smoke
 </div>
 </div>
 </a>
-<a id="chillhop" class="link heading fit glow " title href="/chillhop">
-<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
+<a href="/chillhop" id="chillhop" class="link heading fit glow " title>
+<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -159,7 +159,7 @@ Chillhop Relaxing Raccoon
 </div>
 </div>
 </a>
-<a id="lofi-code-beats" class="link heading fit glow " title href="/lofi-code-beats">
+<a href="/lofi-code-beats" id="lofi-code-beats" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -187,7 +187,7 @@ College Girl
 </div>
 </div>
 </a>
-<a title href="/collegemusic-guy" id="collegemusic-guy" class="link heading fit glow ">
+<a id="collegemusic-guy" class="link heading fit glow " title href="/collegemusic-guy">
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -201,8 +201,8 @@ College Guy
 </div>
 </div>
 </a>
-<a href="/collegemusic-lonely" id="collegemusic-lonely" class="link heading fit glow " title>
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a id="collegemusic-lonely" class="link heading fit glow " title href="/collegemusic-lonely">
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -229,8 +229,8 @@ Everything Fades To Blue
 </div>
 </div>
 </a>
-<a title href="/lofigirl" id="lofigirl" class="link heading fit glow ">
-<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
+<a id="lofigirl" class="link heading fit glow " title href="/lofigirl">
+<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ Lofi Girl
 </div>
 </div>
 </a>
-<a href="/lofigirl-sleepy" id="lofigirl-sleepy" class="link heading fit glow " title>
+<a id="lofigirl-sleepy" class="link heading fit glow " title href="/lofigirl-sleepy">
 <div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -272,7 +272,7 @@ Pop Culture Sunday
 </div>
 </a>
 <a id="closedonsunday-starwars" class="link heading fit glow " title href="/closedonsunday-starwars">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -285,7 +285,7 @@ Star Wars Sunday
 </div>
 </div>
 </a>
-<a id="steezyasfuck-coffee-show" class="link heading fit glow " title href="/steezyasfuck-coffee-show">
+<a href="/steezyasfuck-coffee-show" id="steezyasfuck-coffee-show" class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -300,7 +300,7 @@ Steezy Coffee Shop
 </div>
 </a>
 <a id="steezyasfuck-junky-fluff" class="link heading fit glow " title href="/steezyasfuck-junky-fluff">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<div class="goapp-stack " style="flex-direction:row;align-items:center;" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -345,7 +345,7 @@ Buy me a coffee
 </div>
 </div>
 </a>
-<a id class="link heading fit glow " title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae">
+<a href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae" id class="link heading fit glow " title>
 <div id class="goapp-stack " style="flex-direction:row;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -359,8 +359,8 @@ Donate cryptos
 </div>
 </div>
 </a>
-<a id class="link heading fit glow " title href="https://github.com/maxence-charriere/lofimusic">
-<div id class="goapp-stack " style="flex-direction:row;align-items:center;">
+<a href="https://github.com/maxence-charriere/lofimusic" id class="link heading fit glow " title>
+<div style="flex-direction:row;align-items:center;" id class="goapp-stack ">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -392,7 +392,7 @@ Twitter
 </div>
 </div>
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;"></div>
-<div class="goapp-shell-item" style="flex-basis:480px;flex-grow:1;">
+<div style="flex-basis:480px;flex-grow:1;" class="goapp-shell-item">
 <aside class="radio-update app-title hspace-out">
 <div id class="goapp-stack fit vspace-stretch right" style="flex-direction:row;align-items:center;"></div>
 </aside>
@@ -403,7 +403,7 @@ Twitter
 サクラチル
 </h1>
 <div class="info-title-separator"></div>
-<div id class="goapp-stack info-links fit center" style="flex-direction:row;align-items:center;">
+<div class="goapp-stack info-links fit center" style="flex-direction:row;align-items:center;" id>
 <a class="infolink " title="Visit Tokyo LosT Track -Sakura Chill-'s Discord." href="https://discord.com/invite/fHkhEgc">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
@@ -411,7 +411,7 @@ Twitter
 	</svg>
 </div>
 </a>
-<a class="infolink " title="Visit Tokyo LosT Track -Sakura Chill-'s Facebook." href="https://www.facebook.com/TokyoLosTTracks">
+<a href="https://www.facebook.com/TokyoLosTTracks" class="infolink " title="Visit Tokyo LosT Track -Sakura Chill-'s Facebook.">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
@@ -464,7 +464,7 @@ Twitter
 </div>
 <div id="app-wasm-loader" class="goapp-app-info">
 <img id="app-wasm-loader-icon" class="goapp-logo goapp-spin" src="/web/logo.png">
-<p class="goapp-label" id="app-wasm-loader-label">
+<p id="app-wasm-loader-label" class="goapp-label">
 Lofi music player to work, study and relax.
 </p>
 </div>

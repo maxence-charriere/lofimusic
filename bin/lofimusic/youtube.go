@@ -182,7 +182,6 @@ func (p *youTubePlayer) onStateChange(this app.Value, args []app.Value) interfac
 
 		case buffering:
 			p.isBuffering = true
-			p.isPlaying = true
 			p.err = nil
 		}
 		p.Update()
@@ -294,7 +293,7 @@ func (p *youTubePlayer) Render() app.UI {
 						newControl().Icon(newSVGIcon().
 							Size(controlIconSize).
 							RawSVG(playSVG)).
-							Disabled(p.player == nil).
+							Disabled(p.player == nil || p.isBuffering).
 							OnClick(p.onPlayClicked),
 					),
 					newControl().
