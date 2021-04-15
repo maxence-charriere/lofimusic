@@ -311,7 +311,7 @@ input[type="range"]:hover::-moz-range-thumb {
   position: absolute;
   top: 0;
   left: 0;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .radio-update {
