@@ -22,6 +22,8 @@ github.com/maxence-charriere/go-app/v9 v9.0.0-20210421094209-f9f3ee1ccba4 h1:WlZ
 github.com/maxence-charriere/go-app/v9 v9.0.0-20210421094209-f9f3ee1ccba4/go.mod h1:zo0n1kh4OMKn7P+MrTUUi7QwUMU2HOfHsZ293TITtxI=
 github.com/maxence-charriere/go-app/v9 v9.0.0-20210422125138-439ecb860e27 h1:Hy2yk5xPO6XhyG4RhqhgLbKXwAP0CTQ+8c3AtDPKYsE=
 github.com/maxence-charriere/go-app/v9 v9.0.0-20210422125138-439ecb860e27/go.mod h1:zo0n1kh4OMKn7P+MrTUUi7QwUMU2HOfHsZ293TITtxI=
+github.com/maxence-charriere/go-app/v9 v9.0.0-20210422141225-0e7d7c5630b2 h1:gK/4vgBKz5tr/g6/R+yR18xfs52DiZ0fxptkeNDsYwE=
+github.com/maxence-charriere/go-app/v9 v9.0.0-20210422141225-0e7d7c5630b2/go.mod h1:zo0n1kh4OMKn7P+MrTUUi7QwUMU2HOfHsZ293TITtxI=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
