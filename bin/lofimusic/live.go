@@ -528,7 +528,7 @@ func getLiveRadios() []liveRadio {
 			Owner: "Tone by Gridge",
 			URL:   "https://youtu.be/56q3dOGNAJ8",
 			Cards: []string{
-				"Sleepy Natula is a radio that broadcasts Neo chill beats style songs and produced by Tone by Bridge in the Japanese city of Tokyo.",
+				"Sleepy Natula is a radio that broadcasts Neo chill beats style songs, produced by Tone by Gridge in the Japanese city of Tokyo.",
 				"The animation shows Natula, a girl that fell asleep after drinking a relaxation drink named CHILL OUT.",
 				"Natula lives in Sephora, a city located on a musical planet named Tone.",
 				"On this planet, music is so important that it touches every species, nature, climate, culture, and civilization of each country.",
