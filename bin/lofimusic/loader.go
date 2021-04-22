@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type loader struct {
@@ -84,10 +84,9 @@ func (l *loader) Render() app.UI {
 		Class(l.Iclass).
 		Body(
 			app.Stack().
-				Class("vspace-stretch").
-				Class("fit").
-				Class("center").
+				Class("fill").
 				Center().
+				Middle().
 				Content(
 					app.Div().
 						Style("width", fmt.Sprintf("%vpx", l.Isize)).

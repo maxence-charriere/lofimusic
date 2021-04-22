@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 const (
@@ -61,25 +61,25 @@ func (i *info) OnMount(ctx app.Context) {
 				return
 
 			case <-ticker.C:
-				i.Defer(func(ctx app.Context) {
+				ctx.Dispatch(func(ctx app.Context) {
 					if i.isCardVisible {
 						ticker.Reset(cardHiddenDuration)
 						i.isCardVisible = false
 					} else {
 						ticker.Reset(cardVisibleDuration)
 						i.isCardVisible = true
-						i.Defer(i.showNewCard)
+						i.showNewCard(ctx)
 					}
-					i.Update()
 				})
 			}
 		}
 	})
 }
 
-func (i *info) showNewCard(ctx app.Context) {
-	defer i.Update()
+func (i *info) OnUpdate(ctx app.Context) {
+}
 
+func (i *info) showNewCard(ctx app.Context) {
 	count := len(i.Iradio.Cards)
 	if count == 0 {
 		i.currentCard = -1
@@ -116,9 +116,8 @@ func (i *info) Render() app.UI {
 					app.Div().Class("info-title-separator"),
 					app.Stack().
 						Class("info-links").
-						Class("fit").
-						Class("center").
 						Center().
+						Middle().
 						Content(
 							app.Range(i.Iradio.Links).Slice(func(j int) app.UI {
 								l := i.Iradio.Links[j]
