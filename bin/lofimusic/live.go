@@ -522,6 +522,49 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
+		{
+			Slug:  "sleepynatula",
+			Name:  "Sleepy Natula",
+			Owner: "Tone by Gridge",
+			URL:   "https://youtu.be/56q3dOGNAJ8",
+			Cards: []string{
+				"Sleepy Natula is a radio that broadcasts Neo chill beats style songs and produced by Tone by Bridge in the Japanese city of Tokyo.",
+				"The animation shows Natula, a girl that fell asleep after drinking a relaxation drink named CHILL OUT.",
+				"Natula lives in Sephora, a city located on a musical planet named Tone.",
+				"On this planet, music is so important that it touches every species, nature, climate, culture, and civilization of each country.",
+				"Tone is a multicultural planet where there are thousands of countries populated by music-loving beings that come from all over the galaxy.",
+			},
+			Links: []socialLink{
+				{
+					Slug: "website",
+					URL:  "https://linktr.ee/tonebygridge?fbclid=IwAR2OYWJlav7MM66780DDtuu2k2viElVF3kgjn-GEK8c2RsvYt0TGOYz31zQ",
+				},
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/56q3dOGNAJ8",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/playlist/1stD3Nr9W5HWf47ft5TfKh?si=fDM2-nsIRlSdv2IC_KaanQ",
+				},
+				{
+					Slug: "discord",
+					URL:  "https://discord.com/invite/eqH6RRj",
+				},
+				{
+					Slug: "facebook",
+					URL:  "https://www.facebook.com/tonedotcom",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/tonebygridge",
+				},
+				{
+					Slug: "twitter",
+					URL:  "https://twitter.com/tonedotcom",
+				},
+			},
+		},
 	}
 
 	sort.Slice(radios, func(a, b int) bool {
