@@ -1,6 +1,6 @@
 package main
 
-import "github.com/maxence-charriere/go-app/v8/pkg/app"
+import "github.com/maxence-charriere/go-app/v9/pkg/app"
 
 type link struct {
 	app.Compo
@@ -88,7 +88,7 @@ func (l *link) Render() app.UI {
 		OnClick(l.onClick).
 		Body(
 			app.Stack().
-				Center().
+				Middle().
 				Content(
 					app.Div().
 						Class(iconVisibility).

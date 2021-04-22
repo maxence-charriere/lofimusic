@@ -3,7 +3,7 @@ package main
 import (
 	"strings"
 
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type nav struct {
@@ -62,7 +62,7 @@ func (n *nav) Render() app.UI {
 			app.Stack().
 				Class("app-title").
 				Class("hspace-out").
-				Center().
+				Middle().
 				Content(
 					app.Header().
 						Body(
@@ -82,7 +82,7 @@ func (n *nav) Render() app.UI {
 						Body(
 							app.Stack().
 								Class("nav-radios-stack").
-								Center().
+								Middle().
 								Content(
 									app.Div().
 										Class("hspace-out").

@@ -449,7 +449,6 @@ input[type="range"]:hover::-moz-range-thumb {
   position: absolute;
   left: 0;
   bottom: 0;
-  justify-content: center;
   z-index: 10;
   overflow: hidden;
 }

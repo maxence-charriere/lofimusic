@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 	"golang.org/x/exp/rand"
 )
 
@@ -42,13 +42,11 @@ func (r *radio) OnNav(ctx app.Context) {
 
 func (r *radio) OnResize(ctx app.Context) {
 	r.ResizeContent()
-	r.Update()
 }
 
 func (r *radio) init(ctx app.Context) {
 	rand.Seed(uint64(time.Now().UnixNano()))
 	r.lives = getLiveRadios()
-	r.Update()
 }
 
 func (r *radio) load(ctx app.Context) {
@@ -70,19 +68,13 @@ func (r *radio) load(ctx app.Context) {
 	r.isUpdateAvailable = ctx.AppUpdateAvailable
 	r.isPlaying = false
 
-	r.Update()
-
 	ctx.Page.SetTitle(fmt.Sprintf("%s Radio", r.current.Name))
 	ctx.Page.SetDescription(fmt.Sprintf("Listen to Lo-fi music radio %s on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).", r.current.Name))
-
-	if app.IsServer {
-		ctx.Page.SetImage("https://lofimusic.app/web/covers/" + slug + ".png")
-	}
+	ctx.Page.SetImage("https://lofimusic.app/web/covers/" + slug + ".png")
 }
 
 func (r *radio) OnAppUpdate(ctx app.Context) {
 	r.isUpdateAvailable = ctx.AppUpdateAvailable
-	r.Update()
 }
 
 func (r *radio) randomRadio() liveRadio {
@@ -128,10 +120,9 @@ func (r *radio) Render() app.UI {
 						Class("hspace-out").
 						Body(
 							app.Stack().
-								Class("fit").
-								Class("vspace-stretch").
-								Class("right").
-								Center().
+								Class("fill").
+								Right().
+								Middle().
 								Content(
 									app.If(r.isUpdateAvailable,
 										newLink().
@@ -157,7 +148,6 @@ func (r *radio) Render() app.UI {
 
 func (r *radio) onPlaybackChange(ctx app.Context, isPlaying bool) {
 	r.isPlaying = isPlaying
-	r.Update()
 }
 
 func (r *radio) onUpdateClick(ctx app.Context) {
