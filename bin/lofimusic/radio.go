@@ -50,12 +50,12 @@ func (r *radio) init(ctx app.Context) {
 }
 
 func (r *radio) load(ctx app.Context) {
-	slug := strings.TrimPrefix(ctx.Page.URL().Path, "/")
+	slug := strings.TrimPrefix(ctx.Page().URL().Path, "/")
 	if slug == "" {
 		r.current = r.randomRadio()
-		u := *ctx.Page.URL()
+		u := *ctx.Page().URL()
 		u.Path = "/" + r.current.Slug
-		ctx.Page.ReplaceURL(&u)
+		ctx.Page().ReplaceURL(&u)
 	} else {
 		for _, lr := range r.lives {
 			if slug == lr.Slug {
@@ -65,16 +65,16 @@ func (r *radio) load(ctx app.Context) {
 		}
 	}
 
-	r.isUpdateAvailable = ctx.AppUpdateAvailable
+	r.isUpdateAvailable = ctx.AppUpdateAvailable()
 	r.isPlaying = false
 
-	ctx.Page.SetTitle(fmt.Sprintf("%s Radio", r.current.Name))
-	ctx.Page.SetDescription(fmt.Sprintf("Listen to Lo-fi music radio %s on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).", r.current.Name))
-	ctx.Page.SetImage("https://lofimusic.app/web/covers/" + slug + ".png")
+	ctx.Page().SetTitle(fmt.Sprintf("%s Radio", r.current.Name))
+	ctx.Page().SetDescription(fmt.Sprintf("Listen to Lo-fi music radio %s on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).", r.current.Name))
+	ctx.Page().SetImage("https://lofimusic.app/web/covers/" + slug + ".png")
 }
 
 func (r *radio) OnAppUpdate(ctx app.Context) {
-	r.isUpdateAvailable = ctx.AppUpdateAvailable
+	r.isUpdateAvailable = ctx.AppUpdateAvailable()
 }
 
 func (r *radio) randomRadio() liveRadio {

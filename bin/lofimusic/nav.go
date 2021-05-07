@@ -48,7 +48,7 @@ func (n *nav) OnMount(ctx app.Context) {
 func (n *nav) OnNav(ctx app.Context) {
 	if n.isFirstLoad {
 		n.isFirstLoad = false
-		ctx.ScrollTo(strings.TrimPrefix(ctx.Page.URL().Path, "/"))
+		ctx.ScrollTo(strings.TrimPrefix(ctx.Page().URL().Path, "/"))
 	}
 }
 

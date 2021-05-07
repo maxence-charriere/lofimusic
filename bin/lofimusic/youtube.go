@@ -371,7 +371,7 @@ func (p *youTubePlayer) onSoundClicked(ctx app.Context, e app.Event) {
 }
 
 func (p *youTubePlayer) onVolumeChanged(ctx app.Context, e app.Event) {
-	volume, _ := strconv.Atoi(ctx.JSSrc.Get("value").String())
+	volume, _ := strconv.Atoi(ctx.JSSrc().Get("value").String())
 	p.setVolume(ctx, volume)
 }
 

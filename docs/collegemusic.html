@@ -8,7 +8,7 @@
 <meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
 <meta name="theme-color" content="#000000">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-<meta property="og:url" content="http://127.0.0.1:57753/collegemusic">
+<meta property="og:url" content="http://127.0.0.1:52759/collegemusic">
 <meta property="og:title" content="College Girl Radio">
 <meta property="og:description" content="Listen to Lo-fi music radio College Girl on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta property="og:type" content="website">
@@ -17,10 +17,10 @@
 College Girl Radio
 </title>
 <link rel="icon" type="image/png" href="/web/logo.png">
-<link href="/web/logo.png" rel="apple-touch-icon">
+<link rel="apple-touch-icon" href="/web/logo.png">
 <link rel="manifest" href="/manifest.webmanifest">
-<link href="/app.css" type="text/css" rel="stylesheet">
-<script defer src="/wasm_exec.js"></script>
+<link rel="stylesheet" href="/app.css" type="text/css">
+<script src="/wasm_exec.js" defer></script>
 <script defer src="/app.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" type="text/css">
 <link type="text/css" rel="stylesheet" href="/web/lofimusic.css">
@@ -46,7 +46,7 @@ College Girl Radio
 <main class="radio fill">
 <div class="youtube radio-player fill">
 <div class="youtube-video">
-<div id="youtube-player" class="unselectable">
+<div class="unselectable" id="youtube-player">
 <script src="https://www.youtube.com/iframe_api"></script>
 </div>
 </div>
@@ -67,7 +67,7 @@ College Girl
 </div>
 </aside>
 </div>
-<div data-goapp="Stack" id class="youtube-controls hspace-out vspace-top vspace-bottom" style="display:flex;justify-content:center;align-items:center;">
+<div id class="youtube-controls hspace-out vspace-top vspace-bottom" style="display:flex;justify-content:center;align-items:center;" data-goapp="Stack">
 <div class="youtube-left-space"></div>
 <button class="control disabled youtube-back">
 <div style="width:18px;height:18px;">
@@ -98,15 +98,15 @@ College Girl
 </div>
 </button>
 <div class="youtube-volume ">
-<input min="0" max="100" value="0" id="youtube-volume" type="range">
+<input id="youtube-volume" type="range" min="0" max="100" value="0">
 </div>
 </div>
 </div>
-<div data-goapp="Shell" id="goapp-shell-f7ee0b21-d076-46a4-a35e-3a427c975270" class="goapp-shell radio-shell fill">
+<div data-goapp="Shell" id="goapp-shell-3a1a70b9-5230-4b09-b430-86ff9c0fb279" class="goapp-shell radio-shell fill">
 <div class="goapp-shell-layout" style="align-items:stretch;">
 <div class="goapp-shell-item" style="display:bloc;width:282px;max-width:282px;">
 <div class="nav fill unselectable ">
-<div data-goapp="Stack" id class="app-title hspace-out" style="display:flex;justify-content:flex-start;align-items:center;">
+<div id class="app-title hspace-out" style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <header>
 <a class="hApp focus glow" href="/">
 Lofimusic
@@ -117,7 +117,7 @@ Lofimusic
 <div class="nav-radios">
 <div data-goapp="Stack" id class="nav-radios-stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="hspace-out">
-<a title href="/thebootlegboy" id="thebootlegboy" class="link heading fit glow ">
+<a href="/thebootlegboy" id="thebootlegboy" class="link heading fit glow " title>
 <div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -145,7 +145,7 @@ Chillhop Raccoon
 </div>
 </div>
 </a>
-<a id="chillhop-relax" class="link heading fit glow " title href="/chillhop-relax">
+<a href="/chillhop-relax" id="chillhop-relax" class="link heading fit glow " title>
 <div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -159,7 +159,7 @@ Chillhop Relaxing Raccoon
 </div>
 </div>
 </a>
-<a id="lofi-code-beats" class="link heading fit glow " title href="/lofi-code-beats">
+<a title href="/lofi-code-beats" id="lofi-code-beats" class="link heading fit glow ">
 <div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -173,8 +173,8 @@ Coding Beats
 </div>
 </div>
 </a>
-<a title href="/collegemusic" id="collegemusic" class="link heading fit glow focus">
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<a class="link heading fit glow focus" title href="/collegemusic" id="collegemusic">
+<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -188,7 +188,7 @@ College Girl
 </div>
 </a>
 <a id="collegemusic-guy" class="link heading fit glow " title href="/collegemusic-guy">
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -201,8 +201,8 @@ College Guy
 </div>
 </div>
 </a>
-<a href="/collegemusic-lonely" id="collegemusic-lonely" class="link heading fit glow " title>
-<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="collegemusic-lonely" class="link heading fit glow " title href="/collegemusic-lonely">
+<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -216,7 +216,7 @@ College Lonely
 </div>
 </a>
 <a href="/everything-fades-to-blue" id="everything-fades-to-blue" class="link heading fit glow " title>
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -230,7 +230,7 @@ Everything Fades To Blue
 </div>
 </a>
 <a id="lofigirl" class="link heading fit glow " title href="/lofigirl">
-<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -244,7 +244,7 @@ Lofi Girl
 </div>
 </a>
 <a id="lofigirl-sleepy" class="link heading fit glow " title href="/lofigirl-sleepy">
-<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
+<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -271,8 +271,8 @@ Pop Culture Sunday
 </div>
 </div>
 </a>
-<a title href="/sleepynatula" id="sleepynatula" class="link heading fit glow ">
-<div id class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="sleepynatula" class="link heading fit glow " title href="/sleepynatula">
+<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -285,7 +285,7 @@ Sleepy Natula
 </div>
 </div>
 </a>
-<a id="closedonsunday-starwars" class="link heading fit glow " title href="/closedonsunday-starwars">
+<a href="/closedonsunday-starwars" id="closedonsunday-starwars" class="link heading fit glow " title>
 <div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -299,8 +299,8 @@ Star Wars Sunday
 </div>
 </div>
 </a>
-<a id="steezyasfuck-coffee-show" class="link heading fit glow " title href="/steezyasfuck-coffee-show">
-<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
+<a title href="/steezyasfuck-coffee-show" id="steezyasfuck-coffee-show" class="link heading fit glow ">
+<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -313,7 +313,7 @@ Steezy Coffee Shop
 </div>
 </div>
 </a>
-<a id="steezyasfuck-junky-fluff" class="link heading fit glow " title href="/steezyasfuck-junky-fluff">
+<a title href="/steezyasfuck-junky-fluff" id="steezyasfuck-junky-fluff" class="link heading fit glow ">
 <div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -327,8 +327,8 @@ Steezy Junky Fluff
 </div>
 </div>
 </a>
-<a href="/tokyolosttracks" id="tokyolosttracks" class="link heading fit glow " title>
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="tokyolosttracks" class="link heading fit glow " title href="/tokyolosttracks">
+<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -346,7 +346,7 @@ Steezy Junky Fluff
 </div>
 <div class="nav-support hspace-out">
 <a title href="https://www.buymeacoffee.com/maxence" id class="link heading fit glow ">
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -359,8 +359,8 @@ Buy me a coffee
 </div>
 </div>
 </a>
-<a class="link heading fit glow " title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae" id>
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<a id class="link heading fit glow " title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae">
+<div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id class>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -373,7 +373,7 @@ Donate cryptos
 </div>
 </div>
 </a>
-<a title href="https://github.com/maxence-charriere/lofimusic" id class="link heading fit glow ">
+<a id class="link heading fit glow " title href="https://github.com/maxence-charriere/lofimusic">
 <div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon">
 <div style="width:24px;height:24px;">
@@ -388,7 +388,7 @@ GitHub
 </div>
 </a>
 <a id class="link heading fit glow " title href="https://twitter.com/jonhymaxoo">
-<div data-goapp="Stack" id class style="display:flex;justify-content:flex-start;align-items:center;">
+<div class style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" id>
 <div class="link-icon">
 <div style="width:24px;height:24px;">
 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
@@ -418,7 +418,7 @@ College Girl
 </h1>
 <div class="info-title-separator"></div>
 <div data-goapp="Stack" id class="info-links" style="display:flex;justify-content:center;align-items:center;">
-<a title="Visit College Music's Facebook." href="https://www.facebook.com/collegemusic" class="infolink ">
+<a class="infolink " title="Visit College Music's Facebook." href="https://www.facebook.com/collegemusic">
 <div style="width:18px;height:18px;">
 <svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z" />
