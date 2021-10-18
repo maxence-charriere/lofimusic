@@ -323,12 +323,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "lofi-code-beats",
 			Name:  "Coding Beats",
 			Owner: "Joma Tech",
-			URL:   "https://youtu.be/bmVKaAV_7-A",
+			URL:   "https://youtu.be/PY8f1Z3nARo",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/bmVKaAV_7-A",
+					URL:  "https://youtu.be/PY8f1Z3nARo",
 				},
 				{
 					Slug: "instagram",
@@ -358,35 +358,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "youtube",
 					URL:  "https://youtu.be/-5KAN9_CzSA",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/stzzyasfvck/",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/stzzyasfvck",
-				},
-			},
-		},
-		{
-			Slug:  "steezyasfuck-junky-fluff",
-			Name:  "Steezy Junky Fluff",
-			Owner: "STEEZYASFUCK",
-			URL:   "https://youtu.be/rc9cjjEun_k",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "website",
-					URL:  "https://www.stzzzy.com",
-				},
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/rc9cjjEun_k",
 				},
 				{
 					Slug: "spotify",
@@ -526,7 +497,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "sleepynatula",
 			Name:  "Sleepy Natula",
 			Owner: "Tone by Gridge",
-			URL:   "https://youtu.be/56q3dOGNAJ8",
+			URL:   "https://youtu.be/pCuy6U-RVFk",
 			Cards: []string{
 				"Sleepy Natula is a radio that broadcasts Neo chill beats style songs, produced by Tone by Gridge in the Japanese city of Tokyo.",
 				"The animation shows Natula, a girl that fell asleep after drinking a relaxation drink named CHILL OUT.",
@@ -541,7 +512,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/56q3dOGNAJ8",
+					URL:  "https://youtu.be/pCuy6U-RVFk",
 				},
 				{
 					Slug: "spotify",

@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/ui"
 )
 
 const (
@@ -114,7 +115,7 @@ func (i *info) Render() app.UI {
 						Class("glow").
 						Text(i.Iradio.Name),
 					app.Div().Class("info-title-separator"),
-					app.Stack().
+					ui.Stack().
 						Class("info-links").
 						Center().
 						Middle().

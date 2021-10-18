@@ -8,6 +8,7 @@ import (
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 	"github.com/maxence-charriere/go-app/v9/pkg/errors"
+	"github.com/maxence-charriere/go-app/v9/pkg/ui"
 )
 
 const (
@@ -269,7 +270,7 @@ func (p *youTubePlayer) Render() app.UI {
 							Err(p.err),
 					),
 			),
-			app.Stack().
+			ui.Stack().
 				Class("youtube-controls").
 				Class("hspace-out").
 				Class("vspace-top").
