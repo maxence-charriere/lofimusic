@@ -26,20 +26,45 @@ if ("serviceWorker" in navigator) {
 }
 
 // -----------------------------------------------------------------------------
-// Init progressive app
+// Env
 // -----------------------------------------------------------------------------
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"","GOAPP_STATIC_RESOURCES_URL":"","GOAPP_VERSION":"154827bb0fc9434bc24472fc181150266034fe32"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"","GOAPP_STATIC_RESOURCES_URL":"","GOAPP_VERSION":"d7b536b83eba2b532d9bd598531a8d1b066749e2"};
 
 function goappGetenv(k) {
   return goappEnv[k];
 }
 
-let deferredPrompt;
+// -----------------------------------------------------------------------------
+// App install
+// -----------------------------------------------------------------------------
+let deferredPrompt = null;
+var goappOnAppInstallChange = function () { };
 
 window.addEventListener("beforeinstallprompt", e => {
   e.preventDefault();
   deferredPrompt = e;
+  goappOnAppInstallChange();
 });
+
+window.addEventListener('appinstalled', () => {
+  deferredPrompt = null;
+  goappOnAppInstallChange();
+});
+
+function goappIsAppInstallable() {
+  return !goappIsAppInstalled() && deferredPrompt != null;
+}
+
+function goappIsAppInstalled() {
+  const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+  return isStandalone || navigator.standalone;
+}
+
+async function goappShowInstallPrompt() {
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt = null;
+}
 
 // -----------------------------------------------------------------------------
 // Keep body clean
@@ -99,4 +124,3 @@ if (!/bot|googlebot|crawler|spider|robot|crawling/i.test(navigator.userAgent)) {
 } else {
   document.getElementById('app-wasm-loader').style.display = "none";
 }
-

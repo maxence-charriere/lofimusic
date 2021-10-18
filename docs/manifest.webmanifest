@@ -1,6 +1,7 @@
 {
   "short_name": "Lofimusic",
   "name": "Lofimusic",
+  "description": "Lofi music player",
   "icons": [
     {
       "src": "/web/logo.png",

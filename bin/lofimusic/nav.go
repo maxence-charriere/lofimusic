@@ -4,6 +4,7 @@ import (
 	"strings"
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/ui"
 )
 
 type nav struct {
@@ -59,7 +60,7 @@ func (n *nav) Render() app.UI {
 		Class("unselectable").
 		Class(n.Iclass).
 		Body(
-			app.Stack().
+			ui.Stack().
 				Class("app-title").
 				Class("hspace-out").
 				Middle().
@@ -80,7 +81,7 @@ func (n *nav) Render() app.UI {
 					app.Div().
 						Class("nav-radios").
 						Body(
-							app.Stack().
+							ui.Stack().
 								Class("nav-radios-stack").
 								Middle().
 								Content(

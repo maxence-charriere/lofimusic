@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/ui"
 	"golang.org/x/exp/rand"
 )
 
@@ -102,14 +103,14 @@ func (r *radio) Render() app.UI {
 				Class("fill").
 				Radio(r.current).
 				OnPlaybackChange(r.onPlaybackChange),
-			app.Shell().
+			ui.Shell().
 				Class("radio-shell").
 				Class("fill").
-				MenuWidth(menuWidth).
+				PaneWidth(menuWidth).
 				Menu(newNav().
 					LiveRadios(r.lives).
 					CurrentRadio(r.current)).
-				OverlayMenu(newNav().
+				HamburgerMenu(newNav().
 					Class("background-overlay").
 					LiveRadios(r.lives).
 					CurrentRadio(r.current)).
@@ -119,7 +120,7 @@ func (r *radio) Render() app.UI {
 						Class("app-title").
 						Class("hspace-out").
 						Body(
-							app.Stack().
+							ui.Stack().
 								Class("fill").
 								Right().
 								Middle().
