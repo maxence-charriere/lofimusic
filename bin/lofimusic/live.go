@@ -377,12 +377,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/mOe8VEMuPo0",
+			URL:   "https://youtu.be/Tgme8K4XlHQ",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/mOe8VEMuPo0",
+					URL:  "https://youtu.be/Tgme8K4XlHQ",
 				},
 				{
 					Slug: "spotify",
