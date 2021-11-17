@@ -257,7 +257,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic-guy",
 			Name:  "College Guy",
 			Owner: "College Music",
-			URL:   "https://youtu.be/2atQnvunGCo",
+			URL:   "https://youtu.be/XDh0JcxrbPM",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -266,7 +266,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/2atQnvunGCo",
+					URL:  "https://youtu.be/XDh0JcxrbPM",
 				},
 				{
 					Slug: "spotify",
@@ -533,6 +533,39 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "twitter",
 					URL:  "https://twitter.com/tonedotcom",
+				},
+			},
+		},
+		{
+			Slug:  "dreamhop",
+			Name:  "Dreamhop",
+			Owner: "Dreamhop Music",
+			URL:   "https://youtu.be/tCs48OFv7xA",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "website",
+					URL:  "https://dreamhopmusic.com",
+				},
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/tCs48OFv7xA",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/user/91jfqzlv0htrqrvvc60138qma",
+				},
+				{
+					Slug: "discord",
+					URL:  "https://discord.com/invite/FxF9kng",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/dreamhopp",
+				},
+				{
+					Slug: "twitter",
+					URL:  "https://twitter.com/Dreamhopp",
 				},
 			},
 		},
