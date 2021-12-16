@@ -15,11 +15,6 @@ import (
 
 const (
 	backgroundColor = "#000000"
-
-	buyMeACoffeeURL     = "https://www.buymeacoffee.com/maxence"
-	githubURL           = "https://github.com/maxence-charriere/lofimusic"
-	twitterURL          = "https://twitter.com/jonhymaxoo"
-	coinbaseBusinessURL = "https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"
 )
 
 type options struct {
@@ -69,24 +64,7 @@ func main() {
 		LoadingLabel: "Lofi music player to work, study and relax.",
 		Name:         "Lofimusic",
 		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
-		RawHeaders: []string{
-			`<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
-			<script>
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
-			
-			  gtag('config', 'UA-177947020-1');
-			</script>			
-			`,
-			`<script>
-			var isOnYouTubeIframeAPIReady = false;
-			function onYouTubeIframeAPIReady() {
-				isOnYouTubeIframeAPIReady = true;
-			}
-			</script>`,
-		},
+		RawHeaders:   []string{},
 		Styles: []string{
 			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
 			"/web/lofimusic.css",
