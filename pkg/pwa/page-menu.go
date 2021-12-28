@@ -68,6 +68,17 @@ func (m *pageMenu) Render() app.UI {
 				Middle().
 				Content(
 					app.Nav().Body(
+						app.If(m.isAppInstallable,
+							ui.Link().
+								Class(linkClass).
+								Icon(downloadSVG).
+								Label("Install").
+								Help(fmt.Sprintf("Click to Install %s on your device.", Info.Name)).
+								OnClick(m.onInstallClick),
+
+							newSectionBreak(),
+						),
+
 						app.Range(m.videos).Slice(func(i int) app.UI {
 							v := m.videos[i]
 							return ui.Link().
@@ -107,4 +118,8 @@ func (m *pageMenu) Render() app.UI {
 					),
 				),
 		)
+}
+
+func (m *pageMenu) onInstallClick(ctx app.Context, e app.Event) {
+	ctx.NewAction(installApp)
 }

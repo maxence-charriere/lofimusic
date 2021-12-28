@@ -49,9 +49,7 @@ func (p *page) Render() app.UI {
 				Class("fill").
 				HeaderHeight(pageHeaderHeight).
 				Header(
-				// newPageTop().
-				// 	Content(p.ItopMenu...).
-				// 	Subcontent(p.ItopIndex...),
+					newPageTop(),
 				).
 				Content(
 					app.Main().

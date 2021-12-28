@@ -14,6 +14,9 @@ const (
 	githubURL           = "https://github.com/maxence-charriere/lofimusic"
 	twitterURL          = "https://twitter.com/jonhymaxoo"
 	coinbaseBusinessURL = "https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"
+
+	installApp = "/app/install"
+	updateApp  = "/app/update"
 )
 
 // The progressive web app info.
@@ -57,6 +60,8 @@ func InitAndRunOnBrowser() {
 	rand.Seed(time.Now().UnixNano())
 	analytics.Add(analytics.NewGoogleAnalytics())
 
+	app.Handle(installApp, handleInstallApp)
+	app.Handle(updateApp, handleUpdateApp)
 	app.Handle(loadVideo, handleLoadVideo)
 
 	for _, v := range radio.List() {
@@ -64,4 +69,12 @@ func InitAndRunOnBrowser() {
 	}
 	app.Route("/", newPage())
 	app.RunWhenOnBrowser()
+}
+
+func handleInstallApp(ctx app.Context, a app.Action) {
+	ctx.ShowAppInstallPrompt()
+}
+
+func handleUpdateApp(ctx app.Context, a app.Action) {
+	ctx.Reload()
 }
