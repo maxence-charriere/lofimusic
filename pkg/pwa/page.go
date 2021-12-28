@@ -44,5 +44,21 @@ func (p *page) Render() app.UI {
 				Class("background-overlay").
 				Class("page-menu-overlay"),
 		).
-		Content()
+		Content(
+			ui.Scroll().
+				Class("fill").
+				HeaderHeight(pageHeaderHeight).
+				Header(
+				// newPageTop().
+				// 	Content(p.ItopMenu...).
+				// 	Subcontent(p.ItopIndex...),
+				).
+				Content(
+					app.Main().
+						Class("fill").
+						Body(
+							newArticle(),
+						),
+				),
+		)
 }
