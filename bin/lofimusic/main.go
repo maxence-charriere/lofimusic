@@ -7,10 +7,12 @@ import (
 	"os"
 	"syscall"
 
+	"github.com/maxence-charriere/go-app/v9/pkg/analytics"
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 	"github.com/maxence-charriere/go-app/v9/pkg/cli"
 	"github.com/maxence-charriere/go-app/v9/pkg/errors"
 	"github.com/maxence-charriere/go-app/v9/pkg/logs"
+	"github.com/maxence-charriere/lofimusic/pkg/pwa"
 )
 
 const (
@@ -31,11 +33,7 @@ type githubOptions struct {
 }
 
 func main() {
-	for _, l := range getLiveRadios() {
-		app.Route("/"+l.Slug, newRadio())
-	}
-	app.Route("/", newRadio())
-	app.RunWhenOnBrowser()
+	pwa.InitAndRunOnBrowser()
 
 	ctx, cancel := cli.ContextWithSignals(context.Background(),
 		os.Interrupt,
@@ -45,41 +43,22 @@ func main() {
 	defer exit()
 
 	h := app.Handler{
-		Author:          "Maxence Charriere",
-		BackgroundColor: backgroundColor,
-		Description:     "Lofi music player",
-		Icon: app.Icon{
-			Default: "/web/logo.png",
+		Name:            pwa.Info.Name,
+		Icon:            app.Icon{Default: pwa.Info.LogoURL},
+		BackgroundColor: pwa.Info.ThemeColor,
+		ThemeColor:      pwa.Info.ThemeColor,
+		Author:          pwa.Info.Author,
+		Title:           pwa.Info.DefaultTitle,
+		Description:     pwa.Info.DefaultDescription,
+		Keywords:        pwa.Info.Keywords,
+		LoadingLabel:    pwa.Info.DefaultDescription,
+		Image:           pwa.Info.ImageURL,
+		Styles: []string{
+			"https://fonts.googleapis.com/css2?family=Montserrat&family=Quicksand&display=swap",
+			"/web/lofi.css",
 		},
-		Keywords: []string{
-			"lofi",
-			"lo-fi",
-			"music",
-			"lofimusic",
-			"chill",
-			"chilled",
-			"beats",
-			"relax",
-			"study",
-			"sleep",
-			"hiphop",
-			"app",
-			"pwa",
-		},
-		LoadingLabel: "Lofi music player to work, study and relax.",
-		Name:         "Lofimusic",
-		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
 		RawHeaders: []string{
-			`<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
-			<script>
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
-			
-			  gtag('config', 'UA-177947020-1');
-			</script>			
-			`,
+			analytics.GoogleAnalyticsHeader("UA-177947020-1"),
 			`<script>
 			var isOnYouTubeIframeAPIReady = false;
 			function onYouTubeIframeAPIReady() {
@@ -87,13 +66,6 @@ func main() {
 			}
 			</script>`,
 		},
-		Styles: []string{
-			"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap",
-			"/web/lofimusic.css",
-		},
-
-		ThemeColor: backgroundColor,
-		Title:      "Lofimusic",
 	}
 
 	opts := options{Port: 4000}
@@ -114,7 +86,6 @@ func main() {
 	case "github":
 		generateGitHubPages(ctx, &h, githubOpts)
 	}
-
 }
 
 func runLocal(ctx context.Context, h http.Handler, opts options) {

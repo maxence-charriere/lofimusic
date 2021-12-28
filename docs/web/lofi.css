@@ -1,0 +1,478 @@
+/* -----------------------------------------------------------------------------
+**
+**
+** GENERAL CSS
+**
+**
+** ---------------------------------------------------------------------------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: none;
+  margin: 0;
+  padding: 0;
+
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+  scrollbar-width: thin;
+
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 15px;
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  text-shadow: 1px 1px rgb(0 0 0 / 55%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.app-title,
+.heading {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+th,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+.h1 {
+  font-size: 42px;
+  letter-spacing: 7px;
+}
+
+h2,
+.h2 {
+  font-size: 25px;
+  letter-spacing: 4px;
+}
+
+h3,
+.h3 {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.app-title {
+  font-size: 28px;
+  letter-spacing: 6px;
+}
+
+p,
+.p {
+  margin: 12px 0 0 0;
+}
+
+a,
+.a {
+  color: currentColor;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+table {
+  border-collapse: collapse;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+tr {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+th {
+  vertical-align: middle;
+  font-weight: normal;
+  text-align: start;
+}
+
+th,
+td {
+  margin: 0;
+  padding: 12px 18px 12px 6px;
+}
+
+tr th:first-child {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list-container {
+  padding: 0;
+  list-style-type: none;
+}
+
+.list-item {
+  margin: 0;
+  padding: 24px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.list-item:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sublist .list-item:last-child {
+  padding-bottom: none;
+  border-bottom: none;
+}
+
+.rounded {
+  border-radius: 18px;
+}
+
+.fill {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.fill-h {
+  width: 100%;
+  max-width: 100%;
+}
+
+.fill-v {
+  height: 100%;
+  max-height: 100%;
+}
+
+.fill-v-min {
+  min-height: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.split-words {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+.above-s {
+  margin-bottom: 6px;
+}
+
+.below-xs {
+  margin-top: 3px;
+}
+.below-s {
+  margin-top: 6px;
+}
+
+.below-l {
+  margin-top: 18px;
+}
+
+.left-s {
+  margin-right: 12px;
+}
+
+.left-m {
+  margin-right: 18px;
+}
+
+.left-l {
+  margin-right: 24px;
+}
+
+.left-xl {
+  margin-right: 30px;
+}
+
+.icon-circle img {
+  border-radius: 50%;
+}
+
+.float-left {
+  float: left;
+}
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* ----------------------------------------------------------------------------- 
+** Colors
+** ---------------------------------------------------------------------------*/
+.page-background,
+.goapp-app-info {
+  /* background: linear-gradient(#20130e, #0b0d12); */
+  background-color: black;
+}
+
+::-webkit-scrollbar {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 12px;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.background-overlay {
+  background-image: linear-gradient(black, rgba(0, 0, 0, 0.9));
+}
+
+.background-block {
+  background-color: #1d1d20;
+}
+
+.background-block-hover:hover,
+.background-block-hover:active {
+  background-color: #29292e;
+}
+
+.shadow,
+svg,
+input,
+img {
+  text-shadow: none;
+  filter: drop-shadow(1px 1px 0 rgb(0 0 0 / 55%));
+}
+
+.goapp-shell-hamburger-button-default:hover,
+.goapp-shell-hamburger-button-default:active,
+.accent,
+.accent-hover:hover,
+.accent-hover:active {
+  color: mediumspringgreen !important;
+}
+
+.danger,
+.danger-hover:hover,
+.danger-hover:active {
+  color: #f06372 !important;
+}
+
+.underline,
+.underline-center,
+th,
+td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+tr:first-child th,
+tr:first-child td {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.subtable tr:last-child th,
+.subtable tr:last-child td {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pane-break {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ----------------------------------------------------------------------------- 
+** Animations
+** ---------------------------------------------------------------------------*/
+.hover {
+  transition: 0.2s all;
+}
+
+.hover:hover {
+  transform: scale(1.08);
+}
+
+.hover:active {
+  transform: scale(0.98) !important;
+}
+
+.animate {
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+}
+
+.animate-slow {
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+}
+
+.animate-patreon {
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-timing-function: ease;
+  animation-name: patreon-highlight;
+  animation-delay: 1.5s;
+}
+
+.bounce {
+  animation-timing-function: ease;
+  animation-name: bouncing;
+  transform-origin: bottom;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-6px);
+  }
+  30% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-6px);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ----------------------------------------------------------------------------- 
+** Page 
+** ---------------------------------------------------------------------------*/
+/* .page-menu .section-break:first-of-type {
+  margin-top: 18px;
+} */
+
+.page-menu .section-break {
+  margin-top: 30px;
+}
+
+/* .page-menu .section-break:last-of-type {
+  margin-top: 16px;
+} */
+
+.page-login {
+  font-size: 14px;
+}
+
+.page-top > * {
+  display: inline-block !important;
+  margin-left: 18px;
+}
+
+.page-menu-link {
+  display: block;
+  cursor: pointer;
+  color: currentColor;
+}
+
+.page-menu-link:hover {
+  transform: scale(1.25);
+}
+
+.page-menu-overlay {
+  position: relative;
+  z-index: 1000;
+}
+
+.page-title {
+  height: 240px;
+  max-width: 720px;
+}
+
+.page-title-image {
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ----------------------------------------------------------------------------- 
+** Section break 
+** ---------------------------------------------------------------------------*/
+.section-break:first-of-type {
+  margin-top: 18px;
+}
+
+.section-break {
+  margin-top: 84px;
+}
+
+.section-break:last-of-type {
+  margin-top: 18px;
+}
+
+/* -----------------------------------------------------------------------------
+**
+**
+** LOFIMUSIC
+** Styles specific to Lofimusic.app
+**
+**
+** ---------------------------------------------------------------------------*/
