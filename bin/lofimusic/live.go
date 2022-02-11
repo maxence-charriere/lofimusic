@@ -319,31 +319,31 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
-		{
-			Slug:  "lofi-code-beats",
-			Name:  "Coding Beats",
-			Owner: "Joma Tech",
-			URL:   "https://youtu.be/PY8f1Z3nARo",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/PY8f1Z3nARo",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/jomaoppa",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/jomaoppa",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/jomaoppa",
-				},
-			},
-		},
+		// {
+		// 	Slug:  "lofi-code-beats",
+		// 	Name:  "Coding Beats",
+		// 	Owner: "Joma Tech",
+		// 	URL:   "https://youtu.be/PY8f1Z3nARo",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/PY8f1Z3nARo",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/jomaoppa",
+		// 		},
+		// 		{
+		// 			Slug: "facebook",
+		// 			URL:  "https://www.facebook.com/jomaoppa",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/jomaoppa",
+		// 		},
+		// 	},
+		// },
 		{
 			Slug:  "steezyasfuck-coffee-show",
 			Name:  "Steezy Coffee Shop",
@@ -377,12 +377,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/Tgme8K4XlHQ",
+			URL:   "https://youtu.be/91P7vt4y7n0",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/Tgme8K4XlHQ",
+					URL:  "https://youtu.be/91P7vt4y7n0",
 				},
 				{
 					Slug: "spotify",
@@ -402,12 +402,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/o33l32ZrIy8",
+			URL:   "https://youtu.be/7pM5fPfzIEg",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/o33l32ZrIy8",
+					URL:  "https://youtu.be/7pM5fPfzIEg",
 				},
 				{
 					Slug: "spotify",
