@@ -377,12 +377,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/91P7vt4y7n0",
+			URL:   "https://youtu.be/QCWVo19m8xc",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/91P7vt4y7n0",
+					URL:  "https://youtu.be/QCWVo19m8xc",
 				},
 				{
 					Slug: "spotify",
@@ -402,12 +402,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/7pM5fPfzIEg",
+			URL:   "https://youtu.be/cTOmezHeQ2I",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/7pM5fPfzIEg",
+					URL:  "https://youtu.be/cTOmezHeQ2I",
 				},
 				{
 					Slug: "spotify",
@@ -427,12 +427,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "tokyolosttracks",
 			Name:  "サクラチル",
 			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/WBfbkPTqUtU",
+			URL:   "https://youtu.be/QYW2K6Ncfwo",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/WBfbkPTqUtU",
+					URL:  "https://youtu.be/QYW2K6Ncfwo",
 				},
 				{
 					Slug: "spotify",
