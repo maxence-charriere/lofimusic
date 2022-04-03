@@ -373,6 +373,35 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
+		// {
+		// 	Slug:  "steezyasfuck-junky-fluff",
+		// 	Name:  "Steezy Junky Fluff",
+		// 	Owner: "STEEZYASFUCK",
+		// 	URL:   "https://www.youtube.com/watch?v=xgirCNccI68",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "website",
+		// 			URL:  "https://www.youtube.com/watch?v=xgirCNccI68",
+		// 		},
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/-5KAN9_CzSA",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/stzzyasfvck/",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/stzzyasfvck",
+		// 		},
+		// 	},
+		// },
 		{
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
@@ -566,6 +595,23 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "twitter",
 					URL:  "https://twitter.com/Dreamhopp",
+				},
+			},
+		},
+		{
+			Slug:  "monsta-space",
+			Name:  "Monsta Space",
+			Owner: "Monstafluff Music",
+			URL:   "https://youtu.be/zVqJv_dKUEs",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/zVqJv_dKUEs",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
 				},
 			},
 		},
