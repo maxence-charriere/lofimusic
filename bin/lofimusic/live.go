@@ -493,7 +493,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "thebootlegboy",
 			Name:  "Bootleg Smoke",
 			Owner: "the bootleg boy",
-			URL:   "https://youtu.be/l7TxwBhtTUY",
+			URL:   "https://youtu.be/vq3IvvNe7VY",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -502,7 +502,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/l7TxwBhtTUY",
+					URL:  "https://youtu.be/vq3IvvNe7VY",
 				},
 				{
 					Slug: "spotify",
@@ -612,6 +612,76 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "spotify",
 					URL:  "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
+				},
+			},
+		},
+		{
+			Slug:  "cloudy-sakura",
+			Name:  "Cloudy Sakura",
+			Owner: "Nourish.",
+			URL:   "https://youtu.be/IjMESxJdWkg",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/IjMESxJdWkg",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/user/nourish.",
+				},
+				{
+					Slug: "discord",
+					URL:  "https://discord.com/invite/8CTEEjW",
+				},
+				{
+					Slug: "twitter",
+					URL:  "https://twitter.com/nourishmusic",
+				},
+				{
+					Slug: "website",
+					URL:  "https://www.nourish.live",
+				},
+				{
+					Slug: "facebook",
+					URL:  "https://www.facebook.com/nourishmusic",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/nourishmusic",
+				},
+			},
+		},
+		{
+			Slug:  "taiki",
+			Name:  "Taiki",
+			Owner: "Chill with Taiki",
+			URL:   "https://youtu.be/HDhR2Yhnvfo",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/HDhR2Yhnvfo",
+				},
+				{
+					Slug: "discord",
+					URL:  "https://discord.com/invite/2qvd2ngQGP",
+				},
+				{
+					Slug: "twitter",
+					URL:  "https://twitter.com/chillwithtaiki",
+				},
+				{
+					Slug: "facebook",
+					URL:  "https://www.facebook.com/chillwithtaiki",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/chillwithtaiki",
+				},
+				{
+					Slug: "website",
+					URL:  "https://taiki.shop",
 				},
 			},
 		},
