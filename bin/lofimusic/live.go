@@ -105,7 +105,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "lofigirl-sleepy",
 			Name:  "Lofi Sleepy Girl",
 			Owner: "Lofi Girl",
-			URL:   "https://youtu.be/DWcJFNfaw9c",
+			URL:   "https://youtu.be/rUxyKA_-grg",
 			Cards: []string{
 				"Lofi girl is a radio that broadcasts lo-fi hip hop songs created by a French fellow named Dimitri in 2017.",
 				`The animation, made by Juan Pablo Machado, is modeled after Shizuku Tsukishima, a girl character from the Studio Ghibli film "Whisper of the Heart".`,
@@ -118,7 +118,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/DWcJFNfaw9c",
+					URL:  "https://youtu.be/rUxyKA_-grg",
 				},
 				{
 					Slug: "spotify",
