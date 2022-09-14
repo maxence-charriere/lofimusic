@@ -290,7 +290,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic-lonely",
 			Name:  "College Lonely",
 			Owner: "College Music",
-			URL:   "https://youtu.be/bM0Iw7PPoU4",
+			URL:   "https://youtu.be/MQ1C6jv6Ysw",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -299,7 +299,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/bM0Iw7PPoU4",
+					URL:  "https://youtu.be/MQ1C6jv6Ysw",
 				},
 				{
 					Slug: "spotify",
@@ -406,12 +406,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/QCWVo19m8xc",
+			URL:   "https://youtu.be/KmmK0a4kGtA",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/QCWVo19m8xc",
+					URL:  "https://youtu.be/KmmK0a4kGtA",
 				},
 				{
 					Slug: "spotify",
@@ -431,12 +431,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/cTOmezHeQ2I",
+			URL:   "https://youtu.be/nxTbSSeZ2Y0",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/cTOmezHeQ2I",
+					URL:  "https://youtu.be/nxTbSSeZ2Y0",
 				},
 				{
 					Slug: "spotify",
@@ -456,12 +456,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "tokyolosttracks",
 			Name:  "サクラチル",
 			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/cATDx8M-D-E",
+			URL:   "https://youtu.be/KpftRrX83Yk",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/cATDx8M-D-E",
+					URL:  "https://youtu.be/KpftRrX83Yk",
 				},
 				{
 					Slug: "spotify",
@@ -493,7 +493,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "thebootlegboy",
 			Name:  "Bootleg Smoke",
 			Owner: "the bootleg boy",
-			URL:   "https://youtu.be/vq3IvvNe7VY",
+			URL:   "https://youtu.be/bLlloaA4b4g",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -502,7 +502,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/vq3IvvNe7VY",
+					URL:  "https://youtu.be/bLlloaA4b4g",
 				},
 				{
 					Slug: "spotify",
@@ -569,7 +569,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "dreamhop",
 			Name:  "Dreamhop",
 			Owner: "Dreamhop Music",
-			URL:   "https://youtu.be/44MwiiWh8lA",
+			URL:   "https://youtu.be/A6rK6_VqBls",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -578,7 +578,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/44MwiiWh8lA",
+					URL:  "https://youtu.be/A6rK6_VqBls",
 				},
 				{
 					Slug: "spotify",
@@ -612,43 +612,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "spotify",
 					URL:  "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
-				},
-			},
-		},
-		{
-			Slug:  "cloudy-sakura",
-			Name:  "Cloudy Sakura",
-			Owner: "Nourish.",
-			URL:   "https://youtu.be/IjMESxJdWkg",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/IjMESxJdWkg",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/user/nourish.",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/8CTEEjW",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/nourishmusic",
-				},
-				{
-					Slug: "website",
-					URL:  "https://www.nourish.live",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/nourishmusic",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/nourishmusic",
 				},
 			},
 		},
