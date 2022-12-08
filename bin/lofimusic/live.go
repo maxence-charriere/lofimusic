@@ -290,7 +290,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic-lonely",
 			Name:  "College Lonely",
 			Owner: "College Music",
-			URL:   "https://youtu.be/MQ1C6jv6Ysw",
+			URL:   "https://youtu.be/dxUtV-zNv9w",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -299,7 +299,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/MQ1C6jv6Ysw",
+					URL:  "https://youtu.be/dxUtV-zNv9w",
 				},
 				{
 					Slug: "spotify",
@@ -406,12 +406,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/KmmK0a4kGtA",
+			URL:   "https://youtu.be/CffBb4C1S2c",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/KmmK0a4kGtA",
+					URL:  "https://youtu.be/CffBb4C1S2c",
 				},
 				{
 					Slug: "spotify",
@@ -431,12 +431,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/nxTbSSeZ2Y0",
+			URL:   "https://youtu.be/SIfKANrHfnk",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/nxTbSSeZ2Y0",
+					URL:  "https://youtu.be/SIfKANrHfnk",
 				},
 				{
 					Slug: "spotify",
@@ -456,12 +456,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "tokyolosttracks",
 			Name:  "サクラチル",
 			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/KpftRrX83Yk",
+			URL:   "https://youtu.be/FpZoXpF0VUM",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/KpftRrX83Yk",
+					URL:  "https://youtu.be/FpZoXpF0VUM",
 				},
 				{
 					Slug: "spotify",
@@ -522,49 +522,49 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
-		{
-			Slug:  "sleepynatula",
-			Name:  "Sleepy Natula",
-			Owner: "Tone by Gridge",
-			URL:   "https://youtu.be/pCuy6U-RVFk",
-			Cards: []string{
-				"Sleepy Natula is a radio that broadcasts Neo chill beats style songs, produced by Tone by Gridge in the Japanese city of Tokyo.",
-				"The animation shows Natula, a girl that fell asleep after drinking a relaxation drink named CHILL OUT.",
-				"Natula lives in Sephora, a city located on a musical planet named Tone.",
-				"On this planet, music is so important that it touches every species, nature, climate, culture, and civilization of each country.",
-				"Tone is a multicultural planet where there are thousands of countries populated by music-loving beings that come from all over the galaxy.",
-			},
-			Links: []socialLink{
-				{
-					Slug: "website",
-					URL:  "https://linktr.ee/tonebygridge?fbclid=IwAR2OYWJlav7MM66780DDtuu2k2viElVF3kgjn-GEK8c2RsvYt0TGOYz31zQ",
-				},
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/pCuy6U-RVFk",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/1stD3Nr9W5HWf47ft5TfKh?si=fDM2-nsIRlSdv2IC_KaanQ",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/eqH6RRj",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/tonedotcom",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/tonebygridge",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/tonedotcom",
-				},
-			},
-		},
+		// {
+		// 	Slug:  "sleepynatula",
+		// 	Name:  "Sleepy Natula",
+		// 	Owner: "Tone by Gridge",
+		// 	URL:   "https://youtu.be/pCuy6U-RVFk",
+		// 	Cards: []string{
+		// 		"Sleepy Natula is a radio that broadcasts Neo chill beats style songs, produced by Tone by Gridge in the Japanese city of Tokyo.",
+		// 		"The animation shows Natula, a girl that fell asleep after drinking a relaxation drink named CHILL OUT.",
+		// 		"Natula lives in Sephora, a city located on a musical planet named Tone.",
+		// 		"On this planet, music is so important that it touches every species, nature, climate, culture, and civilization of each country.",
+		// 		"Tone is a multicultural planet where there are thousands of countries populated by music-loving beings that come from all over the galaxy.",
+		// 	},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "website",
+		// 			URL:  "https://linktr.ee/tonebygridge?fbclid=IwAR2OYWJlav7MM66780DDtuu2k2viElVF3kgjn-GEK8c2RsvYt0TGOYz31zQ",
+		// 		},
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/pCuy6U-RVFk",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/playlist/1stD3Nr9W5HWf47ft5TfKh?si=fDM2-nsIRlSdv2IC_KaanQ",
+		// 		},
+		// 		{
+		// 			Slug: "discord",
+		// 			URL:  "https://discord.com/invite/eqH6RRj",
+		// 		},
+		// 		{
+		// 			Slug: "facebook",
+		// 			URL:  "https://www.facebook.com/tonedotcom",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/tonebygridge",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/tonedotcom",
+		// 		},
+		// 	},
+		// },
 		{
 			Slug:  "dreamhop",
 			Name:  "Dreamhop",
@@ -599,23 +599,6 @@ func getLiveRadios() []liveRadio {
 			},
 		},
 		{
-			Slug:  "monsta-space",
-			Name:  "Monsta Space",
-			Owner: "Monstafluff Music",
-			URL:   "https://youtu.be/zVqJv_dKUEs",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/zVqJv_dKUEs",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/178jrNhRrUc8DZERi4Iu2A",
-				},
-			},
-		},
-		{
 			Slug:  "taiki",
 			Name:  "Taiki",
 			Owner: "Chill with Taiki",
@@ -645,6 +628,60 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "website",
 					URL:  "https://taiki.shop",
+				},
+			},
+		},
+		{
+			Slug:  "coffee-girl",
+			Name:  "Coffee Gil",
+			Owner: "Lofi Zone",
+			URL:   "https: //youtu.be/f2APAc1xjq8",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/HDhR2Yhnvfo",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/playlist/0V5IsHm0VJbmeffuLzgoc3?si=eac2c90bc18f4a97",
+				},
+			},
+		},
+		{
+			Slug:  "chainsmokers",
+			Name:  "The Chainsmokers",
+			Owner: "The Chainsmokers",
+			URL:   "https://youtu.be/k4mtTZ8nNc4",
+			Cards: []string{},
+			Links: []socialLink{
+				{
+					Slug: "youtube",
+					URL:  "https://youtu.be/k4mtTZ8nNc4",
+				},
+				{
+					Slug: "spotify",
+					URL:  "https://open.spotify.com/album/3Fpxa7OUrdGmqEebgoAF1E",
+				},
+				{
+					Slug: "facebook",
+					URL:  "https://www.facebook.com/thechainsmokers",
+				},
+				{
+					Slug: "instagram",
+					URL:  "https://www.instagram.com/thechainsmokers",
+				},
+				{
+					Slug: "twitter",
+					URL:  "https://twitter.com/thechainsmokers",
+				},
+				{
+					Slug: "discord",
+					URL:  "https://discord.com/invite/thechainsmokers",
+				},
+				{
+					Slug: "website",
+					URL:  "https://thechainsmokers.com",
 				},
 			},
 		},
