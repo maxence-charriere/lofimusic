@@ -633,7 +633,7 @@ func getLiveRadios() []liveRadio {
 		},
 		{
 			Slug:  "coffee-girl",
-			Name:  "Coffee Gil",
+			Name:  "Coffee Girl",
 			Owner: "Lofi Zone",
 			URL:   "https: //youtu.be/f2APAc1xjq8",
 			Cards: []string{},
