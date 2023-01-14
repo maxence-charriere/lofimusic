@@ -348,7 +348,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "steezyasfuck-coffee-show",
 			Name:  "Steezy Coffee Shop",
 			Owner: "STEEZYASFUCK",
-			URL:   "https://youtu.be/-5KAN9_CzSA",
+			URL:   "https://youtu.be/e3L1PIY1pN8",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -357,7 +357,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/-5KAN9_CzSA",
+					URL:  "https://youtu.be/e3L1PIY1pN8",
 				},
 				{
 					Slug: "spotify",
