@@ -648,43 +648,44 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
-		{
-			Slug:  "chainsmokers",
-			Name:  "The Chainsmokers",
-			Owner: "The Chainsmokers",
-			URL:   "https://youtu.be/k4mtTZ8nNc4",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/k4mtTZ8nNc4",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/album/3Fpxa7OUrdGmqEebgoAF1E",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/thechainsmokers",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/thechainsmokers",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/thechainsmokers",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/thechainsmokers",
-				},
-				{
-					Slug: "website",
-					URL:  "https://thechainsmokers.com",
-				},
-			},
-		},
+		// This stream seems to be no more
+		// {
+		// 	Slug:  "chainsmokers",
+		// 	Name:  "The Chainsmokers",
+		// 	Owner: "The Chainsmokers",
+		// 	URL:   "https://youtu.be/k4mtTZ8nNc4",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/k4mtTZ8nNc4",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/album/3Fpxa7OUrdGmqEebgoAF1E",
+		// 		},
+		// 		{
+		// 			Slug: "facebook",
+		// 			URL:  "https://www.facebook.com/thechainsmokers",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/thechainsmokers",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/thechainsmokers",
+		// 		},
+		// 		{
+		// 			Slug: "discord",
+		// 			URL:  "https://discord.com/invite/thechainsmokers",
+		// 		},
+		// 		{
+		// 			Slug: "website",
+		// 			URL:  "https://thechainsmokers.com",
+		// 		},
+		// 	},
+		// },
 	}
 
 	sort.Slice(radios, func(a, b int) bool {
