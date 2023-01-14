@@ -569,7 +569,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "dreamhop",
 			Name:  "Dreamhop",
 			Owner: "Dreamhop Music",
-			URL:   "https://youtu.be/A6rK6_VqBls",
+			URL:   "https://youtu.be/wkhLHTmS_GI",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -578,7 +578,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/A6rK6_VqBls",
+					URL:  "https://youtu.be/wkhLHTmS_GI",
 				},
 				{
 					Slug: "spotify",
