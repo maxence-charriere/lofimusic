@@ -257,7 +257,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic-guy",
 			Name:  "College Guy",
 			Owner: "College Music",
-			URL:   "https://youtu.be/XDh0JcxrbPM",
+			URL:   "https://youtu.be/epaP2LCCuVE",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -266,7 +266,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/XDh0JcxrbPM",
+					URL:  "https://youtu.be/epaP2LCCuVE",
 				},
 				{
 					Slug: "spotify",
