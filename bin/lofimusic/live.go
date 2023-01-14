@@ -452,43 +452,44 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
-		{
-			Slug:  "tokyolosttracks",
-			Name:  "サクラチル",
-			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/FpZoXpF0VUM",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/FpZoXpF0VUM",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/37i9dQZF1DX87D1EaNZxW1",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/fHkhEgc",
-				},
-				{
-					Slug: "reddit",
-					URL:  "https://www.reddit.com/r/LofiGirl",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/TokyoLosTTracks",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/TokyoLosTTracks",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/TTT_SakuraChill",
-				},
-			},
-		},
+		// This stream seems to be suspended, most of the social links are broken too
+		// {
+		// 	Slug:  "tokyolosttracks",
+		// 	Name:  "サクラチル",
+		// 	Owner: "Tokyo LosT Track -Sakura Chill-",
+		// 	URL:   "https://youtu.be/FpZoXpF0VUM",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/FpZoXpF0VUM",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/playlist/37i9dQZF1DX87D1EaNZxW1",
+		// 		},
+		// 		{
+		// 			Slug: "discord",
+		// 			URL:  "https://discord.com/invite/fHkhEgc",
+		// 		},
+		// 		{
+		// 			Slug: "reddit",
+		// 			URL:  "https://www.reddit.com/r/LofiGirl",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/TokyoLosTTracks",
+		// 		},
+		// 		{
+		// 			Slug: "facebook",
+		// 			URL:  "https://www.facebook.com/TokyoLosTTracks",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/TTT_SakuraChill",
+		// 		},
+		// 	},
+		// },
 		{
 			Slug:  "thebootlegboy",
 			Name:  "Bootleg Smoke",
@@ -631,23 +632,24 @@ func getLiveRadios() []liveRadio {
 				},
 			},
 		},
-		{
-			Slug:  "coffee-girl",
-			Name:  "Coffee Girl",
-			Owner: "Lofi Zone",
-			URL:   "https: //youtu.be/f2APAc1xjq8",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/HDhR2Yhnvfo",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/0V5IsHm0VJbmeffuLzgoc3?si=eac2c90bc18f4a97",
-				},
-			},
-		},
+		//  Cannot find this stream anymore, there are plenty to choose from
+		// {
+		// 	Slug:  "coffee-girl",
+		// 	Name:  "Coffee Girl",
+		// 	Owner: "Lofi Zone",
+		// 	URL:   "https://youtu.be/f2APAc1xjq8",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/HDhR2Yhnvfo",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/playlist/0V5IsHm0VJbmeffuLzgoc3?si=eac2c90bc18f4a97",
+		// 		},
+		// 	},
+		// },
 		// This stream seems to be no more
 		// {
 		// 	Slug:  "chainsmokers",
