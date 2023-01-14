@@ -602,12 +602,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "taiki",
 			Name:  "Taiki",
 			Owner: "Chill with Taiki",
-			URL:   "https://youtu.be/HDhR2Yhnvfo",
+			URL:   "https://youtu.be/qH3fETPsqXU",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/HDhR2Yhnvfo",
+					URL:  "https://youtu.be/qH3fETPsqXU",
 				},
 				{
 					Slug: "discord",
