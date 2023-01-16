@@ -257,7 +257,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic-guy",
 			Name:  "College Guy",
 			Owner: "College Music",
-			URL:   "https://youtu.be/XDh0JcxrbPM",
+			URL:   "https://youtu.be/QwXHcgZUnFI",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -266,7 +266,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/XDh0JcxrbPM",
+					URL:  "https://youtu.be/QwXHcgZUnFI",
 				},
 				{
 					Slug: "spotify",
@@ -344,35 +344,35 @@ func getLiveRadios() []liveRadio {
 		// 		},
 		// 	},
 		// },
-		{
-			Slug:  "steezyasfuck-coffee-show",
-			Name:  "Steezy Coffee Shop",
-			Owner: "STEEZYASFUCK",
-			URL:   "https://youtu.be/-5KAN9_CzSA",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "website",
-					URL:  "https://www.stzzzy.com",
-				},
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/-5KAN9_CzSA",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/stzzyasfvck/",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/stzzyasfvck",
-				},
-			},
-		},
+		// {
+		// 	Slug:  "steezyasfuck-coffee-show",
+		// 	Name:  "Steezy Coffee Shop",
+		// 	Owner: "STEEZYASFUCK",
+		// 	URL:   "https://youtu.be/-5KAN9_CzSA",
+		// 	Cards: []string{},
+		// 	Links: []socialLink{
+		// 		{
+		// 			Slug: "website",
+		// 			URL:  "https://www.stzzzy.com",
+		// 		},
+		// 		{
+		// 			Slug: "youtube",
+		// 			URL:  "https://youtu.be/-5KAN9_CzSA",
+		// 		},
+		// 		{
+		// 			Slug: "spotify",
+		// 			URL:  "https://open.spotify.com/playlist/2s9R059mmdc8kz6lrUqZZd",
+		// 		},
+		// 		{
+		// 			Slug: "instagram",
+		// 			URL:  "https://www.instagram.com/stzzyasfvck/",
+		// 		},
+		// 		{
+		// 			Slug: "twitter",
+		// 			URL:  "https://twitter.com/stzzyasfvck",
+		// 		},
+		// 	},
+		// },
 		// {
 		// 	Slug:  "steezyasfuck-junky-fluff",
 		// 	Name:  "Steezy Junky Fluff",
@@ -456,12 +456,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "tokyolosttracks",
 			Name:  "サクラチル",
 			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/FpZoXpF0VUM",
+			URL:   "https://youtu.be/lZpRnzkWB84",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/FpZoXpF0VUM",
+					URL:  "https://youtu.be/lZpRnzkWB84",
 				},
 				{
 					Slug: "spotify",
@@ -569,7 +569,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "dreamhop",
 			Name:  "Dreamhop",
 			Owner: "Dreamhop Music",
-			URL:   "https://youtu.be/A6rK6_VqBls",
+			URL:   "https://youtu.be/wkhLHTmS_GI",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -578,7 +578,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/A6rK6_VqBls",
+					URL:  "https://youtu.be/wkhLHTmS_GI",
 				},
 				{
 					Slug: "spotify",
@@ -602,12 +602,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "taiki",
 			Name:  "Taiki",
 			Owner: "Chill with Taiki",
-			URL:   "https://youtu.be/HDhR2Yhnvfo",
+			URL:   "https://youtu.be/qH3fETPsqXU",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/HDhR2Yhnvfo",
+					URL:  "https://youtu.be/qH3fETPsqXU",
 				},
 				{
 					Slug: "discord",
@@ -632,56 +632,19 @@ func getLiveRadios() []liveRadio {
 			},
 		},
 		{
-			Slug:  "coffee-girl",
-			Name:  "Coffee Girl",
+			Slug:  "house-in-the-woods",
+			Name:  "House in the Woods",
 			Owner: "Lofi Zone",
-			URL:   "https: //youtu.be/f2APAc1xjq8",
+			URL:   "https://youtu.be/vUv5wkw9pMU",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/HDhR2Yhnvfo",
+					URL:  "https://youtu.be/vUv5wkw9pMU",
 				},
 				{
 					Slug: "spotify",
 					URL:  "https://open.spotify.com/playlist/0V5IsHm0VJbmeffuLzgoc3?si=eac2c90bc18f4a97",
-				},
-			},
-		},
-		{
-			Slug:  "chainsmokers",
-			Name:  "The Chainsmokers",
-			Owner: "The Chainsmokers",
-			URL:   "https://youtu.be/k4mtTZ8nNc4",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/k4mtTZ8nNc4",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/album/3Fpxa7OUrdGmqEebgoAF1E",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/thechainsmokers",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/thechainsmokers",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/thechainsmokers",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/thechainsmokers",
-				},
-				{
-					Slug: "website",
-					URL:  "https://thechainsmokers.com",
 				},
 			},
 		},
