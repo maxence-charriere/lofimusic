@@ -224,7 +224,7 @@ func getLiveRadios() []liveRadio {
 			Slug:  "collegemusic",
 			Name:  "College Girl",
 			Owner: "College Music",
-			URL:   "https://youtu.be/MCkTebktHVc",
+			URL:   "https://youtu.be/3TASKrR6nrg",
 			Cards: []string{},
 			Links: []socialLink{
 				{
@@ -233,7 +233,7 @@ func getLiveRadios() []liveRadio {
 				},
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/MCkTebktHVc",
+					URL:  "https://youtu.be/3TASKrR6nrg",
 				},
 				{
 					Slug: "spotify",
@@ -406,12 +406,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/CffBb4C1S2c",
+			URL:   "https://youtu.be/pixAeRe2rk0",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/CffBb4C1S2c",
+					URL:  "https://youtu.be/pixAeRe2rk0",
 				},
 				{
 					Slug: "spotify",
@@ -431,12 +431,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/SIfKANrHfnk",
+			URL:   "https://youtu.be/zFTFx6nclUY",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/SIfKANrHfnk",
+					URL:  "https://youtu.be/zFTFx6nclUY",
 				},
 				{
 					Slug: "spotify",
@@ -449,43 +449,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "instagram",
 					URL:  "https://www.instagram.com/closedonsundayy",
-				},
-			},
-		},
-		{
-			Slug:  "tokyolosttracks",
-			Name:  "サクラチル",
-			Owner: "Tokyo LosT Track -Sakura Chill-",
-			URL:   "https://youtu.be/lZpRnzkWB84",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/lZpRnzkWB84",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/37i9dQZF1DX87D1EaNZxW1",
-				},
-				{
-					Slug: "discord",
-					URL:  "https://discord.com/invite/fHkhEgc",
-				},
-				{
-					Slug: "reddit",
-					URL:  "https://www.reddit.com/r/LofiGirl",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/TokyoLosTTracks",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/TokyoLosTTracks",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/TTT_SakuraChill",
 				},
 			},
 		},
@@ -635,12 +598,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "house-in-the-woods",
 			Name:  "House in the Woods",
 			Owner: "Lofi Zone",
-			URL:   "https://youtu.be/vUv5wkw9pMU",
+			URL:   "https://youtu.be/MKzeyoX_w4g",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/vUv5wkw9pMU",
+					URL:  "https://youtu.be/MKzeyoX_w4g",
 				},
 				{
 					Slug: "spotify",
