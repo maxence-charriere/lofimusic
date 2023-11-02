@@ -4,14 +4,19 @@
   "description": "Lofi music player",
   "icons": [
     {
-      "src": "/web/logo.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
     },
     {
       "src": "",
       "type": "image/png",
       "sizes": "512x512"
+    },
+    {
+      "src": "/web/logo.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
   "scope": "/",
