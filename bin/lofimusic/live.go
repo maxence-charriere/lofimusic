@@ -265,39 +265,6 @@ func getLiveRadios() []liveRadio {
 			},
 		},
 		{
-			Slug:  "collegemusic",
-			Name:  "College Girl",
-			Owner: "College Music",
-			URL:   "https://youtu.be/3TASKrR6nrg",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "website",
-					URL:  "https://www.collegemusic.co.uk/",
-				},
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/3TASKrR6nrg",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/32hJXySZtt9YvnwcYINGZ0",
-				},
-				{
-					Slug: "instagram",
-					URL:  "https://www.instagram.com/collegemusic",
-				},
-				{
-					Slug: "facebook",
-					URL:  "https://www.facebook.com/collegemusic",
-				},
-				{
-					Slug: "twitter",
-					URL:  "https://twitter.com/collegemusicyt",
-				},
-			},
-		},
-		{
 			Slug:  "collegemusic-guy",
 			Name:  "College Guy",
 			Owner: "College Music",
@@ -450,12 +417,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-pop-culture",
 			Name:  "Pop Culture Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/pixAeRe2rk0",
+			URL:   "https://youtu.be/nLtTYQX8s00",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/pixAeRe2rk0",
+					URL:  "https://youtu.be/nLtTYQX8s00",
 				},
 				{
 					Slug: "spotify",
@@ -475,12 +442,12 @@ func getLiveRadios() []liveRadio {
 			Slug:  "closedonsunday-starwars",
 			Name:  "Star Wars Sunday",
 			Owner: "Closed on Sunday",
-			URL:   "https://youtu.be/zFTFx6nclUY",
+			URL:   "https://youtu.be/pFqGLRqvQyI",
 			Cards: []string{},
 			Links: []socialLink{
 				{
 					Slug: "youtube",
-					URL:  "https://youtu.be/zFTFx6nclUY",
+					URL:  "https://youtu.be/pFqGLRqvQyI",
 				},
 				{
 					Slug: "spotify",
@@ -635,23 +602,6 @@ func getLiveRadios() []liveRadio {
 				{
 					Slug: "website",
 					URL:  "https://taiki.shop",
-				},
-			},
-		},
-		{
-			Slug:  "house-in-the-woods",
-			Name:  "House in the Woods",
-			Owner: "Lofi Zone",
-			URL:   "https://youtu.be/MKzeyoX_w4g",
-			Cards: []string{},
-			Links: []socialLink{
-				{
-					Slug: "youtube",
-					URL:  "https://youtu.be/MKzeyoX_w4g",
-				},
-				{
-					Slug: "spotify",
-					URL:  "https://open.spotify.com/playlist/0V5IsHm0VJbmeffuLzgoc3?si=eac2c90bc18f4a97",
 				},
 			},
 		},
