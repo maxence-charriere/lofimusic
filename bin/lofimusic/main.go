@@ -70,16 +70,6 @@ func main() {
 		Name:         "Lofimusic",
 		Image:        "https://lofimusic.app/web/covers/lofimusic.png",
 		RawHeaders: []string{
-			`<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
-			<script>
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
-			
-			  gtag('config', 'UA-177947020-1');
-			</script>			
-			`,
 			`<script>
 			var isOnYouTubeIframeAPIReady = false;
 			function onYouTubeIframeAPIReady() {

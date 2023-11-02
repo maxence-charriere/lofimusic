@@ -5,7 +5,7 @@ var goappNav = function () {};
 var goappOnUpdate = function () {};
 var goappOnAppInstallChange = function () {};
 
-const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"","GOAPP_STATIC_RESOURCES_URL":"","GOAPP_VERSION":"1225325ee9f08013dff779658431a05765d10db7"};
+const goappEnv = {"GOAPP_INTERNAL_URLS":"null","GOAPP_ROOT_PREFIX":"","GOAPP_STATIC_RESOURCES_URL":"","GOAPP_VERSION":"7f6f0f74260297d83380b97d67e026300835a067"};
 const goappLoadingLabel = "Lofi music player to work, study and relax.";
 const goappWasmContentLengthHeader = "";
 

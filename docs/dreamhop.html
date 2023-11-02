@@ -6,33 +6,24 @@
 <meta name="description" content="Listen to Lo-fi music radio Dreamhop on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta name="keywords" content="lofi, lo-fi, music, lofimusic, chill, chilled, beats, relax, study, sleep, hiphop, app, pwa">
 <meta name="theme-color" content="#000000">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-<meta content="http://127.0.0.1:50651/dreamhop" property="og:url">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover" name="viewport">
+<meta content="http://127.0.0.1:51594/dreamhop" property="og:url">
 <meta property="og:title" content="Dreamhop Radio">
 <meta property="og:description" content="Listen to Lo-fi music radio Dreamhop on the Lofimusic open-source player: an installable Progressive Web app (PWA) written in Go (Golang).">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://lofimusic.app/web/covers/dreamhop.png">
 <title>Dreamhop Radio</title>
-<link type="text/css" rel="preload" href="/app.css" as="style">
+<link as="style" type="text/css" rel="preload" href="/app.css">
 <link type="text/css" rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" as="style">
-<link rel="preload" href="/web/lofimusic.css" as="style" type="text/css">
-<link href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg" rel="icon">
+<link as="style" type="text/css" rel="preload" href="/web/lofimusic.css">
+<link rel="icon" href="https://raw.githubusercontent.com/maxence-charriere/go-app/master/docs/web/icon.svg">
 <link rel="apple-touch-icon" href="/web/logo.png">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="stylesheet" type="text/css" href="/app.css">
-<link type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap">
 <link rel="stylesheet" type="text/css" href="/web/lofimusic.css">
-<script src="/wasm_exec.js" defer></script>
+<script defer src="/wasm_exec.js"></script>
 <script defer src="/app.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177947020-1"></script>
-			<script>
-			  window.dataLayer = window.dataLayer || [];
-			  function gtag(){dataLayer.push(arguments);}
-			  gtag('js', new Date());
-			
-			  gtag('config', 'UA-177947020-1');
-			</script>
 <script>
 			var isOnYouTubeIframeAPIReady = false;
 			function onYouTubeIframeAPIReady() {
@@ -44,14 +35,14 @@
 <main class="radio fill">
 <div class="youtube radio-player fill">
 <div class="youtube-video"><div id="youtube-player" class="unselectable"><script src="https://www.youtube.com/iframe_api"></script></div></div>
-<div class="youtube-noplay fill background-overlay"><aside class="loader hide hspace-out vspace-stretch"><div style="display:flex;justify-content:center;align-items:center;" data-goapp="Stack" class="fill">
+<div class="youtube-noplay fill background-overlay"><aside class="loader hide hspace-out vspace-stretch"><div class="fill" style="display:flex;justify-content:center;align-items:center;" data-goapp="Stack">
 <div style="width:78px;height:78px;"><div class="icon active" style="width:76px;height:76px;"></div></div>
 <div class="hspace-in">
 <header class="h2">Buffering</header>
 <p>Dreamhop</p>
 </div>
 </div></aside></div>
-<div style="display:flex;justify-content:center;align-items:center;" data-goapp="Stack" class="youtube-controls hspace-out vspace-top vspace-bottom">
+<div data-goapp="Stack" class="youtube-controls hspace-out vspace-top vspace-bottom" style="display:flex;justify-content:center;align-items:center;">
 <div class="youtube-left-space"></div>
 <button class="control disabled youtube-back"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
@@ -65,46 +56,46 @@
 <button class="control"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M3,9H7L12,4V20L7,15H3V9M16.59,12L14,9.41L15.41,8L18,10.59L20.59,8L22,9.41L19.41,12L22,14.59L20.59,16L18,13.41L15.41,16L14,14.59L16.59,12Z" />
 	</svg></div></button>
-<div class="youtube-volume"><input id="youtube-volume" type="range" min="0" max="100" value="0"></div>
+<div class="youtube-volume"><input type="range" min="0" max="100" value="0" id="youtube-volume"></div>
 </div>
 </div>
 <div class="radio-shell fill" data-goapp-ui="shell">
-<div id="goapp-shell-79afeee7-d02d-4e31-b97e-015e7aabef81" style="display:flex;width:100%;height:100%;overflow:hidden;">
+<div id="goapp-shell-2082398d-803d-4c6f-9210-01f8fa4be9bb" style="display:flex;width:100%;height:100%;overflow:hidden;">
 <div style="position:relative;display:none;flex-shrink:0;flex-basis:282px;overflow:hidden;"><div class="nav fill unselectable">
-<div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" class="app-title hspace-out"><header><a class="hApp focus glow" href="/">Lofimusic</a></header></div>
+<div data-goapp="Stack" class="app-title hspace-out" style="display:flex;justify-content:flex-start;align-items:center;"><header><a class="hApp focus glow" href="/">Lofimusic</a></header></div>
 <nav class="nav-content">
 <div class="nav-radios"><div class="nav-radios-stack" style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack"><div class="hspace-out">
-<a id="thebootlegboy" class="link heading fit glow" title href="/thebootlegboy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a class="link heading fit glow" title href="/thebootlegboy" id="thebootlegboy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Bootleg Smoke</div>
 </div></a>
-<a id="chillhop" class="link heading fit glow" title href="/chillhop"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a title href="/chillhop" id="chillhop" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Chillhop Raccoon</div>
 </div></a>
-<a id="chillhop-relax" class="link heading fit glow" title href="/chillhop-relax"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="chillhop-relax" class="link heading fit glow" title href="/chillhop-relax"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Chillhop Relaxing Raccoon</div>
 </div></a>
-<a id="collegemusic-guy" class="link heading fit glow" title href="/collegemusic-guy"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="/collegemusic-guy" id="collegemusic-guy"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>College Guy</div>
 </div></a>
-<a class="link heading fit glow" title href="/collegemusic-lonely" id="collegemusic-lonely"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="collegemusic-lonely" class="link heading fit glow" title href="/collegemusic-lonely"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>College Lonely</div>
 </div></a>
-<a class="link heading fit glow focus" title href="/dreamhop" id="dreamhop"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="dreamhop" class="link heading fit glow focus" title href="/dreamhop"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
@@ -116,37 +107,37 @@
 	</svg></div></div>
 <div>Everything Fades To Blue</div>
 </div></a>
-<a id="lofigirl" class="link heading fit glow" title href="/lofigirl"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a href="/lofigirl" id="lofigirl" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Lofi Girl</div>
 </div></a>
-<a id="lofigirl-sleepy" class="link heading fit glow" title href="/lofigirl-sleepy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="lofigirl-sleepy" class="link heading fit glow" title href="/lofigirl-sleepy"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Lofi Sleepy Girl</div>
 </div></a>
-<a title href="/closedonsunday-pop-culture" id="closedonsunday-pop-culture" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a href="/closedonsunday-pop-culture" id="closedonsunday-pop-culture" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Pop Culture Sunday</div>
 </div></a>
-<a id="closedonsunday-starwars" class="link heading fit glow" title href="/closedonsunday-starwars"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="closedonsunday-starwars" class="link heading fit glow" title href="/closedonsunday-starwars"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Star Wars Sunday</div>
 </div></a>
-<a id="synthwave-boy" class="link heading fit glow" title href="/synthwave-boy"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="synthwave-boy" class="link heading fit glow" title href="/synthwave-boy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Synthwave Boy</div>
 </div></a>
-<a id="taiki" class="link heading fit glow" title href="/taiki"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="/taiki" id="taiki"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
@@ -154,13 +145,13 @@
 </div></a>
 </div></div></div>
 <div class="nav-support hspace-out">
-<a class="link heading fit glow" title href="https://www.buymeacoffee.com/maxence"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a title href="https://www.buymeacoffee.com/maxence" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
 	</svg></div></div>
 <div>Buy me a coffee</div>
 </div></a>
-<a class="link heading fit glow" title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M14.24 10.56C13.93 11.8 12 11.17 11.4 11L11.95 8.82C12.57 9 14.56 9.26 14.24 10.56M11.13 12.12L10.53 14.53C11.27 14.72 13.56 15.45 13.9 14.09C14.26 12.67 11.87 12.3 11.13 12.12M21.7 14.42C20.36 19.78 14.94 23.04 9.58 21.7C4.22 20.36 .963 14.94 2.3 9.58C3.64 4.22 9.06 .964 14.42 2.3C19.77 3.64 23.03 9.06 21.7 14.42M14.21 8.05L14.66 6.25L13.56 6L13.12 7.73C12.83 7.66 12.54 7.59 12.24 7.53L12.68 5.76L11.59 5.5L11.14 7.29C10.9 7.23 10.66 7.18 10.44 7.12L10.44 7.12L8.93 6.74L8.63 7.91C8.63 7.91 9.45 8.1 9.43 8.11C9.88 8.22 9.96 8.5 9.94 8.75L8.71 13.68C8.66 13.82 8.5 14 8.21 13.95C8.22 13.96 7.41 13.75 7.41 13.75L6.87 15L8.29 15.36C8.56 15.43 8.82 15.5 9.08 15.56L8.62 17.38L9.72 17.66L10.17 15.85C10.47 15.93 10.76 16 11.04 16.08L10.59 17.87L11.69 18.15L12.15 16.33C14 16.68 15.42 16.54 16 14.85C16.5 13.5 16 12.7 15 12.19C15.72 12 16.26 11.55 16.41 10.57C16.61 9.24 15.59 8.53 14.21 8.05Z" />
 	</svg></div></div>
@@ -188,10 +179,10 @@
 <h1 class="h1 glow">Dreamhop</h1>
 <div class="info-title-separator"></div>
 <div data-goapp="Stack" class="info-links" style="display:flex;justify-content:center;align-items:center;">
-<a class="infolink" title="Visit Dreamhop Music's Discord." href="https://discord.com/invite/FxF9kng"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
+<a title="Visit Dreamhop Music's Discord." href="https://discord.com/invite/FxF9kng" class="infolink"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M22,24L16.75,19L17.38,21H4.5A2.5,2.5 0 0,1 2,18.5V3.5A2.5,2.5 0 0,1 4.5,1H19.5A2.5,2.5 0 0,1 22,3.5V24M12,6.8C9.32,6.8 7.44,7.95 7.44,7.95C8.47,7.03 10.27,6.5 10.27,6.5L10.1,6.33C8.41,6.36 6.88,7.53 6.88,7.53C5.16,11.12 5.27,14.22 5.27,14.22C6.67,16.03 8.75,15.9 8.75,15.9L9.46,15C8.21,14.73 7.42,13.62 7.42,13.62C7.42,13.62 9.3,14.9 12,14.9C14.7,14.9 16.58,13.62 16.58,13.62C16.58,13.62 15.79,14.73 14.54,15L15.25,15.9C15.25,15.9 17.33,16.03 18.73,14.22C18.73,14.22 18.84,11.12 17.12,7.53C17.12,7.53 15.59,6.36 13.9,6.33L13.73,6.5C13.73,6.5 15.53,7.03 16.56,7.95C16.56,7.95 14.68,6.8 12,6.8M9.93,10.59C10.58,10.59 11.11,11.16 11.1,11.86C11.1,12.55 10.58,13.13 9.93,13.13C9.29,13.13 8.77,12.55 8.77,11.86C8.77,11.16 9.28,10.59 9.93,10.59M14.1,10.59C14.75,10.59 15.27,11.16 15.27,11.86C15.27,12.55 14.75,13.13 14.1,13.13C13.46,13.13 12.94,12.55 12.94,11.86C12.94,11.16 13.45,10.59 14.1,10.59Z" />
 	</svg></div></a>
-<a title="Visit Dreamhop Music's Instagram." href="https://www.instagram.com/dreamhopp" class="infolink"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
+<a class="infolink" title="Visit Dreamhop Music's Instagram." href="https://www.instagram.com/dreamhopp"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
 	</svg></div></a>
 <a class="infolink" title="Visit Dreamhop Music's Spotify." href="https://open.spotify.com/user/91jfqzlv0htrqrvvc60138qma"><div style="width:18px;height:18px;"><svg style="width:18px;height:18px" viewBox="0 0 24 24">
@@ -213,34 +204,34 @@
 </div>
 <div style="display:block;position:absolute;top:0;left:0;cursor:pointer;"><div class="goapp-shell-hamburger-button-default">☰</div></div>
 <div style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;"><div class="nav fill unselectable background-overlay">
-<div class="app-title hspace-out" style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack"><header><a class="hApp focus glow" href="/">Lofimusic</a></header></div>
+<div data-goapp="Stack" class="app-title hspace-out" style="display:flex;justify-content:flex-start;align-items:center;"><header><a class="hApp focus glow" href="/">Lofimusic</a></header></div>
 <nav class="nav-content">
-<div class="nav-radios"><div class="nav-radios-stack" style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack"><div class="hspace-out">
-<a title href="/thebootlegboy" id="thebootlegboy" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<div class="nav-radios"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack" class="nav-radios-stack"><div class="hspace-out">
+<a href="/thebootlegboy" id="thebootlegboy" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Bootleg Smoke</div>
 </div></a>
-<a id="chillhop" class="link heading fit glow" title href="/chillhop"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a href="/chillhop" id="chillhop" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Chillhop Raccoon</div>
 </div></a>
-<a title href="/chillhop-relax" id="chillhop-relax" class="link heading fit glow"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="chillhop-relax" class="link heading fit glow" title href="/chillhop-relax"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Chillhop Relaxing Raccoon</div>
 </div></a>
-<a class="link heading fit glow" title href="/collegemusic-guy" id="collegemusic-guy"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a id="collegemusic-guy" class="link heading fit glow" title href="/collegemusic-guy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>College Guy</div>
 </div></a>
-<a title href="/collegemusic-lonely" id="collegemusic-lonely" class="link heading fit glow"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="/collegemusic-lonely" id="collegemusic-lonely"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
@@ -252,7 +243,7 @@
 	</svg></div></div>
 <div>Dreamhop</div>
 </div></a>
-<a id="everything-fades-to-blue" class="link heading fit glow" title href="/everything-fades-to-blue"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a href="/everything-fades-to-blue" id="everything-fades-to-blue" class="link heading fit glow" title><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
@@ -264,31 +255,31 @@
 	</svg></div></div>
 <div>Lofi Girl</div>
 </div></a>
-<a id="lofigirl-sleepy" class="link heading fit glow" title href="/lofigirl-sleepy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a href="/lofigirl-sleepy" id="lofigirl-sleepy" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Lofi Sleepy Girl</div>
 </div></a>
-<a id="closedonsunday-pop-culture" class="link heading fit glow" title href="/closedonsunday-pop-culture"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a title href="/closedonsunday-pop-culture" id="closedonsunday-pop-culture" class="link heading fit glow"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Pop Culture Sunday</div>
 </div></a>
-<a href="/closedonsunday-starwars" id="closedonsunday-starwars" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="closedonsunday-starwars" class="link heading fit glow" title href="/closedonsunday-starwars"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Star Wars Sunday</div>
 </div></a>
-<a href="/synthwave-boy" id="synthwave-boy" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="synthwave-boy" class="link heading fit glow" title href="/synthwave-boy"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
 <div>Synthwave Boy</div>
 </div></a>
-<a href="/taiki" id="taiki" class="link heading fit glow" title><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a id="taiki" class="link heading fit glow" title href="/taiki"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M8,5.14V19.14L19,12.14L8,5.14Z" />
 	</svg></div></div>
@@ -296,25 +287,25 @@
 </div></a>
 </div></div></div>
 <div class="nav-support hspace-out">
-<a class="link heading fit glow" title href="https://www.buymeacoffee.com/maxence"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="https://www.buymeacoffee.com/maxence"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
 	</svg></div></div>
 <div>Buy me a coffee</div>
 </div></a>
-<a class="link heading fit glow" title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="https://commerce.coinbase.com/checkout/851320a4-35b5-41f1-897b-74dd5ee207ae"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
     	<path fill="currentColor" d="M14.24 10.56C13.93 11.8 12 11.17 11.4 11L11.95 8.82C12.57 9 14.56 9.26 14.24 10.56M11.13 12.12L10.53 14.53C11.27 14.72 13.56 15.45 13.9 14.09C14.26 12.67 11.87 12.3 11.13 12.12M21.7 14.42C20.36 19.78 14.94 23.04 9.58 21.7C4.22 20.36 .963 14.94 2.3 9.58C3.64 4.22 9.06 .964 14.42 2.3C19.77 3.64 23.03 9.06 21.7 14.42M14.21 8.05L14.66 6.25L13.56 6L13.12 7.73C12.83 7.66 12.54 7.59 12.24 7.53L12.68 5.76L11.59 5.5L11.14 7.29C10.9 7.23 10.66 7.18 10.44 7.12L10.44 7.12L8.93 6.74L8.63 7.91C8.63 7.91 9.45 8.1 9.43 8.11C9.88 8.22 9.96 8.5 9.94 8.75L8.71 13.68C8.66 13.82 8.5 14 8.21 13.95C8.22 13.96 7.41 13.75 7.41 13.75L6.87 15L8.29 15.36C8.56 15.43 8.82 15.5 9.08 15.56L8.62 17.38L9.72 17.66L10.17 15.85C10.47 15.93 10.76 16 11.04 16.08L10.59 17.87L11.69 18.15L12.15 16.33C14 16.68 15.42 16.54 16 14.85C16.5 13.5 16 12.7 15 12.19C15.72 12 16.26 11.55 16.41 10.57C16.61 9.24 15.59 8.53 14.21 8.05Z" />
 	</svg></div></div>
 <div>Donate cryptos</div>
 </div></a>
-<a class="link heading fit glow" title href="https://github.com/maxence-charriere/lofimusic"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
+<a class="link heading fit glow" title href="https://github.com/maxence-charriere/lofimusic"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
 	</svg></div></div>
 <div>GitHub</div>
 </div></a>
-<a class="link heading fit glow" title href="https://twitter.com/jonhymaxoo"><div style="display:flex;justify-content:flex-start;align-items:center;" data-goapp="Stack">
+<a class="link heading fit glow" title href="https://twitter.com/jonhymaxoo"><div data-goapp="Stack" style="display:flex;justify-content:flex-start;align-items:center;">
 <div class="link-icon"><div style="width:24px;height:24px;"><svg style="width:24px;height:24px" viewBox="0 0 24 24">
 		<path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
 	</svg></div></div>
@@ -326,7 +317,7 @@
 </div>
 </main>
 <aside id="app-wasm-loader" class="goapp-app-info">
-<img class="goapp-logo goapp-spin" src="/web/logo.png" id="app-wasm-loader-icon">
+<img src="/web/logo.png" id="app-wasm-loader-icon" class="goapp-logo goapp-spin">
 <p id="app-wasm-loader-label" class="goapp-label">Lofi music player to work, study and relax.</p>
 </aside>
 </body>

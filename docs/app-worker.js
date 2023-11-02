@@ -1,8 +1,8 @@
-const cacheName = "app-" + "1225325ee9f08013dff779658431a05765d10db7";
+const cacheName = "app-" + "7f6f0f74260297d83380b97d67e026300835a067";
 const resourcesToCache = ["/","/app.css","/app.js","/manifest.webmanifest","/wasm_exec.js","/web/app.wasm","/web/lofimusic.css","/web/logo.png","https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500\u0026display=swap"];
 
 self.addEventListener("install", (event) => {
-  console.log("installing app worker 1225325ee9f08013dff779658431a05765d10db7");
+  console.log("installing app worker 7f6f0f74260297d83380b97d67e026300835a067");
 
   event.waitUntil(
     caches
@@ -28,7 +28,7 @@ self.addEventListener("activate", (event) => {
       );
     })
   );
-  console.log("app worker 1225325ee9f08013dff779658431a05765d10db7 is activated");
+  console.log("app worker 7f6f0f74260297d83380b97d67e026300835a067 is activated");
 });
 
 self.addEventListener("fetch", (event) => {
