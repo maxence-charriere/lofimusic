@@ -119,7 +119,7 @@ func main() {
 
 func runLocal(ctx context.Context, h http.Handler, opts options) {
 	app.Logf("%s", logs.New("starting lofimusic app server").
-		Tag("port", opts.Port),
+		WithTag("port", opts.Port),
 	)
 
 	s := http.Server{
